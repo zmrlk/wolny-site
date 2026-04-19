@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Strona główna -->
+  <url>
+    <loc>https://wolnynamiot.pl/</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-7.jpg</image:loc>
+      <image:title>Wolny Namiot — ekspresowy namiot z girlandami w ogrodzie</image:title>
+      <image:caption>Namiot ekspresowy 4.5×3m, czarny popup, ogrody urodzinowe</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 8 podstron okazji -->
+  <url>
+    <loc>https://wolnynamiot.pl/okazje/biesiada-w-gorach.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-3.jpg</image:loc>
+      <image:title>Biesiada w górach — namiot 6×12m na polanie</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/okazje/urodziny-w-ogrodzie.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-7.jpg</image:loc>
+      <image:title>Urodziny w ogrodzie — namiot ekspresowy dla dzieci</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/okazje/protest.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-7.jpg</image:loc>
+      <image:title>Protest — namiot 3×3m jako punkt informacyjny</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/okazje/dom-dzialkowca.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-4.jpg</image:loc>
+      <image:title>Dom działkowca — namiot w ROD</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/okazje/uroczystosci-rodzinne.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-8.jpg</image:loc>
+      <image:title>Uroczystości rodzinne — wesele, komunia, chrzciny, stypa</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/okazje/rodzinne-z-psem.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-11.jpg</image:loc>
+      <image:title>Rodzinne z psem — kameralny namiot ekspres</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/okazje/jarmark-festyn.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-14.jpg</image:loc>
+      <image:title>Jarmark festyn — namioty dla gmin OSP stowarzyszeń</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/okazje/event-firmowy.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-2.jpg</image:loc>
+      <image:title>Event firmowy — namiot 10×20m do 300 osób</image:title>
+    </image:image>
+  </url>
+
+</urlset>

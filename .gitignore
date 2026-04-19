@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Edytory
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temp / draft files
+*.tmp
+*.bak
+*.log
+
+# Node (jeśli kiedyś dodamy)
+node_modules/
+npm-debug.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Prywatne / lokalne
+.env
+.env.local

@@ -1,0 +1,2778 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>wolny namiot — brand system v2 (odtworzenie z chat1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* paleta rozszerzona — neo-biesiada festiwalowa (10 kolorów) */
+  --plotno: #F5F1E6; --plotno-50: #FDFBF5; --plotno-100: #FAF7EE; --plotno-200: #F5F1E6; --plotno-300: #E8DFC9; --plotno-400: #D4C9AE;
+  --atrament: #0A0A0A; --atrament-900: #1A1A1A; --atrament-700: #2A2A2A; --atrament-500: #4A4A4A; --atrament-300: #7A7A7A; --atrament-100: #BDBDBD;
+  --trawa: #1F7A3F; --trawa-900: #0B3318; --trawa-700: #145026; --trawa-500: #1F7A3F; --trawa-300: #5BAC73; --trawa-100: #C8E6D1;
+  --ogien: #132B4D; --ogien-900: #050C19; --ogien-700: #0A1A33; --ogien-500: #132B4D; --ogien-300: #4A6591; --ogien-100: #C7D1E3;
+  --granat: #132B4D;
+  --zarowka: #F9D94A; --zarowka-900: #6B5706; --zarowka-700: #A16207; --zarowka-500: #F9D94A; --zarowka-300: #FBE988; --zarowka-100: #FEF3C7;
+  --wesele: #E8DFC9; --wesele-900: #4A412E; --wesele-700: #8F8367; --wesele-500: #E8DFC9; --wesele-300: #F1ECD9; --wesele-100: #FAF7EC;
+  /* dodatkowe — dla plakatów */
+  --burak: #8B1E3F;    --burak-300: #C56B85;   --burak-100: #F0D4DC;
+  --niebo: #1A8FA3;    --niebo-300: #6FBAC8;   --niebo-100: #D2EBF0;
+  --fiolet: #6B3F8C;   --fiolet-300: #A079BA;  --fiolet-100: #E2D5EC;
+  --roz: #D63384;      --roz-300: #E880B4;     --roz-100: #F7D5E4;
+  --pomidor: #D93A1F;  --pomidor-300: #EB8670; --pomidor-100: #F9D6CE;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 96px;
+  --radius: 0; --radius-soft: 2px;
+  --shadow-sticker: 4px 4px 0 var(--atrament);
+  --shadow-card: 0 1px 0 var(--atrament);
+}
+@page { size: A3 landscape; margin: 0; }
+@media print {
+  body { background: var(--plotno) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; zoom: 0.62; }
+  .toc { display: none !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* sekcje flow naturalnie, mniejsze padding żeby się upchnęło */
+  section { padding: 36px 0 !important; border-bottom: 1px solid rgba(10,10,10,0.08) !important; }
+
+  /* Nie łam pojedynczych kart/plakatów/wizytówek w połowie — jedyna reguła page-break */
+  .pakiet-item, .poster, .card-service, .card-review, .card-product,
+  .wiz, .naklejka, .koszulka, .naszywka, .b6, .flyer,
+  .mp-ig1, .plk-916, .plk-land, .slogan-cell, .usecase, .pillar,
+  .swatch, .logo-cell, .misuse-cell, .ig-post, .ig-story, .fb-post,
+  .tt-cover, .gbp-cover, .gbp-post, .email-sig,
+  .type-row, .type-step, .scale-row, .comp-cell, .foto-tile {
+    page-break-inside: avoid; break-inside: avoid;
+  }
+
+  /* nagłówek trzyma się z treścią */
+  .section-head { page-break-after: avoid; break-after: avoid; }
+  h2, h3, .eyebrow { page-break-after: avoid; break-after: avoid; }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Archivo', -apple-system, sans-serif;
+  color: var(--atrament);
+  background: var(--plotno);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.display { font-family: 'Archivo Black', sans-serif; letter-spacing: -0.03em; text-transform: lowercase; }
+.italic { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.container { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: lowercase; color: var(--atrament-500); font-weight: 500; }
+
+/* ========== NAV ========== */
+.toc {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--atrament); color: var(--plotno);
+  padding: 12px 0; border-bottom: 4px solid var(--zarowka);
+}
+.toc .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.toc-logo { font-family: 'Archivo Black', sans-serif; font-size: 20px; text-transform: lowercase; letter-spacing: -0.02em; }
+.toc-logo em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+.toc-links { display: flex; gap: 18px; flex-wrap: wrap; }
+.toc-links a { color: var(--plotno); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: lowercase; transition: color 0.15s; }
+.toc-links a:hover { color: var(--pomidor); }
+
+/* ========== GIRLANDA ========== */
+.girlanda {
+  height: 6px;
+  background-image:
+    radial-gradient(circle at 40px 3px, var(--zarowka) 3.5px, transparent 4px),
+    radial-gradient(circle at 120px 3px, var(--ogien) 3.5px, transparent 4px),
+    radial-gradient(circle at 200px 3px, var(--zarowka) 3.5px, transparent 4px),
+    radial-gradient(circle at 280px 3px, var(--wesele) 3.5px, transparent 4px),
+    radial-gradient(circle at 360px 3px, var(--zarowka) 3.5px, transparent 4px),
+    radial-gradient(circle at 440px 3px, var(--ogien) 3.5px, transparent 4px),
+    linear-gradient(to bottom, transparent 2px, var(--atrament) 2px, var(--atrament) 3px, transparent 3px);
+  background-size: 480px 6px;
+  background-repeat: repeat-x;
+}
+
+/* ========== SECTION LAYOUT ========== */
+section { padding: 100px 0; border-bottom: 1px solid rgba(10,10,10,0.08); }
+section > .container > .section-head { margin-bottom: 56px; max-width: 860px; }
+.sec-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 3px; color: var(--pomidor); font-weight: 600; }
+.sec-head {
+  font-family: 'Archivo Black', sans-serif; font-size: 56px; text-transform: lowercase;
+  letter-spacing: -0.035em; margin-top: 12px; line-height: 0.92;
+}
+.sec-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--pomidor); text-transform: none; }
+.sec-intro { color: var(--atrament-700); margin-top: 18px; font-size: 17px; line-height: 1.6; max-width: 720px; font-weight: 400; }
+/* subsekcja w sekcji 13 */
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2.5px;
+  text-transform: lowercase; color: var(--atrament-700); font-weight: 600;
+  display: inline-block; padding: 6px 12px; background: var(--plotno-300);
+  margin-bottom: 6px;
+}
+
+/* ========== 1. ESENCJA ========== */
+.hero {
+  background: var(--atrament); color: var(--plotno); padding: 80px 0 40px;
+}
+.hero h1 {
+  font-family: 'Archivo Black', sans-serif; font-size: 140px; letter-spacing: -0.05em;
+  line-height: 0.85; text-transform: lowercase; margin: 24px 0 16px;
+}
+.hero h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; letter-spacing: -0.02em; }
+.hero .claim { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 36px; color: var(--zarowka); margin-top: 8px; letter-spacing: -0.01em; }
+.hero .eyebrow { color: var(--ogien); }
+.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--atrament); margin-top: 40px; }
+.pillar { background: var(--plotno); padding: 32px 28px; min-height: 180px; display: flex; flex-direction: column; justify-content: space-between; }
+.pillar .num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--ogien); }
+.pillar .title { font-family: 'Archivo Black', sans-serif; font-size: 28px; text-transform: lowercase; line-height: 1.0; letter-spacing: -0.02em; }
+.pillar .desc { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 16px; color: var(--atrament-500); }
+.manifest { margin-top: 48px; padding: 48px; background: var(--plotno-100); border: 2px solid var(--atrament); }
+.manifest p { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 28px; line-height: 1.45; max-width: 820px; color: var(--atrament); font-weight: 500; }
+.manifest p + p { margin-top: 20px; }
+.manifest p em { font-family: 'Archivo Black', sans-serif; font-style: normal; background: var(--zarowka); color: var(--atrament); text-transform: lowercase; letter-spacing: -0.02em; padding: 2px 8px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+/* ========== 2. LOGO ========== */
+.logo-main { font-family: 'Archivo Black', sans-serif; font-size: 80px; text-transform: lowercase; letter-spacing: -0.04em; line-height: 1; }
+.logo-main em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; letter-spacing: -0.02em; }
+.logo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--atrament); }
+.logo-cell { padding: 40px; min-height: 200px; display: flex; align-items: center; justify-content: center; position: relative; }
+.logo-cell .meta { position: absolute; bottom: 10px; left: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: lowercase; opacity: 0.55; }
+.lc-1 { background: var(--plotno); color: var(--atrament); }
+.lc-2 { background: var(--atrament); color: var(--plotno); }
+.lc-2 .logo-main em { color: var(--zarowka); }
+.lc-3 { background: var(--ogien); color: var(--plotno); }
+.lc-3 .logo-main em { color: var(--zarowka); }
+.lc-4 { background: var(--trawa); color: var(--plotno); }
+.lc-4 .logo-main em { color: var(--zarowka); }
+.logo-anatomy { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; align-items: center; }
+.sygnet-xl svg { display: block; }
+.sticker {
+  display: inline-block; padding: 24px 32px; background: var(--ogien); color: var(--plotno);
+  font-family: 'Archivo Black', sans-serif; font-size: 16px; text-transform: lowercase;
+  letter-spacing: 0.02em; line-height: 1.1; border: 3px solid var(--atrament);
+  box-shadow: var(--shadow-sticker); transform: rotate(-3deg); border-radius: 999px;
+}
+.sticker em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; color: var(--zarowka); }
+.misuse { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--atrament); margin-top: 32px; }
+.misuse-cell { background: var(--plotno-100); padding: 24px; min-height: 160px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.misuse-cell::after { content: '×'; position: absolute; right: 16px; top: 16px; font-family: 'Archivo Black', sans-serif; font-size: 32px; color: var(--ogien); }
+.misuse-cell .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: lowercase; letter-spacing: 1px; color: var(--atrament-500); }
+.misuse-cell .demo { font-family: 'Archivo Black', sans-serif; font-size: 28px; text-transform: lowercase; }
+
+/* ========== 3. KOLOR ========== */
+.color-lead { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; background: var(--atrament); margin-bottom: 24px; }
+.color-lead-cell { height: 140px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; }
+.color-lead-cell .name { font-family: 'Archivo Black', sans-serif; font-size: 18px; text-transform: lowercase; letter-spacing: -0.01em; }
+.color-lead-cell .hex { font-family: 'JetBrains Mono', monospace; font-size: 10px; }
+.cl-plotno { background: var(--plotno); color: var(--atrament); }
+.cl-atrament { background: var(--atrament); color: var(--plotno); }
+.cl-ogien { background: var(--ogien); color: var(--plotno); }
+.cl-trawa { background: var(--trawa); color: var(--plotno); }
+.cl-zarowka { background: var(--zarowka); color: var(--atrament); }
+.cl-wesele { background: var(--wesele); color: var(--atrament); }
+.scales { display: grid; gap: 4px; }
+.scale-row { display: grid; grid-template-columns: 120px repeat(6, 1fr); gap: 0; }
+.scale-name { font-family: 'Archivo Black', sans-serif; font-size: 14px; text-transform: lowercase; padding: 16px 0; display: flex; align-items: center; }
+.scale-step { height: 48px; padding: 6px 10px; display: flex; align-items: flex-end; justify-content: flex-end; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; }
+.proportions { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; align-items: start; }
+.prop-bar { display: flex; height: 80px; }
+.prop-seg { display: flex; align-items: flex-end; justify-content: flex-start; padding: 10px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: lowercase; }
+.prop-text h4 { font-family: 'Archivo Black', sans-serif; font-size: 20px; text-transform: lowercase; margin-bottom: 10px; letter-spacing: -0.01em; }
+.prop-text ul { list-style: none; font-size: 14px; line-height: 1.7; }
+.prop-text ul li:before { content: '— '; color: var(--ogien); }
+.contrast-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--atrament); margin-top: 32px; }
+.contrast-cell { padding: 28px 20px; display: flex; flex-direction: column; gap: 6px; }
+.contrast-cell .ratio { font-family: 'Archivo Black', sans-serif; font-size: 32px; letter-spacing: -0.02em; }
+.contrast-cell .pair { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: lowercase; }
+.contrast-cell .badge-pass { display: inline-block; width: fit-content; padding: 2px 8px; background: var(--atrament); color: var(--zarowka); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; }
+
+/* ========== 4. TYPOGRAFIA ========== */
+.type-hero { font-family: 'Archivo Black', sans-serif; font-size: 120px; text-transform: lowercase; letter-spacing: -0.05em; line-height: 0.88; }
+.type-hero em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; text-transform: none; color: var(--pomidor); letter-spacing: -0.02em; }
+.type-scale { display: grid; gap: 20px; max-width: 960px; margin-top: 40px; }
+.type-step { padding: 20px 0; border-bottom: 1px solid var(--atrament); }
+.type-step:last-child { border-bottom: none; }
+.type-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--ogien); margin-bottom: 8px; }
+.type-sample { font-family: 'Archivo', sans-serif; }
+.ts-1 { font-family: 'Archivo Black', sans-serif; font-size: 96px; letter-spacing: -0.04em; line-height: 0.9; text-transform: lowercase; }
+.ts-2 { font-family: 'Archivo Black', sans-serif; font-size: 64px; letter-spacing: -0.03em; line-height: 0.95; text-transform: lowercase; }
+.ts-3 { font-family: 'Archivo Black', sans-serif; font-size: 44px; letter-spacing: -0.025em; line-height: 1.0; text-transform: lowercase; }
+.ts-4 { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 36px; letter-spacing: -0.01em; }
+.ts-5 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.005em; }
+.ts-6 { font-family: 'Archivo', sans-serif; font-weight: 500; font-size: 18px; }
+.ts-7 { font-family: 'Archivo', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; }
+.ts-8 { font-family: 'Archivo', sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: var(--atrament-500); }
+.ts-9 { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: lowercase; }
+.ts-10 { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: lowercase; color: var(--atrament-500); }
+.font-families { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--atrament); }
+.ff-cell { background: var(--plotno-100); padding: 32px 28px; }
+.ff-cell .name { font-size: 20px; margin-bottom: 8px; }
+.ff-cell .specimen { font-size: 64px; line-height: 1; margin: 16px 0; }
+.ff-cell .meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; color: var(--atrament-500); text-transform: lowercase; }
+.ff-1 .name, .ff-1 .specimen { font-family: 'Archivo Black', sans-serif; text-transform: lowercase; letter-spacing: -0.03em; }
+.ff-2 .name, .ff-2 .specimen { font-family: 'Instrument Serif', serif; font-style: italic; }
+.ff-3 .name, .ff-3 .specimen { font-family: 'JetBrains Mono', monospace; text-transform: lowercase; letter-spacing: -0.01em; }
+
+/* ========== 5. TOKENY ========== */
+.tokens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.token-block h4 { font-family: 'Archivo Black', sans-serif; font-size: 22px; text-transform: lowercase; margin-bottom: 18px; letter-spacing: -0.02em; }
+.spacing-scale { display: flex; flex-direction: column; gap: 12px; }
+.spacing-row { display: flex; align-items: center; gap: 14px; }
+.spacing-name { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; width: 70px; text-transform: lowercase; color: var(--atrament-500); }
+.spacing-bar { background: var(--ogien); height: 14px; }
+.spacing-val { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--atrament-500); }
+.radius-samples { display: flex; gap: 14px; align-items: center; }
+.radius-sample { width: 64px; height: 64px; background: var(--atrament); color: var(--plotno); display: flex; align-items: flex-end; padding: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: lowercase; }
+.grid-demo { background: var(--plotno-100); border: 2px solid var(--atrament); padding: 16px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; margin-top: 12px; }
+.grid-col { background: var(--ogien-100); color: var(--atrament); text-align: center; padding: 14px 0; font-family: 'JetBrains Mono', monospace; font-size: 10px; }
+
+/* ========== 6. IKONY ========== */
+.icon-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 2px; background: var(--atrament); }
+.icon-cell { background: var(--plotno-100); padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 10px; min-height: 120px; justify-content: center; }
+.icon-cell svg { width: 40px; height: 40px; }
+.icon-cell .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: lowercase; letter-spacing: 1px; color: var(--atrament-500); }
+
+/* ========== 7. KOMPONENTY ========== */
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; border: 2px solid transparent; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-decoration: none; cursor: pointer; text-transform: lowercase; transition: all 0.12s ease; }
+.btn-primary { background: var(--atrament); color: var(--plotno); border-color: var(--atrament); }
+.btn-primary:hover { background: var(--ogien); border-color: var(--ogien); }
+.btn-ogien { background: var(--ogien); color: var(--plotno); border-color: var(--ogien); }
+.btn-ogien:hover { background: var(--atrament); border-color: var(--atrament); }
+.btn-outline { background: transparent; color: var(--atrament); border-color: var(--atrament); }
+.btn-outline:hover { background: var(--atrament); color: var(--plotno); }
+.tag { display: inline-block; padding: 5px 12px; background: var(--atrament); color: var(--plotno); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: lowercase; }
+.tag-ogien { background: var(--ogien); } .tag-zarowka { background: var(--zarowka); color: var(--atrament); }
+.tag-wesele { background: var(--wesele); color: var(--atrament); } .tag-trawa { background: var(--trawa); }
+.input { width: 100%; padding: 16px 18px; border: 2px solid var(--atrament); background: var(--plotno); font-family: 'Archivo', sans-serif; font-size: 15px; color: var(--atrament); }
+.input::placeholder { color: var(--atrament-300); }
+.input:focus { outline: none; background: var(--plotno-50); border-color: var(--ogien); }
+.input-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: lowercase; color: var(--atrament-500); margin-bottom: 6px; display: block; }
+.card-product { background: var(--plotno-100); border: 2px solid var(--atrament); padding: 32px 28px; transition: all 0.12s; }
+.card-product:hover { background: var(--atrament); color: var(--plotno); }
+.card-product:hover h3 em { color: var(--zarowka); }
+.card-product .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ogien); letter-spacing: 2px; }
+.card-product h3 { font-family: 'Archivo Black', sans-serif; font-size: 28px; text-transform: lowercase; margin: 12px 0; letter-spacing: -0.02em; line-height: 1.0; }
+.card-product h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--pomidor); text-transform: none; }
+.card-product p { font-size: 14px; line-height: 1.55; }
+.card-product .price { font-family: 'JetBrains Mono', monospace; margin-top: 18px; font-size: 13px; color: var(--atrament-500); }
+.card-product:hover .price { color: var(--zarowka); }
+.card-editorial { background: var(--atrament); color: var(--plotno); padding: 48px 40px; }
+.card-editorial .meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ogien); letter-spacing: 2px; }
+.card-editorial h3 { font-family: 'Archivo Black', sans-serif; font-size: 40px; text-transform: lowercase; margin: 14px 0 20px; letter-spacing: -0.03em; line-height: 1.0; }
+.card-editorial h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+.card-editorial p { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; line-height: 1.5; max-width: 540px; color: rgba(238,232,220,0.85); }
+.stat-card { background: var(--ogien); color: var(--plotno); padding: 36px 32px; }
+.stat-card .num { font-family: 'Archivo Black', sans-serif; font-size: 96px; letter-spacing: -0.05em; line-height: 0.88; }
+.stat-card .label { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: lowercase; letter-spacing: 2px; margin-top: 8px; }
+.callout { padding: 28px 32px; background: var(--zarowka); color: var(--atrament); border-left: 8px solid var(--atrament); }
+.callout-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; margin-bottom: 6px; text-transform: lowercase; }
+.callout p { font-family: 'Archivo', sans-serif; font-size: 17px; font-weight: 500; }
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 32px; background: var(--atrament); }
+.comp-cell { background: var(--plotno-100); padding: 32px; }
+.comp-cell h4 { font-family: 'Archivo Black', sans-serif; font-size: 16px; text-transform: lowercase; margin-bottom: 16px; letter-spacing: -0.01em; }
+
+/* ========== 8. VOICE ========== */
+.voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--atrament); }
+.voice-cell { padding: 32px 28px; }
+.voice-cell.do { background: var(--trawa); color: var(--plotno); }
+.voice-cell.dont { background: var(--plotno-100); color: var(--atrament); }
+.voice-cell h4 { font-family: 'Archivo Black', sans-serif; font-size: 24px; text-transform: lowercase; margin-bottom: 20px; letter-spacing: -0.02em; }
+.voice-cell ul { list-style: none; }
+.voice-cell li { padding: 8px 0; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+.voice-cell.dont li { border-bottom-color: rgba(10,10,10,0.1); }
+.voice-cell.do li:before { content: '✓ '; color: var(--zarowka); font-family: 'JetBrains Mono', monospace; font-weight: bold; }
+.voice-cell.dont li:before { content: '× '; color: var(--ogien); font-family: 'JetBrains Mono', monospace; font-weight: bold; }
+.voice-slider { margin: 40px 0; }
+.voice-slider-row { display: grid; grid-template-columns: 120px 1fr 120px; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--atrament-100); }
+.voice-slider-row .label-l, .voice-slider-row .label-r { font-family: 'Archivo Black', sans-serif; text-transform: lowercase; font-size: 13px; }
+.voice-slider-row .label-l { text-align: right; color: var(--atrament-300); }
+.voice-slider-row .label-r { color: var(--atrament); }
+.voice-bar { height: 4px; background: var(--atrament-100); position: relative; }
+.voice-bar::after { content: ''; position: absolute; right: 18%; top: -6px; width: 16px; height: 16px; background: var(--ogien); border-radius: 50%; border: 2px solid var(--atrament); }
+.lexicon { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--atrament); margin-top: 32px; }
+.lex-cell { padding: 28px; }
+.lex-say { background: var(--plotno-100); }
+.lex-nosay { background: var(--atrament); color: var(--plotno); }
+.lex-cell h4 { font-family: 'Archivo Black', sans-serif; font-size: 18px; text-transform: lowercase; margin-bottom: 14px; }
+.lex-cell .w { font-family: 'Archivo', sans-serif; font-weight: 500; font-size: 15px; padding: 6px 0; }
+.lex-say .w:before { content: '→ '; color: var(--ogien); }
+.lex-nosay .w:before { content: '× '; color: var(--ogien); }
+.lex-nosay .w { color: var(--atrament-300); text-decoration: line-through; text-decoration-color: var(--ogien); text-decoration-thickness: 2px; }
+
+/* ========== 9. SLOGANS 9 ========== */
+.slogans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.slogan-cell { padding: 36px 28px; min-height: 200px; display: flex; flex-direction: column; justify-content: space-between; }
+.slogan-tier { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: lowercase; }
+.slogan-text { font-family: 'Archivo Black', sans-serif; font-size: 28px; line-height: 1.0; letter-spacing: -0.02em; text-transform: lowercase; }
+.slogan-text em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; }
+.sl-1 { background: var(--atrament); color: var(--plotno); } .sl-1 .slogan-tier { color: var(--zarowka); }
+.sl-2 { background: var(--ogien); color: var(--plotno); } .sl-2 .slogan-tier { color: rgba(255,255,255,0.7); }
+.sl-3 { background: var(--plotno-100); color: var(--atrament); border: 1px solid var(--atrament); } .sl-3 .slogan-tier { color: var(--ogien); }
+.sl-4 { background: var(--trawa); color: var(--plotno); } .sl-4 .slogan-tier { color: var(--zarowka); }
+.sl-5 { background: var(--zarowka); color: var(--atrament); } .sl-5 .slogan-tier { color: var(--ogien-dark); }
+.sl-6 { background: var(--wesele); color: var(--atrament); } .sl-6 .slogan-tier { color: var(--ogien-700); }
+.sl-7 { background: var(--plotno-300); color: var(--atrament); } .sl-7 .slogan-tier { color: var(--ogien); }
+.sl-8 { background: var(--atrament-700); color: var(--plotno); } .sl-8 .slogan-tier { color: var(--wesele); }
+.sl-9 { background: var(--plotno); color: var(--atrament); border: 1px solid var(--atrament); } .sl-9 .slogan-tier { color: var(--trawa); }
+
+/* ========== 10. USE CASES · PLAKATY ========== */
+.poster-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--atrament); }
+.poster {
+  aspect-ratio: 3/4; padding: 32px 28px; position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.poster .num-sticker {
+  position: absolute; top: 20px; right: 20px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px;
+  padding: 4px 10px; border: 1.5px solid currentColor;
+}
+.poster .eyebrow-p {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px;
+  text-transform: lowercase; opacity: 0.75;
+}
+.poster .headline {
+  font-family: 'Archivo Black', sans-serif; text-transform: lowercase;
+  letter-spacing: -0.04em; line-height: 0.88; margin-top: auto;
+}
+.poster .headline em {
+  font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; text-transform: none;
+  letter-spacing: -0.02em;
+}
+.poster .tagline {
+  font-family: 'Instrument Serif', serif; font-style: italic; font-size: 17px;
+  margin-top: 10px; opacity: 0.85;
+}
+.poster .footer-p {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-top: 24px;
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px;
+  text-transform: lowercase; opacity: 0.8;
+}
+.poster svg.icon-bg {
+  position: absolute; opacity: 0.16; pointer-events: none;
+}
+.poster svg.icon-fg {
+  position: relative; z-index: 2;
+}
+
+/* 01 · biesiada — las + żarówka, mountains, diagonal */
+.p1 { background: var(--trawa); color: var(--plotno); }
+.p1 .headline { font-size: 56px; color: var(--zarowka); }
+.p1 .headline em { color: var(--plotno); }
+.p1 svg.icon-bg { bottom: -20px; left: -30px; width: 260px; }
+
+/* 02 · urodziny w ogrodzie — żarówka, słońce, atrament */
+.p2 { background: var(--zarowka); color: var(--atrament); }
+.p2 .headline { font-size: 64px; }
+.p2 .headline em { color: var(--pomidor); }
+.p2 svg.icon-bg { top: -40px; right: -40px; width: 220px; }
+
+/* 03 · protest — atrament + róż stencil */
+.p3 { background: var(--atrament); color: var(--plotno); }
+.p3 .headline { font-size: 60px; color: var(--roz); }
+.p3 .headline em { color: var(--zarowka); }
+.p3 svg.icon-bg { bottom: 40px; right: 30px; width: 140px; opacity: 0.28; }
+
+/* 04 · dom działkowca — pomidor + las */
+.p4 { background: var(--pomidor); color: var(--plotno); }
+.p4 .headline { font-size: 52px; }
+.p4 .headline em { color: var(--zarowka); }
+.p4 svg.icon-bg { bottom: -30px; left: -30px; width: 240px; }
+
+/* 05 · wesele — kremowy + granat */
+.p5 { background: var(--wesele); color: var(--granat); }
+.p5 .headline { font-size: 72px; color: var(--granat); }
+.p5 .headline em { color: var(--pomidor); }
+.p5 svg.icon-bg { top: 20%; left: -40px; width: 180px; opacity: 0.22; }
+
+/* 06 · urodziny psa burego — niebo + atrament playful */
+.p6 { background: var(--niebo); color: var(--plotno); }
+.p6 .headline { font-size: 48px; }
+.p6 .headline em { color: var(--zarowka); }
+.p6 svg.icon-bg { bottom: -20px; right: -30px; width: 220px; }
+
+/* 07 · jarmark — burak + żarówka folk */
+.p7 { background: var(--burak); color: var(--plotno); }
+.p7 .headline { font-size: 60px; color: var(--zarowka); }
+.p7 .headline em { color: var(--roz-300); }
+.p7 svg.icon-bg { bottom: 20px; right: -30px; width: 200px; opacity: 0.22; }
+
+/* 08 · stypa — atrament + płótno cichy */
+.p8 { background: var(--atrament); color: var(--plotno); }
+.p8 .headline { font-size: 44px; color: var(--plotno); font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; letter-spacing: -0.01em; }
+.p8 .headline em { color: var(--wesele); font-family: 'Archivo Black', sans-serif; font-style: normal; text-transform: lowercase; letter-spacing: -0.03em; }
+.p8 svg.icon-bg { top: 30%; right: 25%; width: 100px; opacity: 0.14; }
+
+/* 09 · komunia — plotno + las */
+.p9 { background: var(--plotno); color: var(--trawa-900); border: 1px solid var(--atrament); }
+.p9 .headline { font-size: 56px; color: var(--trawa); }
+.p9 .headline em { color: var(--atrament); }
+.p9 svg.icon-bg { top: 25%; left: 20px; width: 90px; opacity: 0.3; }
+
+/* 10 · event firmowy — granat + żarówka geometric */
+.p10 { background: var(--granat); color: var(--plotno); }
+.p10 .headline { font-size: 52px; color: var(--plotno); }
+.p10 .headline em { color: var(--zarowka); }
+.p10 svg.icon-bg { bottom: -40px; right: -20px; width: 240px; opacity: 0.2; }
+
+/* pattern overlays */
+.poster.pattern-dots::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(currentColor 1px, transparent 1.5px);
+  background-size: 22px 22px; opacity: 0.08; pointer-events: none;
+}
+.poster.pattern-lines::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, currentColor 10px, currentColor 11px);
+  opacity: 0.06; pointer-events: none;
+}
+
+/* ========== 11. ROBIMY / NIE ROBIMY ========== */
+.robimy { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--atrament); }
+.robimy-cell { padding: 40px 32px; }
+.robimy-tak { background: var(--trawa); color: var(--plotno); }
+.robimy-nie { background: var(--plotno-100); color: var(--atrament); }
+.robimy-cell h3 { font-family: 'Archivo Black', sans-serif; font-size: 36px; text-transform: lowercase; margin-bottom: 20px; letter-spacing: -0.03em; }
+.robimy-cell h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; text-transform: none; color: var(--zarowka); }
+.robimy-cell ul { list-style: none; }
+.robimy-cell li { padding: 10px 0; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+.robimy-nie li { border-bottom-color: rgba(10,10,10,0.1); }
+.robimy-tak li:before { content: '→ '; color: var(--zarowka); font-family: 'JetBrains Mono', monospace; }
+.robimy-nie li:before { content: '× '; color: var(--ogien); font-family: 'JetBrains Mono', monospace; }
+
+/* ========== 12. ZASTOSOWANIA ========== */
+.apply-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2px; background: var(--atrament); }
+.apply-cell { background: var(--plotno-100); padding: 28px; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; }
+.apply-landing { grid-row: span 2; background: var(--atrament); color: var(--plotno); }
+.apply-landing .miniwp { background: var(--plotno); color: var(--atrament); padding: 20px; margin-top: 18px; border: 1px solid var(--atrament-700); }
+.apply-landing .miniwp .h { font-family: 'Archivo Black', sans-serif; font-size: 28px; text-transform: lowercase; letter-spacing: -0.03em; line-height: 1.0; }
+.apply-landing .miniwp .h em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--ogien); text-transform: none; }
+.apply-landing .miniwp .p { font-size: 11px; margin-top: 8px; color: var(--atrament-500); }
+.apply-cell .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: lowercase; color: var(--ogien); }
+.apply-cell h4 { font-family: 'Archivo Black', sans-serif; font-size: 22px; text-transform: lowercase; margin-top: 8px; letter-spacing: -0.02em; }
+.apply-poster { background: var(--ogien); color: var(--plotno); position: relative; }
+.apply-poster .big { font-family: 'Archivo Black', sans-serif; font-size: 48px; text-transform: lowercase; line-height: 0.88; letter-spacing: -0.03em; }
+.apply-poster .big em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--zarowka); text-transform: none; }
+.apply-flyer { background: var(--zarowka); color: var(--atrament); }
+.apply-flyer .slogan { font-family: 'Archivo Black', sans-serif; font-size: 28px; text-transform: lowercase; line-height: 1.0; letter-spacing: -0.02em; }
+.apply-furgonetka { background: var(--plotno); color: var(--atrament); grid-column: span 2; min-height: 180px; }
+.apply-furgonetka .f-preview { background: var(--atrament); color: var(--plotno); margin-top: 12px; padding: 24px 28px; font-family: 'Archivo Black', sans-serif; font-size: 44px; text-transform: lowercase; letter-spacing: -0.04em; line-height: 0.9; }
+.apply-furgonetka .f-preview em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--ogien); text-transform: none; }
+.apply-story { background: var(--trawa); color: var(--plotno); }
+.apply-koszulka { background: var(--wesele); color: var(--atrament); }
+.apply-naklejki { background: var(--plotno-100); }
+.stickers-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+.sticker-s { padding: 14px 18px; background: var(--ogien); color: var(--plotno); font-family: 'Archivo Black', sans-serif; font-size: 12px; text-transform: lowercase; border: 2px solid var(--atrament); box-shadow: 3px 3px 0 var(--atrament); border-radius: 999px; transform: rotate(-2deg); }
+.sticker-s.alt2 { background: var(--zarowka); color: var(--atrament); transform: rotate(2deg); }
+.sticker-s.alt3 { background: var(--trawa); color: var(--plotno); transform: rotate(-1deg); }
+.sticker-s.alt4 { background: var(--wesele); color: var(--atrament); transform: rotate(3deg); }
+
+@media (max-width: 900px) {
+  .hero h1 { font-size: 64px; }
+  .pillars { grid-template-columns: 1fr 1fr; }
+  .logo-grid, .usecase-grid, .color-lead { grid-template-columns: 1fr 1fr; }
+  .slogans-grid { grid-template-columns: 1fr; }
+  .robimy, .font-families, .voice-grid, .lexicon, .comp-grid, .apply-grid { grid-template-columns: 1fr; }
+  .tokens-grid { grid-template-columns: 1fr; }
+  .scale-row { grid-template-columns: 90px repeat(6, 1fr); }
+  .icon-grid { grid-template-columns: repeat(4, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV TOC ========== -->
+<nav class="toc">
+  <div class="container">
+    <div class="toc-logo">wolny <em>namiot</em></div>
+    <div class="toc-links">
+      <a href="#esencja">01 esencja</a>
+      <a href="#logo">02 logo</a>
+      <a href="#kolor">03 kolor</a>
+      <a href="#typo">04 typo</a>
+      <a href="#tokeny">05 tokeny</a>
+      <a href="#ikony">06 ikony</a>
+      <a href="#komponenty">07 komponenty</a>
+      <a href="#voice">08 voice</a>
+      <a href="#slogany">09 slogany</a>
+      <a href="#usecase">10 zastosowania</a>
+      <a href="#robimy">11 robimy/nie</a>
+      <a href="#apply">12 materiały</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== 1. ESENCJA ========== -->
+<section id="esencja" class="hero">
+  <div class="container">
+    <div class="sec-num">01 · esencja</div>
+    <h1>wolny namiot<br/>— <em>postaw gdzie chcesz.</em><br/><em>zrób co chcesz.</em></h1>
+    <div class="claim">— wolny namiot to może być twoja impreza.</div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="num">01</span>
+        <div>
+          <div class="title">wolność</div>
+          <div class="desc">twój event, twoje zasady.</div>
+        </div>
+      </div>
+      <div class="pillar" style="background:var(--ogien);color:var(--plotno);">
+        <span class="num" style="color:var(--zarowka);">02</span>
+        <div>
+          <div class="title">rzemiosło</div>
+          <div class="desc">stawiamy na czas. zwijamy po sobie.</div>
+        </div>
+      </div>
+      <div class="pillar" style="background:var(--trawa);color:var(--plotno);">
+        <span class="num" style="color:var(--zarowka);">03</span>
+        <div>
+          <div class="title">lokalność</div>
+          <div class="desc">rodzinna firma z jędrzejowa.</div>
+        </div>
+      </div>
+      <div class="pillar" style="background:var(--zarowka);color:var(--atrament);">
+        <span class="num" style="color:var(--atrament);">04</span>
+        <div>
+          <div class="title">biesiada</div>
+          <div class="desc">bez premium, bez cyrku. ludzko.</div>
+        </div>
+      </div>
+    </div>
+    <div class="manifest">
+      <p>jesteśmy <em>wolnym namiotem</em> z jędrzejowa.</p>
+      <p>stawiamy pawilony — od małego 3×3 po 15×30 — wszędzie tam, gdzie ludzie się spotykają.</p>
+      <p>wesele? tak. urodziny cioci? tak. biesiada działkowiczów? jasne. protest? postawimy. stypa? przyjedziemy cicho. urodziny psa burego? a czemu nie.</p>
+      <p>nie udajemy eleganckich dostawców. robimy robotę — ładnie, na czas, bez niespodzianek w fakturze. <em>nie pytamy co robisz pod spodem.</em></p>
+    </div>
+  </div>
+</section>
+
+<div class="girlanda"></div>
+
+<!-- ========== 2. LOGO ========== -->
+<section id="logo">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">02 · logo</div>
+      <h2 class="sec-head">logo &amp; <em>sygnet</em></h2>
+      <p class="sec-intro">Wordmark: Archivo Black lowercase "wolny" + Instrument Serif italic "namiot" (podwójne znaczenie — namiot jako przedmiot + słowo jako szept). Sygnet: pawilon z lotu ptaka, 2×2 kratki z przekątnymi dachu. Pieczątka-sticker: ruchowa, plakatowa.</p>
+    </div>
+
+    <div class="logo-grid">
+      <div class="logo-cell lc-1">
+        <div class="logo-main">wolny <em>namiot</em></div>
+        <span class="meta">01 · podstawowy · płótno</span>
+      </div>
+      <div class="logo-cell lc-2">
+        <div class="logo-main">wolny <em>namiot</em></div>
+        <span class="meta">02 · atrament · ogień akcent</span>
+      </div>
+      <div class="logo-cell lc-3">
+        <div class="logo-main">wolny <em>namiot</em></div>
+        <span class="meta">03 · ogień · żarówka akcent</span>
+      </div>
+      <div class="logo-cell lc-4">
+        <div class="logo-main">wolny <em>namiot</em></div>
+        <span class="meta">04 · trawa · żarówka akcent</span>
+      </div>
+    </div>
+
+    <div class="logo-anatomy">
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px;">sygnet — pawilon 2×2 z lotu ptaka</div>
+        <div class="sygnet-xl">
+          <svg viewBox="0 0 160 160" width="160" height="160">
+            <rect x="8" y="8" width="144" height="144" fill="none" stroke="#0A0A0A" stroke-width="5"/>
+            <line x1="80" y1="8" x2="80" y2="152" stroke="#0A0A0A" stroke-width="5"/>
+            <line x1="8" y1="80" x2="152" y2="80" stroke="#0A0A0A" stroke-width="5"/>
+            <line x1="8" y1="8" x2="152" y2="152" stroke="#C34A1F" stroke-width="3"/>
+            <line x1="152" y1="8" x2="8" y2="152" stroke="#C34A1F" stroke-width="3"/>
+          </svg>
+        </div>
+        <p style="font-size:13px;color:var(--atrament-500);margin-top:12px;max-width:320px;">Widok z góry na namiot 2×2 metry z dachem czterospadowym. Geometryczny. Odporny na redukcję.</p>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px;">pieczątka-sticker</div>
+        <div class="sticker">postaw<br/>gdzie <em>chcesz</em></div>
+        <p style="font-size:13px;color:var(--atrament-500);margin-top:20px;max-width:320px;">Wariant do naklejek, koszulek, boku furgonetki. 5 kolorów × 5 sloganów.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;">
+      <div class="eyebrow" style="margin-bottom:16px;">misuse — czego nie robić</div>
+      <div class="misuse">
+        <div class="misuse-cell">
+          <span class="label">nie rozciągaj</span>
+          <div class="demo" style="transform:scaleX(1.8);transform-origin:left;">wolny <em style="font-family:'Instrument Serif',serif;font-style:italic;">namiot</em></div>
+        </div>
+        <div class="misuse-cell">
+          <span class="label">nie dodawaj cienia</span>
+          <div class="demo" style="text-shadow:4px 4px 0 var(--wesele);">wolny <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--ogien);">namiot</em></div>
+        </div>
+        <div class="misuse-cell" style="background:#ff00cc;">
+          <span class="label" style="color:white;">nie dawaj tła magenta</span>
+          <div class="demo" style="color:white;">wolny <em style="font-family:'Instrument Serif',serif;font-style:italic;color:lime;">namiot</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. KOLOR ========== -->
+<section id="kolor">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">03 · kolor</div>
+      <h2 class="sec-head">paleta <em>plakatowa</em></h2>
+      <p class="sec-intro"><strong>11 kolorów.</strong> Każdy ma nazwę z biesiady/festiwalu. Płótno + atrament = baza (70%). Granat = primary, żarówka = akcent. Reszta (trawa, pomidor, burak, niebo, fiolet, róż, wesele) = tonacje na plakaty i sekcje. Każda okazja dostaje swoją.</p>
+    </div>
+
+    <div class="color-lead" style="grid-template-columns: repeat(6, 1fr);">
+      <div class="color-lead-cell cl-plotno"><div class="name">płótno</div><span class="hex">#F5F1E6</span></div>
+      <div class="color-lead-cell cl-atrament"><div class="name">atrament</div><span class="hex">#0A0A0A</span></div>
+      <div class="color-lead-cell cl-ogien" style="background:var(--granat);"><div class="name">granat</div><span class="hex">#132B4D</span></div>
+      <div class="color-lead-cell cl-trawa"><div class="name">trawa</div><span class="hex">#1F7A3F</span></div>
+      <div class="color-lead-cell cl-zarowka"><div class="name">żarówka</div><span class="hex">#F9D94A</span></div>
+      <div class="color-lead-cell" style="background:var(--pomidor);color:var(--plotno);"><div class="name">pomidor</div><span class="hex">#D93A1F</span></div>
+    </div>
+    <div class="color-lead" style="grid-template-columns: repeat(5, 1fr); margin-top: 2px;">
+      <div class="color-lead-cell" style="background:var(--burak);color:var(--plotno);"><div class="name">burak</div><span class="hex">#8B1E3F</span></div>
+      <div class="color-lead-cell" style="background:var(--niebo);color:var(--plotno);"><div class="name">niebo</div><span class="hex">#1A8FA3</span></div>
+      <div class="color-lead-cell" style="background:var(--fiolet);color:var(--plotno);"><div class="name">fiolet</div><span class="hex">#6B3F8C</span></div>
+      <div class="color-lead-cell" style="background:var(--roz);color:var(--plotno);"><div class="name">róż</div><span class="hex">#D63384</span></div>
+      <div class="color-lead-cell cl-wesele"><div class="name">wesele</div><span class="hex">#E8DFC9</span></div>
+    </div>
+
+    <div class="eyebrow" style="margin:28px 0 12px;">pełne skale — 6 stopni</div>
+    <div class="scales">
+      <div class="scale-row">
+        <div class="scale-name">płótno</div>
+        <div class="scale-step" style="background:var(--plotno-50);color:var(--atrament);">50</div>
+        <div class="scale-step" style="background:var(--plotno-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--plotno-200);color:var(--atrament);">200</div>
+        <div class="scale-step" style="background:var(--plotno-300);color:var(--atrament);">300</div>
+        <div class="scale-step" style="background:var(--plotno-400);color:var(--atrament);">400</div>
+        <div class="scale-step" style="background:var(--atrament-500);color:var(--plotno);">500</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-name">atrament</div>
+        <div class="scale-step" style="background:var(--atrament-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--atrament-300);color:var(--plotno);">300</div>
+        <div class="scale-step" style="background:var(--atrament-500);color:var(--plotno);">500</div>
+        <div class="scale-step" style="background:var(--atrament-700);color:var(--plotno);">700</div>
+        <div class="scale-step" style="background:var(--atrament-900);color:var(--plotno);">900</div>
+        <div class="scale-step" style="background:var(--atrament);color:var(--plotno);">999</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-name">granat</div>
+        <div class="scale-step" style="background:var(--ogien-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--ogien-300);color:var(--plotno);">300</div>
+        <div class="scale-step" style="background:var(--ogien-500);color:var(--plotno);">500</div>
+        <div class="scale-step" style="background:var(--ogien-700);color:var(--plotno);">700</div>
+        <div class="scale-step" style="background:var(--ogien-900);color:var(--plotno);">900</div>
+        <div class="scale-step" style="background:var(--atrament);color:var(--plotno);">base</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-name">pomidor</div>
+        <div class="scale-step" style="background:var(--pomidor-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--pomidor-300);color:var(--atrament);">300</div>
+        <div class="scale-step" style="background:var(--pomidor);color:var(--plotno);">500</div>
+        <div class="scale-step" style="background:#9B2814;color:var(--plotno);">700</div>
+        <div class="scale-step" style="background:#4F1409;color:var(--plotno);">900</div>
+        <div class="scale-step" style="background:var(--atrament);color:var(--plotno);">base</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-name">burak</div>
+        <div class="scale-step" style="background:var(--burak-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--burak-300);color:var(--atrament);">300</div>
+        <div class="scale-step" style="background:var(--burak);color:var(--plotno);">500</div>
+        <div class="scale-step" style="background:#5F0E24;color:var(--plotno);">700</div>
+        <div class="scale-step" style="background:#330512;color:var(--plotno);">900</div>
+        <div class="scale-step" style="background:var(--atrament);color:var(--plotno);">base</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-name">niebo</div>
+        <div class="scale-step" style="background:var(--niebo-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--niebo-300);color:var(--atrament);">300</div>
+        <div class="scale-step" style="background:var(--niebo);color:var(--plotno);">500</div>
+        <div class="scale-step" style="background:#0D5F6C;color:var(--plotno);">700</div>
+        <div class="scale-step" style="background:#053640;color:var(--plotno);">900</div>
+        <div class="scale-step" style="background:var(--atrament);color:var(--plotno);">base</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-name">fiolet</div>
+        <div class="scale-step" style="background:var(--fiolet-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--fiolet-300);color:var(--plotno);">300</div>
+        <div class="scale-step" style="background:var(--fiolet);color:var(--plotno);">500</div>
+        <div class="scale-step" style="background:#4A285F;color:var(--plotno);">700</div>
+        <div class="scale-step" style="background:#2A1439;color:var(--plotno);">900</div>
+        <div class="scale-step" style="background:var(--atrament);color:var(--plotno);">base</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-name">róż</div>
+        <div class="scale-step" style="background:var(--roz-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--roz-300);color:var(--atrament);">300</div>
+        <div class="scale-step" style="background:var(--roz);color:var(--plotno);">500</div>
+        <div class="scale-step" style="background:#A01C63;color:var(--plotno);">700</div>
+        <div class="scale-step" style="background:#5C0F38;color:var(--plotno);">900</div>
+        <div class="scale-step" style="background:var(--atrament);color:var(--plotno);">base</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-name">trawa</div>
+        <div class="scale-step" style="background:var(--trawa-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--trawa-300);color:var(--atrament);">300</div>
+        <div class="scale-step" style="background:var(--trawa-500);color:var(--plotno);">500</div>
+        <div class="scale-step" style="background:var(--trawa-700);color:var(--plotno);">700</div>
+        <div class="scale-step" style="background:var(--trawa-900);color:var(--plotno);">900</div>
+        <div class="scale-step" style="background:var(--atrament);color:var(--plotno);">base</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-name">żarówka</div>
+        <div class="scale-step" style="background:var(--zarowka-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--zarowka-300);color:var(--atrament);">300</div>
+        <div class="scale-step" style="background:var(--zarowka-500);color:var(--atrament);">500</div>
+        <div class="scale-step" style="background:var(--zarowka-700);color:var(--plotno);">700</div>
+        <div class="scale-step" style="background:var(--zarowka-900);color:var(--plotno);">900</div>
+        <div class="scale-step" style="background:var(--atrament);color:var(--plotno);">base</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-name">wesele</div>
+        <div class="scale-step" style="background:var(--wesele-100);color:var(--atrament);">100</div>
+        <div class="scale-step" style="background:var(--wesele-300);color:var(--atrament);">300</div>
+        <div class="scale-step" style="background:var(--wesele-500);color:var(--atrament);">500</div>
+        <div class="scale-step" style="background:var(--wesele-700);color:var(--plotno);">700</div>
+        <div class="scale-step" style="background:var(--wesele-900);color:var(--plotno);">900</div>
+        <div class="scale-step" style="background:var(--atrament);color:var(--plotno);">base</div>
+      </div>
+    </div>
+
+    <div class="proportions">
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px;">proporcje — 50/20/15/10/5</div>
+        <div class="prop-bar">
+          <div class="prop-seg" style="flex:50;background:var(--plotno);color:var(--atrament);">płótno 50%</div>
+          <div class="prop-seg" style="flex:20;background:var(--atrament);color:var(--plotno);">atrament 20%</div>
+          <div class="prop-seg" style="flex:15;background:var(--granat);color:var(--plotno);">granat 15%</div>
+          <div class="prop-seg" style="flex:10;background:var(--zarowka);color:var(--atrament);">żarówka 10%</div>
+          <div class="prop-seg" style="flex:5;background:var(--pomidor);color:var(--plotno);">reszta 5%</div>
+        </div>
+      </div>
+      <div class="prop-text">
+        <h4>reguła mieszania</h4>
+        <ul>
+          <li>płótno to <em>tło</em> — zawsze baza (kremowy, nie biały)</li>
+          <li>atrament to <em>głos</em> — tekst, plakat, sekcje mocne</li>
+          <li>granat to <em>kręgosłup</em> — CTA, primary, mocne bloki</li>
+          <li>żarówka to <em>iskra</em> — italic akcent, highlight, ticker</li>
+          <li>pomidor / burak / niebo / fiolet / róż / las = <em>tonacje plakatu</em> — każda okazja ma swój kolor</li>
+          <li>nigdy więcej niż 3 kolory w jednej sekcji</li>
+          <li>wesele to neutralny kremowy 2 — działa na ciemnym tle jak płótno</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contrast-grid">
+      <div class="contrast-cell" style="background:var(--atrament);color:var(--plotno);">
+        <span class="pair">atrament / płótno</span>
+        <span class="ratio">17.4:1</span>
+        <span class="badge-pass">aaa · ok</span>
+      </div>
+      <div class="contrast-cell" style="background:var(--ogien);color:var(--plotno);">
+        <span class="pair">ogień / płótno</span>
+        <span class="ratio">4.8:1</span>
+        <span class="badge-pass">aa · ok</span>
+      </div>
+      <div class="contrast-cell" style="background:var(--trawa);color:var(--plotno);">
+        <span class="pair">trawa / płótno</span>
+        <span class="ratio">6.1:1</span>
+        <span class="badge-pass">aa · ok</span>
+      </div>
+      <div class="contrast-cell" style="background:var(--zarowka);color:var(--atrament);">
+        <span class="pair">żarówka / atrament</span>
+        <span class="ratio">13.2:1</span>
+        <span class="badge-pass">aaa · ok</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="girlanda"></div>
+
+<!-- ========== 4. TYPOGRAFIA ========== -->
+<section id="typo">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">04 · typografia</div>
+      <h2 class="sec-head">typografia — <em>3 fonty</em></h2>
+      <p class="sec-intro">Archivo Black (grotesk krzyczy) · Instrument Serif italic (serif szepcze) · JetBrains Mono (utility). Wszystkie lowercase. Wszystkie darmowe przez Google Fonts.</p>
+    </div>
+
+    <div class="type-hero">postaw gdzie chcesz.<br/><em>zrób co chcesz.</em></div>
+
+    <div class="font-families" style="margin-top:48px;">
+      <div class="ff-cell ff-1">
+        <span class="name">archivo black</span>
+        <div class="specimen">Aa</div>
+        <span class="meta">display · headlines · slogans · 900 weight only</span>
+      </div>
+      <div class="ff-cell ff-2">
+        <span class="name">instrument serif italic</span>
+        <div class="specimen">Aa</div>
+        <span class="meta">italic whisper · accent · quotes · 400 italic</span>
+      </div>
+      <div class="ff-cell ff-3">
+        <span class="name">jetbrains mono</span>
+        <div class="specimen">Aa</div>
+        <span class="meta">utility · meta · labels · code · 400 / 500 / 700</span>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin:48px 0 12px;">skala typograficzna — 10 stopni</div>
+    <div class="type-scale">
+      <div class="type-step">
+        <div class="type-meta">01 · hero display · archivo black · 96px / -0.04em</div>
+        <div class="ts-1">wolny <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--ogien);">namiot</em></div>
+      </div>
+      <div class="type-step">
+        <div class="type-meta">02 · display large · archivo black · 64px</div>
+        <div class="ts-2">postaw gdzie chcesz.</div>
+      </div>
+      <div class="type-step">
+        <div class="type-meta">03 · h1 · archivo black · 44px</div>
+        <div class="ts-3">nie pytamy co robisz pod spodem.</div>
+      </div>
+      <div class="type-step">
+        <div class="type-meta">04 · italic lead · instrument serif · 36px</div>
+        <div class="ts-4">— wolny namiot to może być twoja impreza.</div>
+      </div>
+      <div class="type-step">
+        <div class="type-meta">05 · h3 · archivo 700 · 22px</div>
+        <div class="ts-5">Dowóz, montaż, demontaż — w cenie</div>
+      </div>
+      <div class="type-step">
+        <div class="type-meta">06 · lead · archivo 500 · 18px</div>
+        <div class="ts-6">Rodzinna wypożyczalnia z Jędrzejowa. 100 km dookoła.</div>
+      </div>
+      <div class="type-step">
+        <div class="type-meta">07 · body · archivo 400 · 16px</div>
+        <div class="ts-7">Wesele, biesiada, urodziny w ogrodzie, spotkanie u działkowca, protest, komunia, urodziny psa Burego, stypa, festyn, chrzciny.</div>
+      </div>
+      <div class="type-step">
+        <div class="type-meta">08 · small · archivo 400 · 14px · muted</div>
+        <div class="ts-8">11 Listopada 27, 28-300 Jędrzejów · tel. 796 886 222 · kontakt@wolnynamiot.pl</div>
+      </div>
+      <div class="type-step">
+        <div class="type-meta">09 · mono · jetbrains mono · 12px · uppercase</div>
+        <div class="ts-9">est. 2020 · jędrzejów · polska</div>
+      </div>
+      <div class="type-step">
+        <div class="type-meta">10 · micro · jetbrains mono · 10px</div>
+        <div class="ts-10">01 / sezon 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. TOKENY ========== -->
+<section id="tokeny">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">05 · tokeny</div>
+      <h2 class="sec-head">tokeny — <em>spacing, radii, grid</em></h2>
+      <p class="sec-intro">Skala 4-based. Radii minimalne (brand ma kanty — bez zaokrągleń dziecinnych). Grid 12 kolumn.</p>
+    </div>
+
+    <div class="tokens-grid">
+      <div class="token-block">
+        <h4>spacing · 4-based scale</h4>
+        <div class="spacing-scale">
+          <div class="spacing-row"><span class="spacing-name">space-1</span><div class="spacing-bar" style="width:4px;"></div><span class="spacing-val">4px</span></div>
+          <div class="spacing-row"><span class="spacing-name">space-2</span><div class="spacing-bar" style="width:8px;"></div><span class="spacing-val">8px</span></div>
+          <div class="spacing-row"><span class="spacing-name">space-3</span><div class="spacing-bar" style="width:12px;"></div><span class="spacing-val">12px</span></div>
+          <div class="spacing-row"><span class="spacing-name">space-4</span><div class="spacing-bar" style="width:16px;"></div><span class="spacing-val">16px</span></div>
+          <div class="spacing-row"><span class="spacing-name">space-5</span><div class="spacing-bar" style="width:24px;"></div><span class="spacing-val">24px</span></div>
+          <div class="spacing-row"><span class="spacing-name">space-6</span><div class="spacing-bar" style="width:32px;"></div><span class="spacing-val">32px</span></div>
+          <div class="spacing-row"><span class="spacing-name">space-7</span><div class="spacing-bar" style="width:48px;"></div><span class="spacing-val">48px</span></div>
+          <div class="spacing-row"><span class="spacing-name">space-8</span><div class="spacing-bar" style="width:64px;"></div><span class="spacing-val">64px</span></div>
+          <div class="spacing-row"><span class="spacing-name">space-9</span><div class="spacing-bar" style="width:96px;"></div><span class="spacing-val">96px</span></div>
+        </div>
+      </div>
+
+      <div class="token-block">
+        <h4>radii — <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--ogien);">brand ma kanty</em></h4>
+        <div class="radius-samples">
+          <div class="radius-sample" style="border-radius:0;">0</div>
+          <div class="radius-sample" style="border-radius:2px;">2</div>
+          <div class="radius-sample" style="border-radius:999px;">∞</div>
+        </div>
+        <p style="font-size:13px;color:var(--atrament-500);margin-top:14px;max-width:320px;">0 dla prostokątów (dominant). 2px miękkości dla inputów. 999px tylko dla pieczątek-stickerów.</p>
+
+        <h4 style="margin-top:40px;">shadow</h4>
+        <div style="display:flex;gap:16px;margin-top:12px;">
+          <div style="width:100px;height:100px;background:var(--plotno-100);box-shadow:var(--shadow-card);display:flex;align-items:flex-end;padding:8px;font-family:'JetBrains Mono',monospace;font-size:10px;">card</div>
+          <div style="width:100px;height:100px;background:var(--ogien);color:var(--plotno);box-shadow:var(--shadow-sticker);display:flex;align-items:flex-end;padding:8px;font-family:'JetBrains Mono',monospace;font-size:10px;transform:rotate(-2deg);">sticker</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;">
+      <div class="eyebrow" style="margin-bottom:12px;">grid · 12 kolumn</div>
+      <div class="grid-demo">
+        <div class="grid-col">1</div><div class="grid-col">2</div><div class="grid-col">3</div><div class="grid-col">4</div>
+        <div class="grid-col">5</div><div class="grid-col">6</div><div class="grid-col">7</div><div class="grid-col">8</div>
+        <div class="grid-col">9</div><div class="grid-col">10</div><div class="grid-col">11</div><div class="grid-col">12</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6. IKONY ========== -->
+<section id="ikony">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">06 · ikony</div>
+      <h2 class="sec-head">ikony — <em>16 cienkich</em></h2>
+      <p class="sec-intro">Stroke 1.5, geometryczne, outline-only. Bez fills. Używane w listach, nawigacji, checkpoints, dokumentach.</p>
+    </div>
+
+    <div class="icon-grid">
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg><span class="label">namiot</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg><span class="label">ogień</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><path d="M12 3 C8 7 8 11 12 15 C16 11 16 7 12 3 Z"/><line x1="12" y1="15" x2="12" y2="21"/></svg><span class="label">żarówka</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg><span class="label">girlanda</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><rect x="3" y="8" width="18" height="12"/><path d="M3 8 L12 3 L21 8"/></svg><span class="label">dom</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><circle cx="12" cy="10" r="4"/><path d="M6 22 Q12 14 18 22"/></svg><span class="label">osoba</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><rect x="5" y="6" width="14" height="14"/><line x1="5" y1="10" x2="19" y2="10"/><line x1="9" y1="3" x2="9" y2="7"/><line x1="15" y1="3" x2="15" y2="7"/></svg><span class="label">kalendarz</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><path d="M4 6 Q12 2 20 6 L20 16 Q12 20 4 16 Z"/></svg><span class="label">flaga</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3 L12 21 M3 12 L21 12"/></svg><span class="label">kompas</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><path d="M12 2 L22 20 L2 20 Z"/></svg><span class="label">trójkąt</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><rect x="3" y="7" width="18" height="14"/><path d="M9 7 Q9 3 15 3 L15 7"/></svg><span class="label">koszyk</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><path d="M5 8 L19 8 L17 20 L7 20 Z"/><line x1="9" y1="4" x2="15" y2="4"/></svg><span class="label">kubek</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><path d="M5 12 Q12 4 19 12 Q12 20 5 12 Z"/><circle cx="12" cy="12" r="3"/></svg><span class="label">oko</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><path d="M5 3 L5 21 M5 3 L19 3 L19 13 L5 13"/></svg><span class="label">flaga-pro</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/><path d="M12 3 L12 6 M12 18 L12 21 M3 12 L6 12 M18 12 L21 12"/></svg><span class="label">celownik</span></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.5"><path d="M3 12 L21 12 M15 6 L21 12 L15 18"/></svg><span class="label">strzałka</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="girlanda"></div>
+
+<!-- ========== 7. KOMPONENTY ========== -->
+<section id="komponenty">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">07 · komponenty</div>
+      <h2 class="sec-head">komponenty <em>ui</em></h2>
+      <p class="sec-intro">Buttony, tagi, inputy, karty produktowe, editorial, stat, callout. Wszystkie ostre — bez zaokrągleń, bez gradientów, bez soft-shadow.</p>
+    </div>
+
+    <div class="comp-grid">
+      <div class="comp-cell">
+        <h4>buttony · 3 warianty</h4>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btn-primary">zadzwoń 796 886 222</a>
+          <a class="btn btn-ogien">rezerwuj 2026</a>
+          <a class="btn btn-outline">zobacz realizacje</a>
+        </div>
+      </div>
+      <div class="comp-cell">
+        <h4>tagi · 5 wariantów</h4>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span class="tag">sezon 2026</span>
+          <span class="tag tag-ogien">wolne terminy</span>
+          <span class="tag tag-zarowka">↯ ostatnie</span>
+          <span class="tag tag-trawa">outdoor</span>
+          <span class="tag tag-wesele">wedding friendly</span>
+        </div>
+      </div>
+      <div class="comp-cell">
+        <h4>input · form field</h4>
+        <span class="input-label">twój email</span>
+        <input type="email" class="input" placeholder="imie@domena.pl"/>
+      </div>
+      <div class="comp-cell">
+        <h4>callout · uwaga</h4>
+        <div class="callout">
+          <div class="callout-label">↯ uwaga</div>
+          <p>Sezon 2026 — soboty w czerwcu już na wyczerpaniu. Rezerwuj.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin:48px 0 16px;">karty produktowe · 3 rozmiary</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--atrament);">
+      <div class="card-product">
+        <div class="num">01 · małe</div>
+        <h3>namiot <em>3×3m</em></h3>
+        <p>Pawilon na ogródek, grill, punkt info, urodziny psa. Szybki montaż.</p>
+        <div class="price">od 200 zł / dobę</div>
+      </div>
+      <div class="card-product">
+        <div class="num">02 · średnie</div>
+        <h3>namiot <em>6×12m</em></h3>
+        <p>Biesiada działkowiczów, jarmark, urodziny 40-60 osób. Podłoga w cenie.</p>
+        <div class="price">od 900 zł / weekend</div>
+      </div>
+      <div class="card-product">
+        <div class="num">03 · duże</div>
+        <h3>namiot <em>10×20m</em></h3>
+        <p>Wesele, komunia, event firmowy 100-150 osób. Pełny pakiet.</p>
+        <div class="price">od 1 100 zł / weekend</div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin:48px 0 16px;">editorial card + stat card</div>
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:2px;background:var(--atrament);">
+      <div class="card-editorial">
+        <div class="meta">blog · 04/2026</div>
+        <h3>zbudowałem <em>80 namiotów</em> w jeden sezon. oto co się stało.</h3>
+        <p>Postawiliśmy w zeszłym roku 80 namiotów. Nie 200. Nie 30. Osiemdziesiąt. I nauczyliśmy się więcej niż przez pierwsze trzy lata razem wzięte. Oto pięć rzeczy które zmieniłem po tym sezonie.</p>
+      </div>
+      <div class="stat-card">
+        <div class="num">80+</div>
+        <div class="label">eventów rocznie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8. VOICE ========== -->
+<section id="voice">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">08 · voice</div>
+      <h2 class="sec-head">głos <em>marki</em></h2>
+      <p class="sec-intro">Ton: polska biesiada, bezpretensjonalny, trochę absurdalny, zero korpo-bełkotu. Mówimy krótko, bez przepraszania, z lekkim dystansem do własnego biznesu.</p>
+    </div>
+
+    <div class="voice-grid">
+      <div class="voice-cell do">
+        <h4>mówimy tak</h4>
+        <ul>
+          <li>krótko, konkretnie, po polsku</li>
+          <li>z lekkim dystansem do siebie</li>
+          <li>nie bierzemy się na poważnie</li>
+          <li>ale dowozimy poważnie</li>
+          <li>zero przepraszania za lokalność</li>
+          <li>lokalny = zaleta, nie kompleks</li>
+          <li>bez superlatyw (premium, luxury, niezapomniany)</li>
+          <li>lowercase = równi wszyscy</li>
+        </ul>
+      </div>
+      <div class="voice-cell dont">
+        <h4>nie mówimy tak</h4>
+        <ul>
+          <li>„zapewniamy profesjonalne dedykowane wsparcie"</li>
+          <li>„kompleksowa obsługa eventu premium"</li>
+          <li>„synergia"</li>
+          <li>„niezapomniany"</li>
+          <li>„ekskluzywny"</li>
+          <li>„pasja do detalu"</li>
+          <li>„doświadczony zespół profesjonalistów"</li>
+          <li>UPPERCASE KRZYKU</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="voice-slider" style="margin-top:32px;">
+      <div class="eyebrow" style="margin-bottom:12px;">slider tonu · gdzie jesteśmy</div>
+      <div class="voice-slider-row">
+        <span class="label-l">formalny</span>
+        <div class="voice-bar"></div>
+        <span class="label-r">luźny</span>
+      </div>
+      <div class="voice-slider-row">
+        <span class="label-l">poważny</span>
+        <div class="voice-bar"></div>
+        <span class="label-r">żartobliwy</span>
+      </div>
+      <div class="voice-slider-row">
+        <span class="label-l">korpo</span>
+        <div class="voice-bar"></div>
+        <span class="label-r">ludzki</span>
+      </div>
+      <div class="voice-slider-row">
+        <span class="label-l">premium</span>
+        <div class="voice-bar"></div>
+        <span class="label-r">biesiada</span>
+      </div>
+    </div>
+
+    <div class="lexicon">
+      <div class="lex-cell lex-say">
+        <h4>lexicon — tak mówimy</h4>
+        <div class="w">namiot (nie „pawilon eventowy")</div>
+        <div class="w">robimy (nie „realizujemy")</div>
+        <div class="w">zadzwoń (nie „skontaktuj się z nami")</div>
+        <div class="w">postawimy (nie „zainstalujemy")</div>
+        <div class="w">zwiniemy (nie „zdemontujemy")</div>
+        <div class="w">impreza (nie „event")</div>
+        <div class="w">biesiada (nie „spotkanie integracyjne")</div>
+      </div>
+      <div class="lex-cell lex-nosay">
+        <h4>słowa zakazane</h4>
+        <div class="w">synergia</div>
+        <div class="w">dedykowany</div>
+        <div class="w">premium</div>
+        <div class="w">ekskluzywny</div>
+        <div class="w">niezapomniany</div>
+        <div class="w">kompleksowy</div>
+        <div class="w">pasja</div>
+        <div class="w">dostarczamy rozwiązania</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="girlanda"></div>
+
+<!-- ========== 9. SLOGANY 9 ========== -->
+<section id="slogany" style="background:var(--plotno-100);">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">09 · slogany</div>
+      <h2 class="sec-head">9 sloganów — <em>3 poziomy</em></h2>
+      <p class="sec-intro">Primary (hero, claim główny). Secondary (plakat, social, pół-żart). Long (manifest, about, naklejka-pieczątka).</p>
+    </div>
+
+    <div class="slogans-grid">
+      <div class="slogan-cell sl-1">
+        <span class="slogan-tier">primary · 01</span>
+        <div class="slogan-text">postaw gdzie chcesz. <em>zrób co chcesz.</em></div>
+      </div>
+      <div class="slogan-cell sl-2">
+        <span class="slogan-tier">primary · 02</span>
+        <div class="slogan-text">wolny namiot <em>—</em><br/>twoja impreza.</div>
+      </div>
+      <div class="slogan-cell sl-3">
+        <span class="slogan-tier">primary · 03</span>
+        <div class="slogan-text">twój <em>ogród.</em> twoje zasady.</div>
+      </div>
+      <div class="slogan-cell sl-4">
+        <span class="slogan-tier">secondary · 04</span>
+        <div class="slogan-text">nie padało. <em>i tak by nie padało.</em></div>
+      </div>
+      <div class="slogan-cell sl-5">
+        <span class="slogan-tier">secondary · 05</span>
+        <div class="slogan-text">ślub? protest? <em>obojętnie.</em></div>
+      </div>
+      <div class="slogan-cell sl-6">
+        <span class="slogan-tier">secondary · 06</span>
+        <div class="slogan-text">nie pytamy <em>co robisz</em> pod spodem.</div>
+      </div>
+      <div class="slogan-cell sl-7">
+        <span class="slogan-tier">long · 07</span>
+        <div class="slogan-text" style="font-size:20px;">80 wesel rocznie. <em>ani jednego odwołania z naszej winy.</em></div>
+      </div>
+      <div class="slogan-cell sl-8">
+        <span class="slogan-tier">long · 08</span>
+        <div class="slogan-text" style="font-size:20px;">montaż w 3h. demontaż w 1. <em>reszta należy do ciebie.</em></div>
+      </div>
+      <div class="slogan-cell sl-9">
+        <span class="slogan-tier">long · 09</span>
+        <div class="slogan-text" style="font-size:20px;">rodzinna firma z <em>jędrzejowa.</em> 100 km dookoła. zawsze na czas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 10. USE CASES ========== -->
+<section id="usecase">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">10 · zastosowania</div>
+      <h2 class="sec-head">10 okazji <em>— od festynu po urodziny psa</em></h2>
+      <p class="sec-intro">Polska biesiada w pełnym spektrum. Każda okazja = inny rozmiar namiotu. Nic nie udajemy — wiemy co robimy.</p>
+    </div>
+
+    <div class="poster-grid">
+
+      <!-- 01 · BIESIADA W GÓRACH -->
+      <div class="poster p1 pattern-dots">
+        <span class="num-sticker">01</span>
+        <span class="eyebrow-p">↯ plener · sezon</span>
+        <svg class="icon-bg" viewBox="0 0 200 200"><path d="M10 180 L60 80 L100 140 L140 60 L190 180 Z" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="150" cy="40" r="18" fill="currentColor"/></svg>
+        <div class="headline">biesiada<br/><em>w górach.</em></div>
+        <div class="tagline">sezon trwa. dach jest.</div>
+        <div class="footer-p"><span>6×12m</span><span>50–80 osób</span></div>
+      </div>
+
+      <!-- 02 · URODZINY W OGRODZIE -->
+      <div class="poster p2">
+        <span class="num-sticker">02</span>
+        <span class="eyebrow-p">↯ ogród · dzień</span>
+        <svg class="icon-bg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="5"/><g stroke="currentColor" stroke-width="5" stroke-linecap="round"><line x1="100" y1="20" x2="100" y2="45"/><line x1="100" y1="155" x2="100" y2="180"/><line x1="20" y1="100" x2="45" y2="100"/><line x1="155" y1="100" x2="180" y2="100"/><line x1="40" y1="40" x2="58" y2="58"/><line x1="142" y1="142" x2="160" y2="160"/><line x1="40" y1="160" x2="58" y2="142"/><line x1="142" y1="58" x2="160" y2="40"/></g></svg>
+        <div class="headline">urodziny<br/><em>w ogrodzie.</em></div>
+        <div class="tagline">60-tka teściowej nie czeka.</div>
+        <div class="footer-p"><span>4×8m</span><span>30–50 osób</span></div>
+      </div>
+
+      <!-- 03 · PROTEST -->
+      <div class="poster p3 pattern-lines">
+        <span class="num-sticker">03</span>
+        <span class="eyebrow-p">↯ społeczne · mocne</span>
+        <svg class="icon-bg" viewBox="0 0 140 140"><path d="M20 90 L70 40 L120 90 L120 125 L20 125 Z M70 40 L70 20 L95 20" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><circle cx="60" cy="105" r="6" fill="currentColor"/></svg>
+        <div class="headline">ślub?<br/>protest?<br/><em>obojętnie.</em></div>
+        <div class="tagline">dach nad dyskusją.</div>
+        <div class="footer-p"><span>3×3m</span><span>punkt info</span></div>
+      </div>
+
+      <!-- 04 · DOM DZIAŁKOWCA -->
+      <div class="poster p4">
+        <span class="num-sticker">04</span>
+        <span class="eyebrow-p">↯ działka · sąsiedzkie</span>
+        <svg class="icon-bg" viewBox="0 0 240 200"><path d="M30 180 Q60 100 120 110 Q180 120 210 180 Z" fill="none" stroke="currentColor" stroke-width="4"/><path d="M80 130 L80 50 M80 50 Q70 40 75 30 Q90 40 80 50 Z M140 130 L140 60 M140 60 Q130 50 135 40 Q150 50 140 60 Z" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+        <div class="headline">spotkanie<br/>u <em>działkowca.</em></div>
+        <div class="tagline">warzywa same się nie skończą.</div>
+        <div class="footer-p"><span>5×10m</span><span>40–60 osób</span></div>
+      </div>
+
+      <!-- 05 · WESELE -->
+      <div class="poster p5">
+        <span class="num-sticker">05</span>
+        <span class="eyebrow-p">↯ wesele · tak, też</span>
+        <svg class="icon-bg" viewBox="0 0 200 140"><circle cx="75" cy="70" r="45" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="125" cy="70" r="45" fill="none" stroke="currentColor" stroke-width="5"/></svg>
+        <div class="headline">wesele <em>—</em><br/>tak, też<br/>to robimy.</div>
+        <div class="tagline">80 wesel rocznie. zero odwołań.</div>
+        <div class="footer-p"><span>10×20m</span><span>100–150 osób</span></div>
+      </div>
+
+      <!-- 06 · URODZINY PSA BUREGO -->
+      <div class="poster p6">
+        <span class="num-sticker">06</span>
+        <span class="eyebrow-p">↯ familijne · z dystansem</span>
+        <svg class="icon-bg" viewBox="0 0 220 180"><path d="M50 140 Q50 80 100 80 Q150 80 150 140 L150 160 L50 160 Z M100 80 L100 50 L120 30 L130 50 L115 60 M100 50 L85 35 L75 50 L90 60" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><circle cx="85" cy="115" r="5" fill="currentColor"/><circle cx="115" cy="115" r="5" fill="currentColor"/><path d="M95 135 Q100 140 105 135" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <div class="headline">rodzinne<br/>z <em>psem.</em></div>
+        <div class="tagline">każdy zasługuje na dach.</div>
+        <div class="footer-p"><span>3×3m</span><span>kameralnie</span></div>
+      </div>
+
+      <!-- 07 · JARMARK -->
+      <div class="poster p7 pattern-dots">
+        <span class="num-sticker">07</span>
+        <span class="eyebrow-p">↯ jarmark · festyn · folk</span>
+        <svg class="icon-bg" viewBox="0 0 200 200"><path d="M40 60 L100 30 L160 60 L160 170 L40 170 Z" fill="none" stroke="currentColor" stroke-width="4"/><path d="M40 60 Q100 90 160 60" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="70" cy="40" r="4" fill="currentColor"/><circle cx="100" cy="30" r="4" fill="currentColor"/><circle cx="130" cy="40" r="4" fill="currentColor"/><path d="M100 30 L100 10" stroke="currentColor" stroke-width="3"/><path d="M90 15 L110 15" stroke="currentColor" stroke-width="3"/></svg>
+        <div class="headline">jarmark.<br/><em>festyn.</em></div>
+        <div class="tagline">kramy pod jednym dachem.</div>
+        <div class="footer-p"><span>6×12m</span><span>otwarte · ludzie</span></div>
+      </div>
+
+      <!-- 08 · STYPA -->
+      <div class="poster p8">
+        <span class="num-sticker">08</span>
+        <span class="eyebrow-p">↯ cicho · z szacunkiem</span>
+        <svg class="icon-bg" viewBox="0 0 100 140"><path d="M50 20 L50 90 M30 50 L70 50" stroke="currentColor" stroke-width="3"/><ellipse cx="50" cy="120" rx="25" ry="8" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+        <div class="headline">stypa <em>—<br/>przyjedziemy<br/>cicho.</em></div>
+        <div class="tagline">montaż bez słowa. demontaż rano.</div>
+        <div class="footer-p"><span>5×10m</span><span>30–50 osób</span></div>
+      </div>
+
+      <!-- 09 · KOMUNIA -->
+      <div class="poster p9">
+        <span class="num-sticker">09</span>
+        <span class="eyebrow-p">↯ rodzinne · święte</span>
+        <svg class="icon-bg" viewBox="0 0 80 120"><path d="M40 20 L40 100 M20 50 L60 50" stroke="currentColor" stroke-width="5"/></svg>
+        <div class="headline">komunia.<br/><em>chrzciny.</em></div>
+        <div class="tagline">biały dach. święty dzień.</div>
+        <div class="footer-p"><span>4×8m</span><span>40–60 osób</span></div>
+      </div>
+
+      <!-- 10 · EVENT FIRMOWY -->
+      <div class="poster p10 pattern-lines">
+        <span class="num-sticker">10</span>
+        <span class="eyebrow-p">↯ firma · b2b · branding</span>
+        <svg class="icon-bg" viewBox="0 0 240 200"><rect x="40" y="60" width="40" height="140" fill="none" stroke="currentColor" stroke-width="4"/><rect x="100" y="30" width="40" height="170" fill="none" stroke="currentColor" stroke-width="4"/><rect x="160" y="80" width="40" height="120" fill="none" stroke="currentColor" stroke-width="4"/><g stroke="currentColor" stroke-width="2"><line x1="50" y1="80" x2="70" y2="80"/><line x1="50" y1="110" x2="70" y2="110"/><line x1="50" y1="140" x2="70" y2="140"/><line x1="110" y1="50" x2="130" y2="50"/><line x1="110" y1="80" x2="130" y2="80"/><line x1="110" y1="110" x2="130" y2="110"/><line x1="110" y1="140" x2="130" y2="140"/><line x1="170" y1="100" x2="190" y2="100"/><line x1="170" y1="130" x2="190" y2="130"/><line x1="170" y1="160" x2="190" y2="160"/></g></svg>
+        <div class="headline">event<br/><em>firmowy.</em></div>
+        <div class="tagline">integracja ma swój termin.</div>
+        <div class="footer-p"><span>do 15×30m</span><span>do 300 · branding</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="girlanda"></div>
+
+<!-- ========== 11. ROBIMY / NIE ROBIMY ========== -->
+<section id="robimy">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">11 · granice usługi</div>
+      <h2 class="sec-head">robimy / <em>nie robimy</em></h2>
+      <p class="sec-intro">Uczciwe granice. Wynajem namiotu + infrastruktura. Wszystko inne — twoja działka. Nie udajemy agencji eventowej.</p>
+    </div>
+
+    <div class="robimy">
+      <div class="robimy-cell robimy-tak">
+        <h3>robimy</h3>
+        <ul>
+          <li>wynajem namiotu (30-300 osób)</li>
+          <li>dowóz w promieniu 100 km od jędrzejowa</li>
+          <li>montaż i demontaż</li>
+          <li>podłogę drewnianą</li>
+          <li>oświetlenie podstawowe</li>
+          <li>boki ścian zamykane (wiatr/deszcz)</li>
+          <li>stoły i krzesła (Chiavari, bankietowe)</li>
+          <li>nagrzewnice (jesień/zima)</li>
+          <li>bezpłatną wizję lokalną</li>
+        </ul>
+      </div>
+      <div class="robimy-cell robimy-nie">
+        <h3>nie <em>robimy</em></h3>
+        <ul>
+          <li>cateringu (mamy zaprzyjaźnionych)</li>
+          <li>DJ-a / muzyki</li>
+          <li>koordynacji eventu</li>
+          <li>dekoracji kwiatowych</li>
+          <li>fotografii</li>
+          <li>napojów / alkoholu</li>
+          <li>pozwoleń / urzędów</li>
+          <li>obsługi kelnerskiej</li>
+          <li>klimatyzacji (lato: boki + zacienienie)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 12. MATERIAŁY ========== -->
+<section id="apply" style="background:var(--plotno-50);">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">12 · zastosowania materiałowe</div>
+      <h2 class="sec-head">jak to <em>wygląda w świecie</em></h2>
+      <p class="sec-intro">Landing, stories, plakat A2 na płot, flyer A5, bok furgonetki, koszulki, naklejki-pieczątki. Wszystko z jednej palety, jednym głosem.</p>
+    </div>
+
+    <div class="apply-grid">
+      <div class="apply-cell apply-landing">
+        <span class="label" style="color:var(--zarowka);">01 · landing page · desktop</span>
+        <h4 style="color:var(--plotno);">strona główna</h4>
+        <div class="miniwp">
+          <div class="h">postaw <em>gdzie chcesz.</em><br/>zrób co chcesz.</div>
+          <div class="p">— wolny namiot to może być twoja impreza.</div>
+        </div>
+      </div>
+
+      <div class="apply-cell apply-poster">
+        <span class="label" style="color:var(--zarowka);">02 · plakat a2 na płot</span>
+        <div class="big">ślub?<br/>protest?<br/><em>obojętnie.</em></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;">796 886 222 · wolnynamiot.pl</div>
+      </div>
+
+      <div class="apply-cell apply-flyer">
+        <span class="label" style="color:var(--atrament);">03 · flyer a5 · skrzynka</span>
+        <div class="slogan">nie padało. <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--ogien);">i tak by nie padało.</em></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;margin-top:12px;">wolny namiot · jędrzejów</div>
+      </div>
+
+      <div class="apply-cell apply-story">
+        <span class="label" style="color:var(--zarowka);">04 · instagram story</span>
+        <h4 style="color:var(--plotno);">↯ sezon 2026</h4>
+        <div style="font-family:'Archivo Black',sans-serif;font-size:32px;text-transform:lowercase;line-height:1.0;letter-spacing:-0.02em;margin-top:12px;">wolne terminy <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--zarowka);">czerwiec</em></div>
+      </div>
+
+      <div class="apply-cell apply-koszulka">
+        <span class="label" style="color:var(--ogien-700);">05 · koszulka · druk</span>
+        <div style="font-family:'Archivo Black',sans-serif;font-size:26px;text-transform:lowercase;line-height:0.95;letter-spacing:-0.02em;margin-top:12px;">nie pytamy<br/><em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--ogien);">co robisz</em><br/>pod spodem.</div>
+      </div>
+
+      <div class="apply-cell apply-furgonetka">
+        <span class="label">06 · bok furgonetki</span>
+        <div class="f-preview">wolny <em>namiot</em> · 796 886 222 · jędrzejów</div>
+      </div>
+
+      <div class="apply-cell apply-naklejki">
+        <span class="label">07 · naklejki-pieczątki</span>
+        <div class="stickers-row">
+          <span class="sticker-s">postaw<br/>gdzie <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--zarowka);">chcesz</em></span>
+          <span class="sticker-s alt2">zrób<br/>co chcesz</span>
+          <span class="sticker-s alt3">ślub?<br/>protest?</span>
+          <span class="sticker-s alt4">est.<br/>2020</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="girlanda"></div>
+
+<!-- ========== 13. PAKIET MATERIAŁÓW — WSZYSTKIE FORMATY ========== -->
+<style>
+.pakiet-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 32px; }
+.pakiet-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+.pakiet-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 32px; }
+.pakiet-item { display: flex; flex-direction: column; gap: 8px; }
+.pakiet-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px;
+  text-transform: lowercase; color: var(--atrament-500);
+  display: flex; justify-content: space-between;
+}
+.pakiet-label .dim { color: var(--atrament-300); }
+.pakiet-frame {
+  border: 2px solid var(--atrament); position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+/* === WIZYTÓWKA 85×55 — osobista Patryka === */
+.wiz { aspect-ratio: 85/55; padding: 0; position: relative; overflow: hidden; }
+
+/* FRONT — imię DOMINUJE */
+.wiz-front { background: var(--granat); color: var(--plotno); padding: 20px 22px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.wiz-front .wf-corner {
+  position: absolute; top: 14px; right: 16px;
+  font-family: 'Archivo Black', sans-serif; font-size: 11px; text-transform: lowercase;
+  letter-spacing: -0.02em; color: var(--plotno); opacity: 0.85; text-align: right; line-height: 1;
+}
+.wiz-front .wf-corner em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+.wiz-front .wf-corner-sub { font-family: 'JetBrains Mono', monospace; font-size: 7px; letter-spacing: 1.5px; text-transform: lowercase; color: var(--zarowka); margin-top: 2px; opacity: 0.75; }
+
+.wiz-front .wf-top { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: lowercase; color: var(--zarowka); padding: 3px 8px; background: rgba(249,217,74,0.15); align-self: flex-start; border-left: 2px solid var(--zarowka); }
+
+.wiz-front .wf-name-big {
+  font-family: 'Archivo Black', sans-serif; font-size: 48px; line-height: 0.86;
+  text-transform: lowercase; letter-spacing: -0.045em; color: var(--plotno);
+  margin: 8px 0 6px;
+}
+.wiz-front .wf-name-big em {
+  font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500;
+  text-transform: none; color: var(--zarowka); letter-spacing: -0.02em;
+}
+.wiz-front .wf-role2 {
+  font-family: 'Instrument Serif', serif; font-style: italic; font-size: 14px;
+  color: var(--zarowka); letter-spacing: -0.01em;
+}
+
+.wiz-front .wf-kk {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px;
+  text-transform: lowercase; display: flex; flex-direction: column; gap: 3px;
+}
+.wiz-front .wf-kk .kk-phone {
+  font-family: 'Archivo Black', sans-serif; font-size: 18px; color: var(--zarowka);
+  letter-spacing: -0.01em; text-transform: none;
+}
+.wiz-front .wf-kk .kk-other { opacity: 0.8; }
+
+/* REWERS — logo DUŻE + zastosowania rozlane ciekawiej */
+.wiz-back { background: var(--plotno); color: var(--atrament); padding: 18px 22px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+.wiz-back::before {
+  content: ''; position: absolute; right: -60px; top: -60px; width: 200px; height: 200px;
+  border: 3px solid var(--pomidor); opacity: 0.25; transform: rotate(25deg);
+}
+.wiz-back::after {
+  content: ''; position: absolute; right: -80px; top: -30px; width: 220px; height: 220px;
+  border: 2px solid var(--trawa); opacity: 0.2; transform: rotate(-10deg);
+}
+.wiz-back > * { position: relative; z-index: 2; }
+.wiz-back .wb-logo-big {
+  font-family: 'Archivo Black', sans-serif; font-size: 56px; line-height: 0.82;
+  text-transform: lowercase; letter-spacing: -0.05em; color: var(--atrament);
+}
+.wiz-back .wb-logo-big em {
+  font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500;
+  text-transform: none; color: var(--pomidor); letter-spacing: -0.02em;
+}
+.wiz-back .wb-sub-slogan {
+  font-family: 'Instrument Serif', serif; font-style: italic; font-size: 13px;
+  color: var(--atrament-700); margin-top: 6px; letter-spacing: -0.01em;
+}
+
+.wiz-back .wb-scatter {
+  position: relative; min-height: 60px; margin-top: 4px;
+}
+.wiz-back .wb-scatter span {
+  position: absolute; padding: 2px 7px;
+  font-family: 'Archivo Black', sans-serif; text-transform: lowercase;
+  letter-spacing: -0.01em; line-height: 1; white-space: nowrap;
+}
+/* rozrzut sloganów — różne rozmiary, kolory, rotacje */
+.wiz-back .wb-scatter span.s1 { top: 0;  left: 0;    font-size: 22px; background: var(--atrament); color: var(--plotno); transform: rotate(-2deg); }
+.wiz-back .wb-scatter span.s2 { top: 3px; left: 125px; font-size: 18px; background: var(--pomidor); color: var(--plotno); transform: rotate(3deg); }
+.wiz-back .wb-scatter span.s3 { top: 26px; left: 40px; font-size: 14px; background: var(--trawa);  color: var(--plotno); transform: rotate(-4deg); }
+.wiz-back .wb-scatter span.s4 { top: 30px; left: 180px;font-size: 16px; background: var(--zarowka); color: var(--atrament); transform: rotate(2deg); }
+.wiz-back .wb-scatter span.s5 { top: 52px; left: 10px; font-size: 13px; background: var(--granat); color: var(--zarowka); transform: rotate(-1deg); }
+.wiz-back .wb-scatter span.s6 { top: 55px; left: 110px;font-size: 14px; background: var(--burak);  color: var(--plotno); transform: rotate(4deg); }
+.wiz-back .wb-scatter span.s7 { top: 56px; left: 220px;font-size: 12px; background: var(--niebo);  color: var(--plotno); transform: rotate(-2deg); }
+.wiz-back .wb-scatter span.s8 { top: 78px; left: 60px; font-size: 13px; background: var(--fiolet); color: var(--plotno); transform: rotate(3deg); }
+
+.wiz-back .wb-foot { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1.5px; text-transform: lowercase; color: var(--atrament-500); display: flex; justify-content: space-between; padding-top: 6px; border-top: 1px solid var(--atrament-100); margin-top: 6px; }
+
+/* === IG POST 1:1 === */
+.ig-post { aspect-ratio: 1/1; display: flex; flex-direction: column; position: relative; }
+.ig-post .ig-img { flex: 1; background-size: cover; background-position: center; position: relative; }
+.ig-post .ig-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,10,10,0.75) 0%, transparent 60%); display: flex; align-items: flex-end; padding: 20px; }
+.ig-post .ig-txt { color: var(--plotno); font-family: 'Archivo Black', sans-serif; font-size: 26px; text-transform: lowercase; line-height: 0.92; letter-spacing: -0.03em; }
+.ig-post .ig-txt em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+.ig-post.no-photo { background: var(--pomidor); color: var(--plotno); padding: 28px; justify-content: space-between; }
+.ig-post.no-photo .big { font-family: 'Archivo Black', sans-serif; font-size: 40px; line-height: 0.92; text-transform: lowercase; letter-spacing: -0.04em; }
+.ig-post.no-photo .big em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+
+/* === IG STORY 9:16 === */
+.ig-story { aspect-ratio: 9/16; position: relative; overflow: hidden; }
+.ig-story .bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.ig-story .scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(19,43,77,0.3) 0%, rgba(10,10,10,0.9) 100%); }
+.ig-story .content { position: relative; z-index: 2; height: 100%; padding: 28px 22px; display: flex; flex-direction: column; justify-content: space-between; color: var(--plotno); }
+.ig-story .top-strip { background: var(--zarowka); color: var(--atrament); padding: 6px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: lowercase; align-self: flex-start; }
+.ig-story .big-hero { font-family: 'Archivo Black', sans-serif; font-size: 44px; text-transform: lowercase; line-height: 0.9; letter-spacing: -0.04em; }
+.ig-story .big-hero em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+.ig-story .cta { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: lowercase; padding: 12px 20px; background: var(--pomidor); color: var(--plotno); align-self: flex-start; }
+
+/* === FB POST 16:9 === */
+.fb-post { aspect-ratio: 16/9; display: flex; background: var(--atrament); color: var(--plotno); }
+.fb-post .fb-img { flex: 1; background-size: cover; background-position: center; }
+.fb-post .fb-txt { flex: 1.1; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
+.fb-post .fb-eye { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--pomidor); letter-spacing: 2px; text-transform: lowercase; }
+.fb-post .fb-head { font-family: 'Archivo Black', sans-serif; font-size: 30px; text-transform: lowercase; line-height: 0.95; letter-spacing: -0.03em; }
+.fb-post .fb-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+.fb-post .fb-cta { font-family: 'Archivo Black', sans-serif; font-size: 12px; text-transform: lowercase; padding: 10px 18px; background: var(--zarowka); color: var(--atrament); align-self: flex-start; letter-spacing: 0.02em; }
+
+/* === TIKTOK COVER 9:16 === */
+.tt-cover { aspect-ratio: 9/16; position: relative; overflow: hidden; background: var(--burak); }
+.tt-cover .bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.35; filter: saturate(1.3); }
+.tt-cover .content { position: relative; z-index: 2; height: 100%; padding: 28px 22px; display: flex; flex-direction: column; justify-content: center; color: var(--plotno); text-align: center; }
+.tt-cover .prefix { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 3px; text-transform: lowercase; color: var(--zarowka); margin-bottom: 14px; }
+.tt-cover .mega { font-family: 'Archivo Black', sans-serif; font-size: 48px; text-transform: lowercase; line-height: 0.88; letter-spacing: -0.04em; }
+.tt-cover .mega em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; display: block; }
+.tt-cover .sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; margin-top: 20px; color: var(--plotno); opacity: 0.85; }
+
+/* === GBP COVER === */
+.gbp-cover { aspect-ratio: 16/9; display: flex; background: var(--granat); color: var(--plotno); overflow: hidden; }
+.gbp-cover .gbp-left { flex: 1; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between; }
+.gbp-cover .gbp-logo { font-family: 'Archivo Black', sans-serif; font-size: 28px; text-transform: lowercase; letter-spacing: -0.03em; line-height: 1; }
+.gbp-cover .gbp-logo em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+.gbp-cover .gbp-info { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: lowercase; line-height: 1.8; }
+.gbp-cover .gbp-right { flex: 1.2; background-size: cover; background-position: center; position: relative; }
+.gbp-cover .gbp-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--granat) 0%, transparent 30%); }
+
+/* GBP POST */
+.gbp-post { aspect-ratio: 4/3; display: flex; flex-direction: column; background: var(--pomidor); color: var(--plotno); }
+.gbp-post .gp-img { flex: 1; background-size: cover; background-position: center; }
+.gbp-post .gp-body { padding: 16px; }
+.gbp-post .gp-eye { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: lowercase; color: var(--zarowka); }
+.gbp-post .gp-head { font-family: 'Archivo Black', sans-serif; font-size: 17px; text-transform: lowercase; letter-spacing: -0.02em; line-height: 1.05; margin-top: 4px; }
+.gbp-post .gp-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+
+/* GOOGLE ADS BANNER */
+.ga-banner { aspect-ratio: 728/90; display: flex; align-items: center; padding: 0 16px; background: var(--atrament); color: var(--plotno); overflow: hidden; }
+.ga-banner .gb-logo { font-family: 'Archivo Black', sans-serif; font-size: 16px; text-transform: lowercase; letter-spacing: -0.02em; }
+.ga-banner .gb-logo em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+.ga-banner .gb-text { flex: 1; padding: 0 20px; font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 14px; }
+.ga-banner .gb-text em { color: var(--pomidor); font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; }
+.ga-banner .gb-cta { font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 8px 14px; background: var(--pomidor); letter-spacing: 1.5px; text-transform: lowercase; }
+
+/* MEDIUM RECTANGLE 300x250 */
+.ga-mrec { aspect-ratio: 300/250; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; background: var(--niebo); color: var(--plotno); }
+.ga-mrec .gm-head { font-family: 'Archivo Black', sans-serif; font-size: 26px; text-transform: lowercase; line-height: 0.92; letter-spacing: -0.03em; }
+.ga-mrec .gm-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+.ga-mrec .gm-cta { font-family: 'Archivo Black', sans-serif; font-size: 11px; padding: 10px 16px; background: var(--zarowka); color: var(--atrament); align-self: flex-start; text-transform: lowercase; letter-spacing: 0.02em; }
+
+/* EMAIL SIGNATURE */
+.email-sig { background: var(--plotno); color: var(--atrament); padding: 20px 24px; font-family: 'Archivo', sans-serif; }
+.email-sig .es-line { display: flex; gap: 14px; align-items: center; padding: 4px 0; border-left: 3px solid var(--granat); padding-left: 14px; }
+.email-sig .es-name { font-family: 'Archivo Black', sans-serif; font-size: 16px; text-transform: lowercase; letter-spacing: -0.02em; }
+.email-sig .es-title { font-size: 12px; color: var(--atrament-500); }
+.email-sig .es-co { font-family: 'Archivo Black', sans-serif; font-size: 18px; text-transform: lowercase; letter-spacing: -0.02em; margin-top: 10px; }
+.email-sig .es-co em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--pomidor); text-transform: none; }
+.email-sig .es-meta { display: flex; gap: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: lowercase; color: var(--atrament-500); margin-top: 6px; }
+
+/* FLYER A5 */
+.flyer { aspect-ratio: 148/210; padding: 24px; display: flex; flex-direction: column; }
+.flyer-front { background: var(--zarowka); color: var(--atrament); }
+.flyer-back { background: var(--atrament); color: var(--plotno); }
+.flyer .fl-eye { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: lowercase; }
+.flyer .fl-head { font-family: 'Archivo Black', sans-serif; text-transform: lowercase; margin: 14px 0 0; letter-spacing: -0.04em; line-height: 0.88; }
+.flyer-front .fl-head { font-size: 44px; color: var(--atrament); }
+.flyer-front .fl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--pomidor); text-transform: none; }
+.flyer-back .fl-head { font-size: 32px; color: var(--zarowka); }
+.flyer-back .fl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--plotno); text-transform: none; }
+.flyer .fl-list { margin-top: auto; font-family: 'JetBrains Mono', monospace; font-size: 10px; line-height: 1.9; letter-spacing: 1px; text-transform: lowercase; }
+.flyer .fl-list span { display: block; border-bottom: 1px solid currentColor; padding: 2px 0; }
+.flyer .fl-cta { font-family: 'Archivo Black', sans-serif; font-size: 14px; margin-top: 14px; text-transform: lowercase; letter-spacing: -0.02em; }
+
+@media (max-width: 900px) {
+  .pakiet-grid-3, .pakiet-grid-4 { grid-template-columns: 1fr; }
+}
+</style>
+
+<section id="pakiet">
+  <div class="container">
+    <div class="section-head">
+      <div class="sec-num">13 · pakiet materiałów</div>
+      <h2 class="sec-head">szeroki pakiet — <em>wszystkie formaty</em></h2>
+      <p class="sec-intro">Wizytówka, social (IG post/story, FB, TikTok), Google Business Profile, Google Ads, email signature, flyer A5. Każdy format gotowy do produkcji. Zdjęcia wzięte z obecnej strony wolnynamiot.pl — docelowo do wymiany na pro sesję.</p>
+    </div>
+
+    <!-- ========== WIZYTÓWKA ========== -->
+    <div class="eyebrow" style="margin-top:20px;">wizytówka — front &amp; rewers · 85×55mm</div>
+    <div class="pakiet-grid-2">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>wizytówka front — osoba</span><span class="dim">85 × 55 mm</span></div>
+        <div class="pakiet-frame wiz wiz-front">
+          <!-- logo małe w rogu -->
+          <div class="wf-corner">wolny <em>namiot</em><div class="wf-corner-sub">est · 2020</div></div>
+          <!-- treść główna: IMIĘ dominuje -->
+          <span class="wf-top">↯ rezerwacje · koordynacja</span>
+          <div>
+            <div class="wf-name-big">patryk<br/><em>pełka.</em></div>
+            <div class="wf-role2">— wolny namiot, jędrzejów.</div>
+          </div>
+          <div class="wf-kk">
+            <div class="kk-phone">796 886 222</div>
+            <div class="kk-other">kontakt@wolnynamiot.pl · wolnynamiot.pl</div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>wizytówka rewers — marka</span><span class="dim">85 × 55 mm</span></div>
+        <div class="pakiet-frame wiz wiz-back">
+          <div>
+            <div class="wb-logo-big">wolny<br/><em>namiot.</em></div>
+            <div class="wb-sub-slogan">— postaw gdzie chcesz. zrób co chcesz.</div>
+          </div>
+          <div class="wb-scatter">
+            <span class="s1">wesele</span>
+            <span class="s2">biesiada</span>
+            <span class="s3">urodziny</span>
+            <span class="s4">protest</span>
+            <span class="s5">komunia</span>
+            <span class="s6">jarmark</span>
+            <span class="s7">event firmowy</span>
+            <span class="s8">stypa</span>
+          </div>
+          <div class="wb-foot">
+            <span>jędrzejów + 100 km</span>
+            <span>wolnynamiot.pl</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== IG POSTS ========== -->
+    <div class="eyebrow" style="margin-top:40px;">instagram post · 1080×1080px</div>
+    <div class="pakiet-grid-3">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig post · realizacja</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame ig-post">
+          <div class="ig-img" style="background-image:url('assets/namiot-1.jpg');"></div>
+          <div class="ig-overlay">
+            <div class="ig-txt">weekend<br/><em>pełen wrażeń.</em></div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig post · oferta</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame ig-post no-photo">
+          <div class="eyebrow" style="color:var(--zarowka);font-size:11px;">↯ sezon 2026 · wolne terminy</div>
+          <div class="big">postaw<br/>gdzie chcesz.<br/><em>zrób co chcesz.</em></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:lowercase;">796 886 222 · wolnynamiot.pl</div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig post · slogan</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame ig-post" style="background:var(--atrament);padding:28px;justify-content:space-between;color:var(--plotno);">
+          <div class="eyebrow" style="color:var(--pomidor);font-size:11px;">↯ motto</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:40px;text-transform:lowercase;line-height:0.9;letter-spacing:-0.04em;color:var(--plotno);">nie pytamy<br/><em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;color:var(--zarowka);text-transform:none;">co robisz</em><br/>pod spodem.</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:18px;text-transform:lowercase;letter-spacing:-0.03em;">wolny <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;color:var(--zarowka);text-transform:none;">namiot</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== IG STORIES ========== -->
+    <div class="eyebrow" style="margin-top:40px;">instagram story · 1080×1920px · 9:16</div>
+    <div class="pakiet-grid-4">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>story · terminy</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame ig-story">
+          <div class="bg" style="background-image:url('assets/namiot-3.jpg');"></div>
+          <div class="scrim"></div>
+          <div class="content">
+            <div class="top-strip">↯ wolne terminy · czerwiec</div>
+            <div class="big-hero">rezerwuj<br/><em>2026.</em></div>
+            <div class="cta">zadzwoń 796 886 222</div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>story · slogan</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame ig-story" style="background:var(--pomidor);">
+          <div class="content">
+            <div class="top-strip">↯ wolny namiot</div>
+            <div class="big-hero" style="color:var(--plotno);">ślub?<br/>protest?<br/><em>obojętnie.</em></div>
+            <div class="cta" style="background:var(--zarowka);color:var(--atrament);">wolnynamiot.pl</div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>story · behind</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame ig-story">
+          <div class="bg" style="background-image:url('assets/namiot-2.jpg');"></div>
+          <div class="scrim"></div>
+          <div class="content">
+            <div class="top-strip" style="background:var(--pomidor);color:var(--plotno);">↯ za kulisami</div>
+            <div class="big-hero">montaż<br/><em>w 3 h.</em></div>
+            <div class="cta">zobacz więcej</div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>story · opinia</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame ig-story" style="background:var(--granat);">
+          <div class="content">
+            <div class="top-strip">★★★★★ · opinia</div>
+            <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:22px;line-height:1.3;color:var(--plotno);">„nie padało. i tak by nie padało. pełen spokój."</div>
+            <div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--zarowka);letter-spacing:1px;text-transform:lowercase;">— marek &amp; ania · wesele 06.2025</div>
+              <div class="cta" style="margin-top:12px;">wolnynamiot.pl/opinie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== FB POST + GBP COVER ========== -->
+    <div class="eyebrow" style="margin-top:40px;">facebook post 16:9 · google business profile cover 16:9</div>
+    <div class="pakiet-grid-2">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>facebook post</span><span class="dim">1200 × 630 px</span></div>
+        <div class="pakiet-frame fb-post">
+          <div class="fb-img" style="background-image:url('assets/namiot-11.jpg');"></div>
+          <div class="fb-txt">
+            <div>
+              <div class="fb-eye">↯ realizacja · weekend</div>
+              <div class="fb-head" style="margin-top:10px;">80 gości.<br/>0 nerwów.<br/><em>10×20 m.</em></div>
+            </div>
+            <div class="fb-cta">zadzwoń 796 886 222</div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>google business cover</span><span class="dim">1080 × 608 px</span></div>
+        <div class="pakiet-frame gbp-cover">
+          <div class="gbp-left">
+            <div class="gbp-logo">wolny<br/><em>namiot</em></div>
+            <div class="gbp-info">↯ jędrzejów + 100 km<br/>wynajem namiotów od 30 do 300 osób<br/>tel. 796 886 222</div>
+          </div>
+          <div class="gbp-right" style="background-image:url('assets/namiot-7.jpg');"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== GBP POSTS + TIKTOK ========== -->
+    <div class="eyebrow" style="margin-top:40px;">google business post · tiktok cover</div>
+    <div class="pakiet-grid-4">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>gbp post · oferta</span><span class="dim">4:3</span></div>
+        <div class="pakiet-frame gbp-post">
+          <div class="gp-img" style="background-image:url('assets/namiot-5.jpg');"></div>
+          <div class="gp-body">
+            <div class="gp-eye">↯ oferta · maj</div>
+            <div class="gp-head">rezerwuj <em>termin</em><br/>na czerwiec</div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>gbp post · edukacja</span><span class="dim">4:3</span></div>
+        <div class="pakiet-frame gbp-post" style="background:var(--fiolet);">
+          <div class="gp-img" style="background-image:url('assets/namiot-8.jpg');"></div>
+          <div class="gp-body">
+            <div class="gp-eye" style="color:var(--zarowka);">↯ q&amp;a</div>
+            <div class="gp-head">ile trwa <em>montaż?</em></div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>tiktok cover</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame tt-cover">
+          <div class="bg" style="background-image:url('assets/namiot-6.jpg');"></div>
+          <div class="content">
+            <div class="prefix">↯ wolny namiot · pov</div>
+            <div class="mega">jak stawia się<br/><em>namiot</em><br/>w 3 h?</div>
+            <div class="sub">zobacz na końcu ↓</div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>tiktok cover</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame tt-cover" style="background:var(--trawa);">
+          <div class="content">
+            <div class="prefix" style="color:var(--zarowka);">↯ nie tylko wesela</div>
+            <div class="mega">bury<br/>kończy <em>10.</em></div>
+            <div class="sub" style="color:var(--plotno);">namiot psa · tiktok</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== GOOGLE ADS ========== -->
+    <div class="eyebrow" style="margin-top:40px;">google ads · bannery standard</div>
+    <div class="pakiet-grid-2">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>leaderboard</span><span class="dim">728 × 90 px</span></div>
+        <div class="pakiet-frame ga-banner">
+          <div class="gb-logo">wolny <em>namiot</em></div>
+          <div class="gb-text">wesele, biesiada, protest — <em>postaw gdzie chcesz.</em></div>
+          <div class="gb-cta">zadzwoń →</div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>medium rectangle</span><span class="dim">300 × 250 px</span></div>
+        <div class="pakiet-frame ga-mrec" style="aspect-ratio: auto; height: 90px; padding: 14px 18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;">
+            <div>
+              <div class="gm-head" style="font-size:18px;">wynajem <em>namiotów</em></div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;margin-top:4px;letter-spacing:1px;text-transform:lowercase;">jędrzejów + 100 km</div>
+            </div>
+            <div class="gm-cta" style="margin-top:0;">od 1100 zł</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pakiet-grid-3">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>square · meta ad</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame" style="aspect-ratio:1/1;background:var(--roz);color:var(--plotno);padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:lowercase;color:var(--zarowka);">↯ sponsored</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:36px;text-transform:lowercase;line-height:0.9;letter-spacing:-0.04em;">twój event, <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;color:var(--zarowka);text-transform:none;">twoje zasady.</em></div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:12px;padding:10px 16px;background:var(--atrament);color:var(--zarowka);align-self:flex-start;text-transform:lowercase;letter-spacing:0.02em;">zobacz ofertę</div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>medium · meta ad</span><span class="dim">4:5</span></div>
+        <div class="pakiet-frame" style="aspect-ratio:4/5;background-image:url('assets/namiot-1.jpg');background-size:cover;background-position:center;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(19,43,77,0.9),transparent 50%);padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:lowercase;color:var(--zarowka);align-self:flex-start;padding:4px 10px;background:rgba(0,0,0,0.4);">↯ sponsored · ig</div>
+            <div>
+              <div style="font-family:'Archivo Black',sans-serif;font-size:32px;text-transform:lowercase;line-height:0.92;letter-spacing:-0.04em;color:var(--plotno);">wesele<br/><em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;color:var(--zarowka);text-transform:none;">w plenerze.</em></div>
+              <div style="font-family:'Archivo Black',sans-serif;font-size:11px;padding:10px 16px;background:var(--pomidor);color:var(--plotno);text-transform:lowercase;margin-top:14px;align-self:flex-start;display:inline-block;letter-spacing:0.02em;">od 1 100 zł</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>wide · reklama</span><span class="dim">16:9</span></div>
+        <div class="pakiet-frame" style="aspect-ratio:16/9;background:var(--pomidor);color:var(--plotno);padding:20px 24px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:lowercase;color:var(--zarowka);">↯ sezon 2026</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:28px;text-transform:lowercase;line-height:0.92;letter-spacing:-0.04em;">rezerwuj do końca maja<br/>— <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;color:var(--zarowka);text-transform:none;">10% rabatu.</em></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:lowercase;">wolnynamiot.pl · 796 886 222</div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:11px;padding:8px 14px;background:var(--atrament);color:var(--zarowka);text-transform:lowercase;letter-spacing:0.02em;">zadzwoń</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== EMAIL SIGNATURE ========== -->
+    <div class="eyebrow" style="margin-top:40px;">email signature</div>
+    <div class="pakiet-grid-2">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>stopka email · patryk</span><span class="dim">640 × 200 px</span></div>
+        <div class="pakiet-frame email-sig">
+          <div class="es-line">
+            <div>
+              <div class="es-name">patryk pełka</div>
+              <div class="es-title">koordynacja · rezerwacje · wolny namiot</div>
+            </div>
+          </div>
+          <div class="es-co">wolny <em>namiot</em></div>
+          <div class="es-meta">
+            <span>↯ 796 886 222</span>
+            <span>kontakt@wolnynamiot.pl</span>
+            <span>wolnynamiot.pl</span>
+          </div>
+          <div class="es-meta" style="margin-top:2px;">
+            <span>11 listopada 27 · 28-300 jędrzejów</span>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>stopka · slogan</span><span class="dim">640 × 120 px</span></div>
+        <div class="pakiet-frame" style="background:var(--granat);color:var(--plotno);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-family:'Archivo Black',sans-serif;font-size:20px;text-transform:lowercase;letter-spacing:-0.02em;">wolny <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;color:var(--zarowka);text-transform:none;">namiot</em></div>
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:var(--zarowka);">— postaw gdzie chcesz. zrób co chcesz.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== FLYER A5 ========== -->
+    <div class="eyebrow" style="margin-top:40px;">flyer a5 · do skrzynki / targów · 148×210 mm</div>
+    <div class="pakiet-grid-2">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>flyer a5 · front</span><span class="dim">148 × 210 mm</span></div>
+        <div class="pakiet-frame flyer flyer-front">
+          <div class="fl-eye">↯ wolny namiot · sezon 2026</div>
+          <div class="fl-head">postaw<br/>gdzie <em>chcesz.</em></div>
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;margin-top:12px;">— twoja impreza, twoje zasady.</div>
+          <div class="fl-list">
+            <span>wesele</span>
+            <span>biesiada</span>
+            <span>urodziny w ogrodzie</span>
+            <span>protest · komunia · festyn</span>
+          </div>
+          <div class="fl-cta">796 886 222 · wolnynamiot.pl</div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>flyer a5 · rewers</span><span class="dim">148 × 210 mm</span></div>
+        <div class="pakiet-frame flyer flyer-back">
+          <div class="fl-eye" style="color:var(--zarowka);">↯ co robimy</div>
+          <div class="fl-head">dach<br/>+ <em>reszta</em><br/>w cenie.</div>
+          <div class="fl-list">
+            <span>dowóz + montaż + demontaż</span>
+            <span>podłoga drewniana</span>
+            <span>oświetlenie podstawowe</span>
+            <span>boki ścian zamykane</span>
+            <span>nagrzewnice (zima)</span>
+          </div>
+          <div class="fl-cta" style="color:var(--zarowka);">zadzwoń: 796 886 222</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== PLAKATY 9:16 — portret story/tiktok ready ========== -->
+    <style>
+    .plk-916 {
+      aspect-ratio: 9/16; padding: 32px 28px; position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .plk-916 .plk-eye {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2.5px;
+      text-transform: lowercase; padding: 4px 10px; align-self: flex-start;
+      background: var(--zarowka); color: var(--atrament);
+    }
+    .plk-916 .plk-head {
+      font-family: 'Archivo Black', sans-serif; text-transform: lowercase;
+      letter-spacing: -0.04em; line-height: 0.88; margin-top: auto;
+    }
+    .plk-916 .plk-head em {
+      font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500;
+      text-transform: none; letter-spacing: -0.02em;
+    }
+    .plk-916 .plk-sub {
+      font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px;
+      margin-top: 10px; letter-spacing: -0.01em; opacity: 0.9;
+    }
+    .plk-916 .plk-ikony {
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px;
+      margin-top: 20px; padding-top: 16px; border-top: 1.5px solid currentColor;
+    }
+    .plk-916 .plk-ikony svg { width: 100%; aspect-ratio: 1/1; }
+    .plk-916 .plk-foot {
+      display: flex; justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px;
+      text-transform: lowercase; margin-top: 12px;
+    }
+
+    .plk-916-a { background: var(--atrament); color: var(--plotno); }
+    .plk-916-a .plk-head em { color: var(--zarowka); }
+    .plk-916-b { background: var(--granat); color: var(--plotno); }
+    .plk-916-b .plk-eye { background: var(--pomidor); color: var(--plotno); }
+    .plk-916-b .plk-head em { color: var(--zarowka); }
+    .plk-916-c { background: var(--pomidor); color: var(--plotno); }
+    .plk-916-c .plk-eye { background: var(--atrament); color: var(--zarowka); }
+    .plk-916-c .plk-head em { color: var(--zarowka); }
+    .plk-916-d { background: var(--trawa); color: var(--plotno); }
+    .plk-916-d .plk-head em { color: var(--zarowka); }
+    .plk-916-e { background: var(--zarowka); color: var(--atrament); }
+    .plk-916-e .plk-eye { background: var(--pomidor); color: var(--plotno); }
+    .plk-916-e .plk-head em { color: var(--pomidor); }
+    .plk-916-f { background: var(--burak); color: var(--plotno); }
+    .plk-916-f .plk-eye { background: var(--zarowka); color: var(--atrament); }
+    .plk-916-f .plk-head em { color: var(--zarowka); }
+
+    .plk-916-photo {
+      position: relative;
+    }
+    .plk-916-photo .plk-bg {
+      position: absolute; inset: 0; background-size: cover; background-position: center;
+    }
+    .plk-916-photo .plk-scrim {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(19,43,77,0.2) 0%, rgba(10,10,10,0.88) 100%);
+    }
+    .plk-916-photo > * { position: relative; z-index: 2; }
+
+    /* landscape marketingowe */
+    .plk-land {
+      aspect-ratio: 3/2; padding: 36px 40px; display: flex; flex-direction: column;
+      justify-content: space-between; position: relative; overflow: hidden;
+    }
+    .plk-land .plk-eye {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2.5px;
+      text-transform: lowercase; padding: 5px 12px; align-self: flex-start;
+    }
+    .plk-land .plk-big {
+      font-family: 'Archivo Black', sans-serif; font-size: 64px; text-transform: lowercase;
+      letter-spacing: -0.04em; line-height: 0.9;
+    }
+    .plk-land .plk-big em {
+      font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500;
+      text-transform: none;
+    }
+    .plk-land .plk-foot {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px;
+      text-transform: lowercase;
+    }
+    </style>
+
+    <div class="eyebrow" style="margin-top:40px;">plakaty 9:16 · instagram story / tiktok / pinterest · ready to post</div>
+    <div class="pakiet-grid-4">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>plakat · postaw gdzie chcesz</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame plk-916 plk-916-a">
+          <span class="plk-eye">↯ wolny namiot · 2026</span>
+          <div class="plk-head" style="font-size:52px;">postaw<br/>gdzie<br/><em>chcesz.</em></div>
+          <div class="plk-sub">zrób co chcesz.</div>
+          <div class="plk-ikony">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="4"/><path d="M6 22 Q12 14 18 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6 Q12 2 20 6 L20 16 Q12 20 4 16 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="18" height="12"/><path d="M3 8 L12 3 L21 8"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8 L19 8 L17 20 L7 20 Z"/></svg>
+          </div>
+          <div class="plk-foot"><span>wolnynamiot.pl</span><span>796 886 222</span></div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>plakat · wesele w plenerze</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame plk-916 plk-916-photo">
+          <div class="plk-bg" style="background-image:url('assets/namiot-4.jpg');"></div>
+          <div class="plk-scrim"></div>
+          <span class="plk-eye">↯ wesele · sezon 2026</span>
+          <div class="plk-head" style="color:var(--plotno);font-size:48px;">wesele<br/>w <em style="color:var(--zarowka);">plenerze.</em></div>
+          <div class="plk-sub" style="color:var(--plotno);">od 1 100 zł za weekend.</div>
+          <div class="plk-ikony" style="color:var(--plotno);border-top-color:rgba(255,255,255,0.3);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3 L12 21 M3 12 L21 12"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8 L19 8 L17 20 L7 20 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="6" width="14" height="14"/><line x1="5" y1="10" x2="19" y2="10"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 C8 7 8 11 12 15 C16 11 16 7 12 3 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 L22 20 L2 20 Z"/></svg>
+          </div>
+          <div class="plk-foot" style="color:var(--zarowka);"><span>wolnynamiot.pl</span><span>796 886 222</span></div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>plakat · integracja firmowa</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame plk-916 plk-916-b">
+          <span class="plk-eye">↯ event firmowy · b2b</span>
+          <div class="plk-head" style="font-size:44px;">integracja<br/>ma swój<br/><em>termin.</em></div>
+          <div class="plk-sub">do 300 osób · faktura vat.</div>
+          <div class="plk-ikony">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="18" height="12"/><path d="M3 8 L12 3 L21 8"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 L22 20 L2 20 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="4"/><path d="M6 22 Q12 14 18 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="6" width="14" height="14"/><line x1="5" y1="10" x2="19" y2="10"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12 L21 12 M15 6 L21 12 L15 18"/></svg>
+          </div>
+          <div class="plk-foot"><span>kontakt@wolnynamiot.pl</span><span>fv · b2b</span></div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>plakat · ślub? protest?</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame plk-916 plk-916-c">
+          <span class="plk-eye">↯ dach nad wszystkim</span>
+          <div class="plk-head" style="font-size:52px;">ślub?<br/>protest?<br/><em>obojętnie.</em></div>
+          <div class="plk-sub">twój namiot, twoja sprawa.</div>
+          <div class="plk-ikony">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3 L5 21 M5 3 L19 3 L19 13 L5 13"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6 Q12 2 20 6 L20 16 Q12 20 4 16 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="4"/><path d="M6 22 Q12 14 18 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3 L12 21 M3 12 L21 12"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+          </div>
+          <div class="plk-foot"><span>wolnynamiot.pl</span><span>796 886 222</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pakiet-grid-4">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>plakat · nie pytamy</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame plk-916 plk-916-d">
+          <span class="plk-eye">↯ motto</span>
+          <div class="plk-head" style="font-size:42px;">nie pytamy<br/><em>co robisz</em><br/>pod spodem.</div>
+          <div class="plk-sub">stawiamy. zwijamy. milczymy.</div>
+          <div class="plk-ikony">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12 Q12 4 19 12 Q12 20 5 12 Z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 C8 7 8 11 12 15 C16 11 16 7 12 3 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 L22 20 L2 20 Z"/></svg>
+          </div>
+          <div class="plk-foot"><span>wolny namiot</span><span>est · 2020</span></div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>plakat · twój ogród</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame plk-916 plk-916-e">
+          <span class="plk-eye">↯ zasady</span>
+          <div class="plk-head" style="font-size:46px;">twój ogród.<br/>twoje <em>zasady.</em><br/>nasz dach.</div>
+          <div class="plk-sub">proste jak drut.</div>
+          <div class="plk-ikony">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20 Q12 8 21 20"/><path d="M8 14 L8 6 M16 14 L16 4"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="18" height="12"/><path d="M3 8 L12 3 L21 8"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="4"/><path d="M6 22 Q12 14 18 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8 L19 8 L17 20 L7 20 Z"/></svg>
+          </div>
+          <div class="plk-foot"><span>wolnynamiot.pl</span><span>jędrzejów</span></div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>plakat · biesiada</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame plk-916 plk-916-photo">
+          <div class="plk-bg" style="background-image:url('assets/namiot-9.jpg');"></div>
+          <div class="plk-scrim"></div>
+          <span class="plk-eye">↯ plener · wolny</span>
+          <div class="plk-head" style="color:var(--plotno);font-size:50px;">biesiada<br/>bez<br/><em style="color:var(--zarowka);">granic.</em></div>
+          <div class="plk-sub" style="color:var(--plotno);">w górach, w ogrodzie, pod lasem.</div>
+          <div class="plk-ikony" style="color:var(--plotno);border-top-color:rgba(255,255,255,0.3);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 L22 20 L2 20 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 C8 7 8 11 12 15 C16 11 16 7 12 3 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8 L19 8 L17 20 L7 20 Z"/></svg>
+          </div>
+          <div class="plk-foot" style="color:var(--zarowka);"><span>wolnynamiot.pl</span><span>est · 2020</span></div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>plakat · montaż w 3h</span><span class="dim">9:16</span></div>
+        <div class="pakiet-frame plk-916 plk-916-f">
+          <span class="plk-eye">↯ proces</span>
+          <div class="plk-head" style="font-size:52px;">montaż<br/>w <em>3h.</em><br/>demontaż<br/>w 1.</div>
+          <div class="plk-sub">reszta należy do ciebie.</div>
+          <div class="plk-ikony">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="6" width="14" height="14"/><line x1="5" y1="10" x2="19" y2="10"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12 L21 12 M15 6 L21 12 L15 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3 L12 21 M3 12 L21 12"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+          </div>
+          <div class="plk-foot"><span>wolnynamiot.pl</span><span>na czas.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANDSCAPE plakaty marketingowe -->
+    <div class="eyebrow" style="margin-top:40px;">plakaty landscape · billboard / facebook cover / prezentacja</div>
+    <div class="pakiet-grid-2">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>landscape · nie padało</span><span class="dim">3:2</span></div>
+        <div class="pakiet-frame plk-land" style="background:var(--trawa);color:var(--plotno);">
+          <span class="plk-eye" style="background:var(--zarowka);color:var(--atrament);">↯ sezon 2026</span>
+          <div class="plk-big">nie padało.<br/><em style="color:var(--zarowka);">i tak by nie padało.</em></div>
+          <div class="plk-foot">
+            <span>wolny namiot · jędrzejów</span>
+            <span>796 886 222</span>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>landscape · rezerwuj</span><span class="dim">3:2</span></div>
+        <div class="pakiet-frame plk-land" style="background:var(--pomidor);color:var(--plotno);">
+          <span class="plk-eye" style="background:var(--atrament);color:var(--zarowka);">↯ oferta</span>
+          <div class="plk-big">rezerwuj<br/>do końca <em style="color:var(--zarowka);">maja</em><br/>— 10% rabat.</div>
+          <div class="plk-foot">
+            <span>wolnynamiot.pl</span>
+            <span>termin 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MEGA PACK — 16 plakatów gotowych do postowania ========== -->
+    <style>
+    .mp-ig1 { aspect-ratio: 1/1; padding: 34px 30px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+    .mp-ig1 .mp-eye { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2.5px; text-transform: lowercase; padding: 4px 10px; align-self: flex-start; }
+    .mp-ig1 .mp-head { font-family: 'Archivo Black', sans-serif; text-transform: lowercase; letter-spacing: -0.045em; line-height: 0.88; }
+    .mp-ig1 .mp-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; text-transform: none; }
+    .mp-ig1 .mp-foot { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: lowercase; }
+    .mp-ig1 .mp-ik { display: flex; gap: 8px; margin-top: 12px; }
+    .mp-ig1 .mp-ik svg { width: 22px; height: 22px; }
+    </style>
+
+    <div class="eyebrow" style="margin-top:40px;">mega pack · 16 plakatów · wszystkie slogany · gotowe do postowania</div>
+
+    <!-- INSTAGRAM 1:1 — 8 wariantów -->
+    <div class="pakiet-grid-4">
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig · twój event</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame mp-ig1" style="background:var(--granat);color:var(--plotno);">
+          <span class="mp-eye" style="background:var(--zarowka);color:var(--atrament);">↯ zasady</span>
+          <div>
+            <div class="mp-head" style="font-size:46px;">twój event.<br/>twoje <em style="color:var(--zarowka);">zasady.</em></div>
+            <div class="mp-ik">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="4"/><path d="M6 22 Q12 14 18 22"/></svg>
+            </div>
+          </div>
+          <div class="mp-foot">wolny namiot · 796 886 222</div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig · dach + reszta</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame mp-ig1" style="background:var(--pomidor);color:var(--plotno);">
+          <span class="mp-eye" style="background:var(--atrament);color:var(--zarowka);">↯ w cenie</span>
+          <div>
+            <div class="mp-head" style="font-size:52px;">dach<br/>+ <em style="color:var(--zarowka);">reszta</em><br/>w cenie.</div>
+            <div class="mp-ik">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="6" width="14" height="14"/><line x1="5" y1="10" x2="19" y2="10"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 C8 7 8 11 12 15 C16 11 16 7 12 3 Z"/></svg>
+            </div>
+          </div>
+          <div class="mp-foot">dowóz · montaż · demontaż</div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig · postaw / zrób</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame mp-ig1" style="background:var(--zarowka);color:var(--atrament);">
+          <span class="mp-eye" style="background:var(--pomidor);color:var(--plotno);">↯ motto</span>
+          <div>
+            <div class="mp-head" style="font-size:48px;">postaw<br/>gdzie chcesz.<br/>zrób <em style="color:var(--pomidor);">co chcesz.</em></div>
+          </div>
+          <div class="mp-foot" style="color:var(--atrament);">wolny namiot · est. 2020</div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig · 80 wesel</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame mp-ig1" style="background:var(--atrament);color:var(--plotno);">
+          <span class="mp-eye" style="background:var(--zarowka);color:var(--atrament);">↯ liczby</span>
+          <div>
+            <div class="mp-head" style="font-size:100px;color:var(--pomidor);letter-spacing:-0.05em;">80<span style="font-size:50px;">+</span></div>
+            <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:24px;color:var(--zarowka);margin-top:8px;">wesel rocznie.</div>
+            <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;color:var(--plotno);opacity:0.85;">ani jednego odwołania z naszej winy.</div>
+          </div>
+          <div class="mp-foot" style="color:var(--zarowka);">wolnynamiot.pl · 796 886 222</div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig · montaż 3h</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame mp-ig1" style="background:var(--niebo);color:var(--plotno);">
+          <span class="mp-eye" style="background:var(--zarowka);color:var(--atrament);">↯ proces</span>
+          <div>
+            <div class="mp-head" style="font-size:52px;">montaż<br/>w <em style="color:var(--zarowka);">3h.</em><br/>demontaż<br/>w 1.</div>
+          </div>
+          <div class="mp-foot">reszta należy do ciebie.</div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig · rodzinna</span><span class="dim">1:1 · photo</span></div>
+        <div class="pakiet-frame mp-ig1" style="background-image:url('assets/namiot-6.jpg');background-size:cover;background-position:center;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.2) 0%,rgba(19,43,77,0.92) 100%);"></div>
+          <span class="mp-eye" style="background:var(--pomidor);color:var(--plotno);position:relative;z-index:2;">↯ od 2020</span>
+          <div style="position:relative;z-index:2;">
+            <div class="mp-head" style="color:var(--plotno);font-size:38px;">rodzinna<br/>firma z<br/><em style="color:var(--zarowka);">jędrzejowa.</em></div>
+            <div style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--zarowka);margin-top:8px;font-size:16px;">100 km dookoła. zawsze na czas.</div>
+          </div>
+          <div class="mp-foot" style="color:var(--plotno);position:relative;z-index:2;">wolnynamiot.pl</div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig · twój ogród</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame mp-ig1" style="background:var(--trawa);color:var(--plotno);">
+          <span class="mp-eye" style="background:var(--zarowka);color:var(--atrament);">↯ ogród</span>
+          <div>
+            <div class="mp-head" style="font-size:46px;">twój ogród.<br/>twoje zasady.<br/>nasz <em style="color:var(--zarowka);">dach.</em></div>
+          </div>
+          <div class="mp-foot">proste jak drut.</div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>ig · wolny namiot</span><span class="dim">1:1</span></div>
+        <div class="pakiet-frame mp-ig1" style="background:var(--fiolet);color:var(--plotno);">
+          <span class="mp-eye" style="background:var(--zarowka);color:var(--atrament);">↯ claim</span>
+          <div>
+            <div class="mp-head" style="font-size:54px;">wolny<br/><em style="color:var(--zarowka);">namiot</em></div>
+            <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:22px;margin-top:10px;color:var(--zarowka);">— twoja impreza.</div>
+          </div>
+          <div class="mp-foot">est · 2020 · jędrzejów</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAKATY 9:16 — kolejne 4 -->
+    <div class="eyebrow" style="margin-top:40px;">mega pack · 9:16 · story / tiktok · dodatkowe</div>
+    <div class="pakiet-grid-4">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>9:16 · twój event</span><span class="dim">story</span></div>
+        <div class="pakiet-frame plk-916" style="background:var(--atrament);color:var(--plotno);">
+          <span class="plk-eye" style="background:var(--pomidor);color:var(--plotno);">↯ twój event</span>
+          <div class="plk-head" style="font-size:58px;">twój event.<br/>twoje<br/><em style="color:var(--zarowka);">zasady.</em></div>
+          <div class="plk-sub" style="color:var(--zarowka);">bez cyrku, bez kompromisów.</div>
+          <div class="plk-ikony">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="4"/><path d="M6 22 Q12 14 18 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6 Q12 2 20 6 L20 16 Q12 20 4 16 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 C8 7 8 11 12 15 C16 11 16 7 12 3 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 L22 20 L2 20 Z"/></svg>
+          </div>
+          <div class="plk-foot" style="color:var(--zarowka);"><span>wolnynamiot.pl</span><span>796 886 222</span></div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>9:16 · dach + reszta</span><span class="dim">story</span></div>
+        <div class="pakiet-frame plk-916" style="background:var(--zarowka);color:var(--atrament);">
+          <span class="plk-eye" style="background:var(--pomidor);color:var(--plotno);">↯ w cenie</span>
+          <div class="plk-head" style="font-size:62px;">dach.<br/>+ <em style="color:var(--pomidor);">reszta.</em><br/>w cenie.</div>
+          <div class="plk-sub">dowóz, montaż, demontaż, podłoga, oświetlenie.</div>
+          <div class="plk-ikony">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="6" width="14" height="14"/><line x1="5" y1="10" x2="19" y2="10"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 C8 7 8 11 12 15 C16 11 16 7 12 3 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8 L19 8 L17 20 L7 20 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <div class="plk-foot"><span>wolny namiot</span><span>od 1 100 zł</span></div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>9:16 · rodzinna</span><span class="dim">photo + story</span></div>
+        <div class="pakiet-frame plk-916 plk-916-photo">
+          <div class="plk-bg" style="background-image:url('assets/namiot-8.jpg');"></div>
+          <div class="plk-scrim"></div>
+          <span class="plk-eye" style="background:var(--pomidor);color:var(--plotno);">↯ est · 2020</span>
+          <div class="plk-head" style="color:var(--plotno);font-size:44px;">rodzinna<br/>firma z<br/><em style="color:var(--zarowka);">jędrzejowa.</em></div>
+          <div class="plk-sub" style="color:var(--zarowka);">100 km dookoła. zawsze na czas.</div>
+          <div class="plk-foot" style="color:var(--plotno);"><span>wolnynamiot.pl</span><span>6 lat</span></div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>9:16 · rezerwuj</span><span class="dim">story</span></div>
+        <div class="pakiet-frame plk-916" style="background:var(--wesele);color:var(--atrament);">
+          <span class="plk-eye" style="background:var(--pomidor);color:var(--plotno);">↯ oferta sezon</span>
+          <div class="plk-head" style="font-size:50px;">rezerwuj<br/>do końca<br/><em style="color:var(--pomidor);">maja.</em></div>
+          <div class="plk-sub" style="color:var(--pomidor);">— 10% rabat na weekend.</div>
+          <div class="plk-ikony">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="6" width="14" height="14"/><line x1="5" y1="10" x2="19" y2="10"/><line x1="9" y1="3" x2="9" y2="7"/><line x1="15" y1="3" x2="15" y2="7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6 Q12 2 20 6 L20 16 Q12 20 4 16 Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12 L21 12 M15 6 L21 12 L15 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3 L12 21 M3 12 L21 12"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8 L19 8 L17 20 L7 20 Z"/></svg>
+          </div>
+          <div class="plk-foot"><span>zadzwoń</span><span>796 886 222</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANDSCAPE dodatkowe -->
+    <div class="eyebrow" style="margin-top:40px;">mega pack · landscape · billboard / FB cover</div>
+    <div class="pakiet-grid-2">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>landscape · twój event</span><span class="dim">3:2</span></div>
+        <div class="pakiet-frame plk-land" style="background:var(--burak);color:var(--plotno);">
+          <span class="plk-eye" style="background:var(--zarowka);color:var(--atrament);">↯ zasady</span>
+          <div class="plk-big">twój event.<br/>twoje <em style="color:var(--zarowka);">zasady.</em></div>
+          <div class="plk-foot">
+            <span>wolny namiot · jędrzejów</span>
+            <span>796 886 222 · wolnynamiot.pl</span>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>landscape · dach</span><span class="dim">3:2 · photo</span></div>
+        <div class="pakiet-frame plk-land" style="background-image:url('assets/namiot-11.jpg');background-size:cover;background-position:center;position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,0.9) 0%,rgba(10,10,10,0.3) 100%);"></div>
+          <span class="plk-eye" style="background:var(--zarowka);color:var(--atrament);position:relative;z-index:2;">↯ w cenie</span>
+          <div class="plk-big" style="color:var(--plotno);position:relative;z-index:2;">dach<br/>+ <em style="color:var(--zarowka);">reszta</em><br/>w cenie.</div>
+          <div class="plk-foot" style="color:var(--zarowka);position:relative;z-index:2;">
+            <span>wolnynamiot.pl</span>
+            <span>dowóz · montaż · demontaż</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4:5 Meta feed extended -->
+    <div class="eyebrow" style="margin-top:40px;">mega pack · 4:5 · meta feed extended</div>
+    <div class="pakiet-grid-3">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>4:5 · ślub protest</span><span class="dim">meta</span></div>
+        <div class="pakiet-frame" style="aspect-ratio:4/5;background:var(--atrament);color:var(--plotno);padding:28px;display:flex;flex-direction:column;justify-content:space-between;">
+          <span class="plk-eye" style="background:var(--pomidor);color:var(--plotno);">↯ wolny namiot</span>
+          <div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:56px;text-transform:lowercase;line-height:0.88;letter-spacing:-0.04em;color:var(--zarowka);">ślub?<br/>protest?<br/><em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;color:var(--plotno);text-transform:none;">obojętnie.</em></div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:lowercase;color:var(--zarowka);">wolnynamiot.pl · 796 886 222</div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>4:5 · nie pytamy</span><span class="dim">meta</span></div>
+        <div class="pakiet-frame" style="aspect-ratio:4/5;background:var(--pomidor);color:var(--plotno);padding:28px;display:flex;flex-direction:column;justify-content:space-between;">
+          <span class="plk-eye" style="background:var(--zarowka);color:var(--atrament);">↯ motto</span>
+          <div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:48px;text-transform:lowercase;line-height:0.9;letter-spacing:-0.04em;">nie pytamy<br/><em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;color:var(--zarowka);text-transform:none;">co robisz</em><br/>pod spodem.</div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:lowercase;">wolny namiot · est. 2020</div>
+        </div>
+      </div>
+
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>4:5 · nie padało</span><span class="dim">meta · photo</span></div>
+        <div class="pakiet-frame" style="aspect-ratio:4/5;background-image:url('assets/namiot-13.jpg');background-size:cover;background-position:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.15) 0%,rgba(19,43,77,0.95) 100%);"></div>
+          <div style="position:relative;z-index:2;padding:28px;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+            <span class="plk-eye" style="background:var(--zarowka);color:var(--atrament);align-self:flex-start;">↯ wolny namiot</span>
+            <div>
+              <div style="font-family:'Archivo Black',sans-serif;font-size:46px;text-transform:lowercase;line-height:0.9;letter-spacing:-0.04em;color:var(--plotno);">nie padało.<br/><em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;color:var(--zarowka);text-transform:none;">i tak by</em><br/>nie padało.</div>
+            </div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:lowercase;color:var(--zarowka);">wolnynamiot.pl · jędrzejów</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== ULOTKA B6 — 4 warianty kolorystyczne ========== -->
+    <style>
+    .b6 { aspect-ratio: 125/176; padding: 18px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .b6 .b6-eye { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: lowercase; }
+    .b6 .b6-head { font-family: 'Archivo Black', sans-serif; text-transform: lowercase; letter-spacing: -0.04em; line-height: 0.88; margin: 12px 0 6px; }
+    .b6 .b6-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; letter-spacing: -0.01em; }
+    .b6 .b6-icons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: auto 0; padding: 14px 0; }
+    .b6 .b6-icon { aspect-ratio: 1/1; border: 1.5px solid currentColor; display: flex; align-items: center; justify-content: center; opacity: 0.9; }
+    .b6 .b6-icon svg { width: 60%; height: 60%; }
+    .b6 .b6-foot { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: lowercase; display: flex; justify-content: space-between; padding-top: 10px; border-top: 1.5px solid currentColor; }
+    .b6-green { background: var(--trawa); color: var(--plotno); }
+    .b6-green .b6-eye { color: var(--zarowka); }
+    .b6-green .b6-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+    .b6-tomato { background: var(--pomidor); color: var(--plotno); }
+    .b6-tomato .b6-eye { color: var(--zarowka); }
+    .b6-tomato .b6-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
+    .b6-blue { background: var(--granat); color: var(--plotno); }
+    .b6-blue .b6-eye { color: var(--zarowka); }
+    .b6-blue .b6-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--pomidor); text-transform: none; }
+    .b6-yellow { background: var(--zarowka); color: var(--atrament); }
+    .b6-yellow .b6-eye { color: var(--pomidor); }
+    .b6-yellow .b6-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--pomidor); text-transform: none; }
+
+    /* === NAKLEJKI Z IKONAMI === */
+    .naklejka-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+    .naklejka {
+      aspect-ratio: 1/1; border-radius: 50%; border: 3px solid var(--atrament);
+      padding: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; box-shadow: 4px 4px 0 var(--atrament);
+      transform: rotate(-3deg); position: relative;
+    }
+    .naklejka:nth-child(2n) { transform: rotate(2deg); }
+    .naklejka:nth-child(3n) { transform: rotate(-1deg); }
+    .naklejka svg { width: 36px; height: 36px; margin-bottom: 6px; }
+    .naklejka .nk-text { font-family: 'Archivo Black', sans-serif; font-size: 11px; text-transform: lowercase; line-height: 1.0; letter-spacing: -0.01em; }
+    .naklejka .nk-text em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; text-transform: none; }
+    .nk-zarowka { background: var(--zarowka); color: var(--atrament); }
+    .nk-pomidor { background: var(--pomidor); color: var(--plotno); }
+    .nk-pomidor .nk-text em { color: var(--zarowka); }
+    .nk-trawa { background: var(--trawa); color: var(--plotno); }
+    .nk-trawa .nk-text em { color: var(--zarowka); }
+    .nk-granat { background: var(--granat); color: var(--plotno); }
+    .nk-granat .nk-text em { color: var(--zarowka); }
+    .nk-plotno { background: var(--plotno); color: var(--atrament); }
+    .nk-plotno .nk-text em { color: var(--pomidor); }
+    .nk-niebo { background: var(--niebo); color: var(--plotno); }
+    .nk-niebo .nk-text em { color: var(--zarowka); }
+
+    /* === KOSZULKI === */
+    .koszulka-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .koszulka {
+      aspect-ratio: 1/1.1; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      clip-path: polygon(10% 0%, 28% 0%, 35% 7%, 65% 7%, 72% 0%, 90% 0%, 100% 18%, 90% 30%, 80% 22%, 80% 100%, 20% 100%, 20% 22%, 10% 30%, 0% 18%);
+    }
+    .koszulka .ks-print {
+      position: absolute; top: 28%; left: 50%; transform: translateX(-50%);
+      width: 60%; display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .koszulka .ks-print svg { width: 100%; height: auto; }
+    .koszulka .ks-print .ks-text { font-family: 'Archivo Black', sans-serif; text-transform: lowercase; font-size: 16px; line-height: 0.9; text-align: center; letter-spacing: -0.02em; }
+    .koszulka .ks-print .ks-text em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; text-transform: none; }
+    .ks-atrament { background: var(--atrament); color: var(--plotno); }
+    .ks-atrament .ks-text em { color: var(--zarowka); }
+    .ks-plotno { background: var(--plotno); color: var(--atrament); border: 1px solid var(--atrament); }
+    .ks-plotno .ks-text em { color: var(--pomidor); }
+    .ks-trawa { background: var(--trawa); color: var(--plotno); }
+    .ks-trawa .ks-text em { color: var(--zarowka); }
+    .ks-pomidor { background: var(--pomidor); color: var(--plotno); }
+    .ks-pomidor .ks-text em { color: var(--zarowka); }
+
+    /* === NASZYWKI === */
+    .naszywka-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .naszywka {
+      aspect-ratio: 1/1; border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 18px; text-align: center; position: relative;
+      background: var(--zarowka); color: var(--atrament);
+      border: 4px dashed var(--atrament);
+      box-shadow: inset 0 0 0 8px var(--zarowka);
+    }
+    .naszywka::before {
+      content: ''; position: absolute; inset: 6px; border-radius: 50%;
+      border: 2px solid var(--atrament);
+      pointer-events: none;
+    }
+    .naszywka svg { width: 48px; height: 48px; margin-bottom: 8px; position: relative; z-index: 1; }
+    .naszywka .nsz-top { font-family: 'Archivo Black', sans-serif; font-size: 10px; text-transform: lowercase; letter-spacing: 1px; position: relative; z-index: 1; }
+    .naszywka .nsz-mid { font-family: 'Archivo Black', sans-serif; font-size: 16px; text-transform: lowercase; letter-spacing: -0.02em; line-height: 0.95; margin: 4px 0; position: relative; z-index: 1; }
+    .naszywka .nsz-mid em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; text-transform: none; }
+    .naszywka .nsz-bot { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: lowercase; position: relative; z-index: 1; }
+    .nsz-trawa { background: var(--trawa); color: var(--plotno); border-color: var(--plotno); box-shadow: inset 0 0 0 8px var(--trawa); }
+    .nsz-trawa::before { border-color: var(--plotno); }
+    .nsz-trawa .nsz-mid em { color: var(--zarowka); }
+    .nsz-pomidor { background: var(--pomidor); color: var(--plotno); border-color: var(--zarowka); box-shadow: inset 0 0 0 8px var(--pomidor); }
+    .nsz-pomidor::before { border-color: var(--plotno); }
+    .nsz-pomidor .nsz-mid em { color: var(--zarowka); }
+    .nsz-granat { background: var(--granat); color: var(--zarowka); border-color: var(--zarowka); box-shadow: inset 0 0 0 8px var(--granat); }
+    .nsz-granat::before { border-color: var(--zarowka); }
+    .nsz-granat .nsz-mid em { color: var(--plotno); }
+    </style>
+
+    <div class="eyebrow" style="margin-top:40px;">ulotka b6 · 125×176 mm · 4 warianty kolorystyczne</div>
+    <div class="pakiet-grid-4">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>b6 · zieleń</span><span class="dim">125×176mm</span></div>
+        <div class="pakiet-frame b6 b6-green">
+          <div class="b6-eye">↯ wolny namiot · b6</div>
+          <div>
+            <div class="b6-head" style="font-size:32px;">wolny <em>namiot.</em></div>
+            <div class="b6-sub">postaw gdzie chcesz. zrób co chcesz.</div>
+          </div>
+          <div class="b6-icons">
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg></div>
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 C8 7 8 11 12 15 C16 11 16 7 12 3 Z"/></svg></div>
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="6" width="14" height="14"/><line x1="5" y1="10" x2="19" y2="10"/></svg></div>
+          </div>
+          <div class="b6-foot"><span>796 886 222</span><span>wolnynamiot.pl</span></div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>b6 · pomidor</span><span class="dim">125×176mm</span></div>
+        <div class="pakiet-frame b6 b6-tomato">
+          <div class="b6-eye">↯ sezon 2026 · b6</div>
+          <div>
+            <div class="b6-head" style="font-size:32px;">ślub?<br/>protest?<br/><em>obojętnie.</em></div>
+            <div class="b6-sub">— dach nad dyskusją.</div>
+          </div>
+          <div class="b6-icons">
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="4"/><path d="M6 22 Q12 14 18 22"/></svg></div>
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6 Q12 2 20 6 L20 16 Q12 20 4 16 Z"/></svg></div>
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3 L12 21 M3 12 L21 12"/></svg></div>
+          </div>
+          <div class="b6-foot"><span>jędrzejów</span><span>+ 100 km</span></div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>b6 · granat</span><span class="dim">125×176mm</span></div>
+        <div class="pakiet-frame b6 b6-blue">
+          <div class="b6-eye">↯ event firmowy · b6</div>
+          <div>
+            <div class="b6-head" style="font-size:28px;">integracja<br/>ma swój <em>termin.</em></div>
+            <div class="b6-sub">— event firmowy od 100 osób.</div>
+          </div>
+          <div class="b6-icons">
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="18" height="12"/><path d="M3 8 L12 3 L21 8"/></svg></div>
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 L22 20 L2 20 Z"/></svg></div>
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/></svg></div>
+          </div>
+          <div class="b6-foot"><span>fv dla firm</span><span>wolnynamiot.pl</span></div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>b6 · żarówka</span><span class="dim">125×176mm</span></div>
+        <div class="pakiet-frame b6 b6-yellow">
+          <div class="b6-eye">↯ wesele · b6</div>
+          <div>
+            <div class="b6-head" style="font-size:30px;">wesele<br/>w <em>plenerze.</em></div>
+            <div class="b6-sub">— od 1 100 zł za weekend.</div>
+          </div>
+          <div class="b6-icons">
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg></div>
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8 L19 8 L17 20 L7 20 Z"/></svg></div>
+            <div class="b6-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 L22 20 L2 20 Z"/></svg></div>
+          </div>
+          <div class="b6-foot"><span>796 886 222</span><span>plener · 2026</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== NAKLEJKI Z IKONAMI ========== -->
+    <div class="eyebrow" style="margin-top:40px;">naklejki · okrągłe 60mm · z ikonami</div>
+    <div class="naklejka-row">
+      <div class="naklejka nk-zarowka">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+        <div class="nk-text">postaw<br/>gdzie <em>chcesz</em></div>
+      </div>
+      <div class="naklejka nk-pomidor">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 C8 7 8 11 12 15 C16 11 16 7 12 3 Z"/><line x1="12" y1="15" x2="12" y2="21" stroke-width="2"/></svg>
+        <div class="nk-text">sezon<br/><em>2026</em></div>
+      </div>
+      <div class="naklejka nk-trawa">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18 Q12 4 21 18" stroke-linecap="round"/><circle cx="7" cy="14" r="2" fill="currentColor"/><circle cx="17" cy="14" r="2" fill="currentColor"/></svg>
+        <div class="nk-text">nie <em>padało.</em><br/>i tak by nie.</div>
+      </div>
+      <div class="naklejka nk-granat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+        <div class="nk-text">est.<br/><em>2020</em></div>
+      </div>
+      <div class="naklejka nk-plotno">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3 L5 21 M5 3 L19 3 L19 13 L5 13"/></svg>
+        <div class="nk-text">ślub? <em>protest?</em><br/>obojętnie.</div>
+      </div>
+      <div class="naklejka nk-niebo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12 Q12 4 19 12 Q12 20 5 12 Z"/><circle cx="12" cy="12" r="3"/></svg>
+        <div class="nk-text">nie pytamy<br/><em>pod spodem</em></div>
+      </div>
+    </div>
+
+    <!-- ========== KOSZULKI ========== -->
+    <div class="eyebrow" style="margin-top:40px;">koszulka · print · 4 warianty</div>
+    <div class="koszulka-row">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>koszulka · atrament</span><span class="dim">ekipa</span></div>
+        <div class="koszulka ks-atrament">
+          <div class="ks-print">
+            <svg viewBox="0 0 60 50" fill="none" stroke="currentColor" stroke-width="2"><path d="M30 5 L55 30 L48 30 L48 45 L12 45 L12 30 L5 30 Z"/></svg>
+            <div class="ks-text">wolny<br/><em>namiot</em></div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>koszulka · plotno</span><span class="dim">merch</span></div>
+        <div class="koszulka ks-plotno">
+          <div class="ks-print">
+            <svg viewBox="0 0 80 30" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 25 C15 10 25 10 35 25 C45 10 55 10 65 25 C70 18 75 15 78 15"/></svg>
+            <div class="ks-text">postaw <em>gdzie chcesz.</em><br/>zrób co chcesz.</div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>koszulka · trawa</span><span class="dim">festiwal</span></div>
+        <div class="koszulka ks-trawa">
+          <div class="ks-print">
+            <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2"><circle cx="30" cy="30" r="24"/><path d="M30 6 L30 54 M6 30 L54 30"/></svg>
+            <div class="ks-text">ślub? <em>protest?</em><br/>obojętnie.</div>
+          </div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>koszulka · pomidor</span><span class="dim">sezon</span></div>
+        <div class="koszulka ks-pomidor">
+          <div class="ks-print">
+            <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2"><path d="M30 10 L52 45 L8 45 Z"/></svg>
+            <div class="ks-text">sezon <em>2026</em><br/>wolny namiot</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== GALERIA ZDJĘĆ NAMIOTÓW ========== -->
+    <style>
+    .foto-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; background: var(--atrament); padding: 4px; }
+    .foto-tile { aspect-ratio: 4/3; background-size: cover; background-position: center; position: relative; overflow: hidden; }
+    .foto-tile .foto-num { position: absolute; top: 10px; left: 10px; background: var(--atrament); color: var(--zarowka); font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 3px 8px; letter-spacing: 1.5px; text-transform: lowercase; }
+    </style>
+    <div class="eyebrow" style="margin-top:40px;">biblioteka zdjęć · 14 fotografii · do wolnego użytku w materiałach</div>
+    <div class="foto-grid">
+      <div class="foto-tile" style="background-image:url('assets/namiot-1.jpg');"><span class="foto-num">01</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-2.jpg');"><span class="foto-num">02</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-3.jpg');"><span class="foto-num">03</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-4.jpg');"><span class="foto-num">04</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-5.jpg');"><span class="foto-num">05</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-6.jpg');"><span class="foto-num">06</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-7.jpg');"><span class="foto-num">07</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-8.jpg');"><span class="foto-num">08</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-9.jpg');"><span class="foto-num">09</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-10.jpg');"><span class="foto-num">10</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-11.jpg');"><span class="foto-num">11</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-12.jpg');"><span class="foto-num">12</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-13.jpg');"><span class="foto-num">13</span></div>
+      <div class="foto-tile" style="background-image:url('assets/namiot-14.jpg');"><span class="foto-num">14</span></div>
+    </div>
+
+    <!-- ========== NASZYWKI ========== -->
+    <div class="eyebrow" style="margin-top:40px;">naszywka · patch · thermo / haftowana · 70mm</div>
+    <div class="naszywka-row">
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>naszywka · żarówka</span><span class="dim">70 mm</span></div>
+        <div class="naszywka">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 C8 7 8 11 12 15 C16 11 16 7 12 3 Z"/><line x1="12" y1="15" x2="12" y2="21" stroke-width="2"/></svg>
+          <div class="nsz-top">wolny</div>
+          <div class="nsz-mid"><em>namiot</em></div>
+          <div class="nsz-bot">est · 2020</div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>naszywka · trawa</span><span class="dim">70 mm</span></div>
+        <div class="naszywka nsz-trawa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 L21 12 L18 12 L18 21 L6 21 L6 12 L3 12 Z"/></svg>
+          <div class="nsz-top">jędrzejów</div>
+          <div class="nsz-mid"><em>ekipa</em></div>
+          <div class="nsz-bot">100 km dookoła</div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>naszywka · pomidor</span><span class="dim">70 mm</span></div>
+        <div class="naszywka nsz-pomidor">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+          <div class="nsz-top">sezon</div>
+          <div class="nsz-mid"><em>2026</em></div>
+          <div class="nsz-bot">wolny namiot</div>
+        </div>
+      </div>
+      <div class="pakiet-item">
+        <div class="pakiet-label"><span>naszywka · granat</span><span class="dim">70 mm</span></div>
+        <div class="naszywka nsz-granat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18 C6 12 9 12 12 18 M12 18 C15 12 18 12 21 18"/></svg>
+          <div class="nsz-top">ślub? protest?</div>
+          <div class="nsz-mid"><em>obojętnie</em></div>
+          <div class="nsz-bot">wolny namiot</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="girlanda"></div>
+
+<footer style="background:var(--atrament);color:var(--plotno);padding:60px 0;">
+  <div class="container">
+    <div style="font-family:'Archivo Black',sans-serif;font-size:80px;text-transform:lowercase;letter-spacing:-0.04em;line-height:0.9;">wolny<br/><em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--ogien);">namiot.</em></div>
+    <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:22px;color:rgba(238,232,220,0.7);margin-top:24px;">— brand system v2 · odtworzony z transkryptu claude design · 18.04.2026</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(238,232,220,0.4);margin-top:40px;letter-spacing:1px;text-transform:lowercase;">© 2026 wolny namiot · 796 886 222 · kontakt@wolnynamiot.pl · 11 listopada 27, 28-300 jędrzejów</div>
+  </div>
+</footer>
+
+</body>
+</html>

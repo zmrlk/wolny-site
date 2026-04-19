@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>wolny namiot — brand system v0.3 (neo-biesiada)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* PALETA NEO-BIESIADA — nazwy z biesiady */
+  --plotno: #EEE8DC;       /* płótno — tło, surowy len namiotu */
+  --plotno-soft: #F5F1E6;
+  --atrament: #0A0A0A;     /* atrament — tekst plakatu */
+  --atrament-soft: #2A2A2A;
+  --trawa: #5A6234;        /* trawa — zieleń polowa, namiot w ogrodzie */
+  --ogien: #C34A1F;        /* ogień — rdza, grill, akcent mocny */
+  --ogien-dark: #8F2E10;
+  --zarowka: #F5C518;      /* żarówka — girlanda pod namiotem */
+  --wesele: #E8A5A0;       /* wesele — różany pył, delikatny akcent */
+  --radius: 0;             /* brand ma kanty */
+  --radius-soft: 2px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Archivo', -apple-system, sans-serif;
+  color: var(--atrament);
+  background: var(--plotno);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-transform: none;
+}
+
+.display { font-family: 'Archivo Black', sans-serif; letter-spacing: -0.03em; }
+.italic-serif { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: lowercase; color: var(--atrament-soft); font-weight: 500; }
+
+/* ========== GIRLANDA ŻARÓWEK MOTYW ========== */
+.girlanda {
+  height: 6px;
+  background-image:
+    radial-gradient(circle at 40px 3px, var(--zarowka) 3.5px, transparent 4px),
+    radial-gradient(circle at 120px 3px, var(--ogien) 3.5px, transparent 4px),
+    radial-gradient(circle at 200px 3px, var(--zarowka) 3.5px, transparent 4px),
+    radial-gradient(circle at 280px 3px, var(--wesele) 3.5px, transparent 4px),
+    radial-gradient(circle at 360px 3px, var(--zarowka) 3.5px, transparent 4px),
+    radial-gradient(circle at 440px 3px, var(--ogien) 3.5px, transparent 4px),
+    linear-gradient(to bottom, transparent 2px, var(--atrament) 2px, var(--atrament) 3px, transparent 3px);
+  background-size: 480px 6px;
+  background-repeat: repeat-x;
+}
+
+/* ========== HEADER ========== */
+.page-header {
+  padding: 40px 0 20px;
+  background: var(--atrament);
+  color: var(--plotno);
+}
+.page-header h1 { font-family: 'Archivo Black', sans-serif; font-size: 52px; letter-spacing: -0.03em; line-height: 0.95; text-transform: lowercase; }
+.page-header h1 em { color: var(--ogien); font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; }
+.page-header p { margin-top: 12px; color: rgba(238,232,220,0.7); max-width: 640px; font-size: 14px; }
+.page-header .eyebrow { color: var(--zarowka); }
+
+section { padding: 72px 0; border-bottom: 1px solid rgba(10,10,10,0.1); }
+section > .container > h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 40px;
+  text-transform: lowercase;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+section > .container > h2 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--ogien); text-transform: none; }
+section > .container > .section-intro { color: var(--atrament-soft); margin-bottom: 40px; max-width: 720px; font-size: 15px; }
+
+/* ========== LOGO ========== */
+.logo-row { display: flex; gap: 60px; align-items: center; flex-wrap: wrap; }
+.logo-main {
+  font-family: 'Archivo Black', sans-serif; font-size: 72px; letter-spacing: -0.04em; line-height: 1; text-transform: lowercase;
+}
+.logo-main em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; letter-spacing: -0.02em; }
+.logo-main.invert { background: var(--atrament); color: var(--plotno); padding: 28px 40px; }
+.logo-main.invert em { color: var(--ogien); }
+.logo-main.fire { color: var(--ogien); }
+.sygnet { width: 80px; height: 80px; display: inline-block; }
+.sygnet svg { display: block; }
+
+/* ========== SLOGANS ========== */
+.slogans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.slogan {
+  padding: 40px 32px; min-height: 180px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.slogan .tier { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; }
+.slogan .text { font-family: 'Archivo Black', sans-serif; font-size: 32px; line-height: 1.0; letter-spacing: -0.02em; text-transform: lowercase; }
+.slogan .text em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; }
+.slogan-1 { background: var(--atrament); color: var(--plotno); }
+.slogan-1 .tier { color: var(--zarowka); }
+.slogan-2 { background: var(--ogien); color: var(--plotno); }
+.slogan-2 .tier { color: rgba(255,255,255,0.7); }
+.slogan-3 { background: var(--plotno-soft); color: var(--atrament); border: 1px solid var(--atrament); }
+.slogan-3 .tier { color: var(--ogien); }
+.slogan-4 { background: var(--trawa); color: var(--plotno); }
+.slogan-4 .tier { color: var(--zarowka); }
+.slogan-5 { background: var(--zarowka); color: var(--atrament); }
+.slogan-5 .tier { color: var(--atrament); }
+.slogan-6 { background: var(--wesele); color: var(--atrament); }
+.slogan-6 .tier { color: var(--ogien-dark); }
+
+/* ========== USE CASES 10 ========== */
+.use-cases { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--atrament); padding: 2px; }
+.use-case {
+  aspect-ratio: 3/4; padding: 20px 18px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative; overflow: hidden;
+}
+.use-case .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; opacity: 0.7; }
+.use-case .name { font-family: 'Archivo Black', sans-serif; font-size: 18px; line-height: 1.0; text-transform: lowercase; letter-spacing: -0.01em; }
+.use-case .size { font-family: 'JetBrains Mono', monospace; font-size: 10px; opacity: 0.7; margin-top: 4px; }
+.uc-bg-trawa { background: var(--trawa); color: var(--plotno); }
+.uc-bg-ogien { background: var(--ogien); color: var(--plotno); }
+.uc-bg-atrament { background: var(--atrament); color: var(--plotno); }
+.uc-bg-atrament .name { color: var(--zarowka); }
+.uc-bg-plotno { background: var(--plotno-soft); color: var(--atrament); border: 1px solid var(--atrament); }
+.uc-bg-zarowka { background: var(--zarowka); color: var(--atrament); }
+.uc-bg-wesele { background: var(--wesele); color: var(--atrament); }
+.uc-bg-wesele .name em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; color: var(--ogien-dark); }
+
+/* ========== COLORS ========== */
+.swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; }
+.swatch { border: 1px solid var(--atrament); }
+.swatch-color { height: 140px; }
+.swatch-body { padding: 14px 16px; background: var(--plotno-soft); border-top: 1px solid var(--atrament); }
+.swatch-name { font-family: 'Archivo Black', sans-serif; text-transform: lowercase; font-size: 16px; letter-spacing: -0.01em; margin-bottom: 2px; }
+.swatch-hex { font-family: 'JetBrains Mono', monospace; color: var(--atrament-soft); font-size: 11px; }
+.swatch-use { font-size: 12px; margin-top: 6px; color: var(--atrament-soft); }
+
+/* ========== TYPOGRAPHY ========== */
+.type-samples { display: grid; gap: 32px; max-width: 960px; }
+.type-row { border-bottom: 2px solid var(--atrament); padding-bottom: 28px; }
+.type-row:last-child { border-bottom: none; }
+.type-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; color: var(--ogien); margin-bottom: 14px; }
+.t-display { font-family: 'Archivo Black', sans-serif; font-size: 96px; letter-spacing: -0.04em; line-height: 0.88; text-transform: lowercase; }
+.t-display em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; color: var(--ogien); }
+.t-h1 { font-family: 'Archivo Black', sans-serif; font-size: 52px; letter-spacing: -0.03em; line-height: 0.95; text-transform: lowercase; }
+.t-h2 { font-family: 'Archivo Black', sans-serif; font-size: 32px; letter-spacing: -0.02em; line-height: 1.0; text-transform: lowercase; }
+.t-italic { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 40px; letter-spacing: -0.01em; line-height: 1.0; color: var(--ogien); }
+.t-h3 { font-family: 'Archivo', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.005em; }
+.t-body { font-family: 'Archivo', sans-serif; font-size: 16px; font-weight: 400; line-height: 1.6; max-width: 640px; }
+.t-caption { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: lowercase; color: var(--atrament-soft); }
+
+/* ========== BUTTONS ========== */
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 28px; border-radius: var(--radius);
+  font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 14px;
+  letter-spacing: 0.04em; text-decoration: none; cursor: pointer; text-transform: lowercase;
+  border: 2px solid transparent; transition: all 0.12s ease;
+}
+.btn-primary { background: var(--atrament); color: var(--plotno); border-color: var(--atrament); }
+.btn-primary:hover { background: var(--ogien); border-color: var(--ogien); }
+.btn-ogien { background: var(--ogien); color: var(--plotno); border-color: var(--ogien); }
+.btn-ogien:hover { background: var(--atrament); border-color: var(--atrament); }
+.btn-outline { background: transparent; color: var(--atrament); border-color: var(--atrament); }
+.btn-outline:hover { background: var(--atrament); color: var(--plotno); }
+
+.tag { display: inline-block; padding: 5px 12px; background: var(--atrament); color: var(--plotno); font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: lowercase; }
+.tag-ogien { background: var(--ogien); }
+.tag-zarowka { background: var(--zarowka); color: var(--atrament); }
+.tag-wesele { background: var(--wesele); color: var(--atrament); }
+.tag-trawa { background: var(--trawa); }
+
+/* ========== NAV ========== */
+.nav-mockup {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 32px; background: var(--plotno);
+  border: 2px solid var(--atrament);
+}
+.nav-logo { font-family: 'Archivo Black', sans-serif; font-size: 26px; letter-spacing: -0.03em; text-transform: lowercase; }
+.nav-logo em { color: var(--ogien); font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: var(--atrament); text-decoration: none; font-size: 14px; font-weight: 500; text-transform: lowercase; letter-spacing: 0.02em; }
+.nav-links a:hover { color: var(--ogien); }
+
+/* ========== HERO ========== */
+.hero-mockup {
+  position: relative; min-height: 640px; overflow: hidden;
+  background: var(--atrament); padding: 0;
+  display: flex; flex-direction: column;
+}
+.hero-ticker {
+  background: var(--zarowka); color: var(--atrament);
+  padding: 10px 0; overflow: hidden;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: lowercase; font-weight: 600;
+  white-space: nowrap;
+}
+.hero-ticker .scroll { display: inline-block; }
+.hero-ticker .scroll span { margin: 0 24px; }
+.hero-main { padding: 50px 60px 40px; color: var(--plotno); flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.hero-main .eyebrow { color: var(--ogien); }
+.hero-main h1 {
+  font-family: 'Archivo Black', sans-serif; font-size: 132px;
+  letter-spacing: -0.05em; line-height: 0.85; margin: 20px 0 16px;
+  text-transform: lowercase;
+}
+.hero-main h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; color: var(--ogien); letter-spacing: -0.02em; }
+.hero-main .tagline { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 34px; color: var(--zarowka); margin-bottom: 32px; letter-spacing: -0.01em; }
+.hero-main .lead { font-size: 17px; max-width: 600px; line-height: 1.5; color: rgba(238,232,220,0.85); margin-bottom: 28px; }
+.hero-usecases { display: flex; gap: 6px; margin-bottom: 28px; flex-wrap: wrap; }
+.hero-usecases .tag { background: rgba(255,255,255,0.1); color: var(--plotno); border: 1px solid rgba(255,255,255,0.2); }
+
+/* ========== ROBIMY / NIE ROBIMY ========== */
+.robimy { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--atrament); padding: 2px; }
+.robimy-box { padding: 40px 32px; }
+.robimy-tak { background: var(--trawa); color: var(--plotno); }
+.robimy-nie { background: var(--plotno-soft); color: var(--atrament); }
+.robimy-box h3 { font-family: 'Archivo Black', sans-serif; font-size: 32px; text-transform: lowercase; margin-bottom: 20px; letter-spacing: -0.02em; }
+.robimy-box h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; }
+.robimy-box ul { list-style: none; }
+.robimy-box li { padding: 8px 0; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+.robimy-nie li { border-bottom-color: rgba(10,10,10,0.1); }
+.robimy-box li:before { content: '→ '; font-family: 'JetBrains Mono', monospace; color: var(--zarowka); }
+.robimy-nie li:before { content: '× '; color: var(--ogien); }
+
+/* ========== SERVICES ========== */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px; }
+.card-service {
+  background: var(--plotno-soft); padding: 36px 32px;
+  border: 2px solid var(--atrament);
+  transition: all 0.12s ease;
+}
+.card-service:hover { background: var(--atrament); color: var(--plotno); }
+.card-service:hover h3 { color: var(--ogien); }
+.card-service:hover h3 em { color: var(--zarowka); }
+.card-service .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ogien); font-weight: 600; letter-spacing: 2px; }
+.card-service h3 { font-family: 'Archivo Black', sans-serif; font-size: 26px; text-transform: lowercase; margin: 14px 0 12px; line-height: 1.0; letter-spacing: -0.02em; }
+.card-service h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; color: var(--ogien); }
+.card-service p { font-size: 14px; line-height: 1.55; }
+.card-service .price { font-family: 'JetBrains Mono', monospace; margin-top: 18px; font-size: 13px; color: var(--atrament-soft); }
+.card-service:hover .price { color: var(--zarowka); }
+
+/* ========== STATS ========== */
+.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--atrament); color: var(--plotno); border: 2px solid var(--atrament); }
+.stat { padding: 36px 28px; border-right: 1px solid rgba(255,255,255,0.1); }
+.stat:last-child { border-right: none; }
+.stat-num { font-family: 'Archivo Black', sans-serif; font-size: 64px; letter-spacing: -0.04em; line-height: 0.95; color: var(--ogien); }
+.stat-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--plotno); margin-top: 10px; letter-spacing: 1px; text-transform: lowercase; }
+
+/* ========== FOOTER ========== */
+.footer-mockup { background: var(--atrament); color: var(--plotno); padding: 60px 40px 30px; }
+.footer-mockup h3 { font-family: 'Archivo Black', sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: lowercase; color: var(--ogien); margin-bottom: 16px; }
+.footer-mockup .fg-split { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(238,232,220,0.15); }
+.footer-mockup .brand-h { font-family: 'Archivo Black', sans-serif; font-size: 48px; text-transform: lowercase; margin-bottom: 14px; line-height: 0.95; letter-spacing: -0.04em; }
+.footer-mockup .brand-h em { color: var(--ogien); font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; }
+.footer-mockup .brand-p { color: rgba(238,232,220,0.7); font-size: 14px; max-width: 320px; font-style: italic; font-family: 'Instrument Serif', serif; font-size: 18px; }
+.footer-mockup ul { list-style: none; }
+.footer-mockup ul li { padding: 4px 0; font-size: 13px; color: rgba(238,232,220,0.85); text-transform: lowercase; }
+.footer-mockup .legal { padding-top: 22px; font-size: 11px; color: rgba(238,232,220,0.5); display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; text-transform: lowercase; }
+
+.spacer { height: 80px; }
+@media (max-width: 900px) {
+  .use-cases { grid-template-columns: repeat(2, 1fr); }
+  .slogans { grid-template-columns: 1fr; }
+  .swatches { grid-template-columns: repeat(2, 1fr); }
+  .hero-main h1 { font-size: 64px; }
+  .t-display { font-size: 48px; }
+  .page-header h1 { font-size: 32px; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .footer-mockup .fg-split { grid-template-columns: 1fr; }
+  .robimy { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="girlanda"></div>
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">wolny namiot · brand system v0.3 · neo-biesiada</span>
+    <h1>wolny namiot<br/>to może być<br/><em>twoja impreza.</em></h1>
+    <p>System wizualny zbudowany z transkryptu claude design + v0.2 lokalnego. Paleta „płótno trawa ogień żarówka wesele atrament" — polska biesiada, działka, wesele, protest, urodziny psa Burego. Lowercase, ostre kanty, grotesk krzyczy i serif szepcze.</p>
+  </div>
+</header>
+
+<div class="girlanda"></div>
+
+<!-- ============ LOGO ============ -->
+<section>
+  <div class="container">
+    <h2>logo &amp; <em>sygnet</em></h2>
+    <p class="section-intro">Wordmark: Archivo Black lowercase + Instrument Serif italic dla "namiot" (podwójne znaczenie — namiot/słowo). Sygnet: pawilon z lotu ptaka — 2×2 kratki z przekątnymi (nie namiot tipi, tylko prawdziwy pawilon imprezowy).</p>
+    <div class="logo-row">
+      <div class="logo-main">wolny <em>namiot</em></div>
+      <div class="sygnet">
+        <svg viewBox="0 0 80 80" width="80" height="80">
+          <rect x="4" y="4" width="72" height="72" fill="none" stroke="#0A0A0A" stroke-width="3"/>
+          <line x1="40" y1="4" x2="40" y2="76" stroke="#0A0A0A" stroke-width="3"/>
+          <line x1="4" y1="40" x2="76" y2="40" stroke="#0A0A0A" stroke-width="3"/>
+          <line x1="4" y1="4" x2="76" y2="76" stroke="#C34A1F" stroke-width="2"/>
+          <line x1="76" y1="4" x2="4" y2="76" stroke="#C34A1F" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+    <div style="margin-top: 32px;" class="logo-row">
+      <div class="logo-main invert">wolny <em>namiot</em></div>
+      <div class="logo-main fire">wolny <em>namiot</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HERO ============ -->
+<section>
+  <div class="container">
+    <h2>hero — <em>plakat</em> na płot</h2>
+    <p class="section-intro">Pasek żarówka z tickerem okazji. Wielki slogan po lewej, serif italic tagline pod spodem, tagi zastosowań, dwa CTA. Ma wyglądać jak plakat festiwalowy albo plakat na działce.</p>
+    <div class="hero-mockup">
+      <div class="hero-ticker">
+        <div class="scroll">
+          <span>↯ sezon 2026</span>
+          <span>·</span>
+          <span>wolne terminy od maja</span>
+          <span>·</span>
+          <span>jędrzejów + 100 km</span>
+          <span>·</span>
+          <span>wesele · protest · urodziny psa</span>
+          <span>·</span>
+          <span>zadzwoń 796 886 222</span>
+        </div>
+      </div>
+      <div class="hero-main">
+        <span class="eyebrow">est. 2020 · rodzinna · jędrzejów</span>
+        <h1>postaw<br/>gdzie chcesz.<br/><em>zrób co chcesz.</em></h1>
+        <div class="tagline">— wolny namiot to może być twoja impreza.</div>
+        <p class="lead">Wesele, biesiada, urodziny w ogrodzie, spotkanie u działkowca, protest, komunia, urodziny psa Burego, stypa, festyn, chrzciny. Stawiamy gdzie chcesz, zwijamy po sobie, nie pytamy co robisz pod spodem.</p>
+        <div class="hero-usecases">
+          <span class="tag">wesele</span>
+          <span class="tag">biesiada</span>
+          <span class="tag">urodziny</span>
+          <span class="tag">komunia</span>
+          <span class="tag">protest</span>
+          <span class="tag">jarmark</span>
+          <span class="tag">stypa</span>
+          <span class="tag">spotkanie sąsiedzkie</span>
+          <span class="tag">urodziny psa</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-ogien">zadzwoń: 796 886 222</a>
+          <a class="btn btn-outline" style="color:var(--plotno);border-color:var(--plotno);">zobacz realizacje</a>
+        </div>
+      </div>
+      <div class="girlanda"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 SLOGANÓW ============ -->
+<section>
+  <div class="container">
+    <h2>slogany — <em>9</em> kawałków</h2>
+    <p class="section-intro">W 3 poziomach: <strong>primary</strong> (claim główny, hero), <strong>secondary</strong> (pól-żart, social/plakat), <strong>long</strong> (manifest, about page). Do rozsyłania po całym systemie — plakat, koszulka, naklejka, bok furgonetki.</p>
+    <div class="slogans">
+      <div class="slogan slogan-1">
+        <span class="tier">primary · 01</span>
+        <div class="text">postaw gdzie chcesz. <em>zrób co chcesz.</em></div>
+      </div>
+      <div class="slogan slogan-2">
+        <span class="tier">primary · 02</span>
+        <div class="text">wolny namiot <em>—</em><br/>twoja impreza.</div>
+      </div>
+      <div class="slogan slogan-3">
+        <span class="tier">secondary · 03</span>
+        <div class="text">nie padało. <em>i tak by nie padało.</em></div>
+      </div>
+      <div class="slogan slogan-4">
+        <span class="tier">secondary · 04</span>
+        <div class="text">ślub? protest? <em>obojętnie.</em></div>
+      </div>
+      <div class="slogan slogan-5">
+        <span class="tier">secondary · 05</span>
+        <div class="text">nie pytamy <em>co robisz</em> pod spodem.</div>
+      </div>
+      <div class="slogan slogan-6">
+        <span class="tier">long · 06</span>
+        <div class="text" style="font-size:24px;">twój ogród. twoje zasady. <em>nasz namiot.</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 USE CASES ============ -->
+<section>
+  <div class="container">
+    <h2>zastosowania <em>— wszystkie</em></h2>
+    <p class="section-intro">Nie tylko wesele. 10 okazji od festynu po urodziny psa. Każda = inny rozmiar namiotu. Polska biesiada, nie premium-outdoor.</p>
+    <div class="use-cases">
+      <div class="use-case uc-bg-trawa">
+        <span class="num">01</span>
+        <div>
+          <div class="name">biesiada w górach</div>
+          <div class="size">6×12m · 50-80 osób</div>
+        </div>
+      </div>
+      <div class="use-case uc-bg-ogien">
+        <span class="num">02</span>
+        <div>
+          <div class="name">urodziny w ogrodzie</div>
+          <div class="size">4×8m · 30-50 osób</div>
+        </div>
+      </div>
+      <div class="use-case uc-bg-atrament">
+        <span class="num">03</span>
+        <div>
+          <div class="name">protest / zgromadzenie</div>
+          <div class="size">3×3m · pavilion punkt info</div>
+        </div>
+      </div>
+      <div class="use-case uc-bg-plotno">
+        <span class="num">04</span>
+        <div>
+          <div class="name">dom działkowca</div>
+          <div class="size">5×10m · 40-60 osób</div>
+        </div>
+      </div>
+      <div class="use-case uc-bg-zarowka">
+        <span class="num">05</span>
+        <div>
+          <div class="name">wesele<br/><em style="font-family:'Instrument Serif',serif;font-style:italic;text-transform:none;">(tak, też)</em></div>
+          <div class="size">10×20m · 100-150 osób</div>
+        </div>
+      </div>
+      <div class="use-case uc-bg-wesele">
+        <span class="num">06</span>
+        <div>
+          <div class="name">urodziny psa <em>burego</em></div>
+          <div class="size">3×3m · pies i rodzina</div>
+        </div>
+      </div>
+      <div class="use-case uc-bg-trawa">
+        <span class="num">07</span>
+        <div>
+          <div class="name">jarmark / festyn</div>
+          <div class="size">6×12m · kramy + ludzie</div>
+        </div>
+      </div>
+      <div class="use-case uc-bg-atrament">
+        <span class="num">08</span>
+        <div>
+          <div class="name">stypa</div>
+          <div class="size">5×10m · 30-50 osób</div>
+        </div>
+      </div>
+      <div class="use-case uc-bg-ogien">
+        <span class="num">09</span>
+        <div>
+          <div class="name">komunia / chrzciny</div>
+          <div class="size">4×8m · 40-60 osób</div>
+        </div>
+      </div>
+      <div class="use-case uc-bg-zarowka">
+        <span class="num">10</span>
+        <div>
+          <div class="name">event firmowy</div>
+          <div class="size">do 300 osób · branding</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROBIMY / NIE ROBIMY ============ -->
+<section>
+  <div class="container">
+    <h2>robimy / <em>nie robimy</em></h2>
+    <p class="section-intro">Uczciwe granice usługi. Wynajem namiotu + podłoga + oświetlenie + dowóz. Wszystko inne — organizujesz sam. Nie udajemy agencji eventowej.</p>
+    <div class="robimy">
+      <div class="robimy-box robimy-tak">
+        <h3>robimy</h3>
+        <ul>
+          <li>wynajem namiotu (30-300 osób)</li>
+          <li>dowóz w promieniu 100 km od jędrzejowa</li>
+          <li>montaż i demontaż</li>
+          <li>podłogę drewnianą</li>
+          <li>oświetlenie podstawowe</li>
+          <li>boki ścian zamykane (wiatr/deszcz)</li>
+          <li>stoły i krzesła (Chiavari, bankietowe)</li>
+          <li>nagrzewnice (jesień/zima)</li>
+          <li>bezpłatną wizję lokalną</li>
+        </ul>
+      </div>
+      <div class="robimy-box robimy-nie">
+        <h3>nie <em>robimy</em></h3>
+        <ul>
+          <li>cateringu (mamy zaprzyjaźnionych)</li>
+          <li>DJ-a / muzyki</li>
+          <li>koordynacji eventu</li>
+          <li>dekoracji kwiatowych</li>
+          <li>fotografii</li>
+          <li>napojów / alkoholu</li>
+          <li>pozwoleń / urzędów</li>
+          <li>obsługi kelnerskiej</li>
+          <li>klimatyzacji (lato: boki + zacienienie)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALETA ============ -->
+<section>
+  <div class="container">
+    <h2>paleta — <em>biesiadna</em></h2>
+    <p class="section-intro">6 kolorów z nazwami biesiady. Płótno + atrament = baza. Ogień = akcent CTA. Trawa = outdoor. Żarówka + wesele = dwa akcenty imprezowe.</p>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#EEE8DC;"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">płótno</div>
+          <div class="swatch-hex">#EEE8DC</div>
+          <div class="swatch-use">tło, len namiotu</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0A0A0A;"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">atrament</div>
+          <div class="swatch-hex">#0A0A0A</div>
+          <div class="swatch-use">tekst, plakat</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C34A1F;"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">ogień</div>
+          <div class="swatch-hex">#C34A1F</div>
+          <div class="swatch-use">akcent, CTA, italic</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#5A6234;"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">trawa</div>
+          <div class="swatch-hex">#5A6234</div>
+          <div class="swatch-use">outdoor, natura</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F5C518;"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">żarówka</div>
+          <div class="swatch-hex">#F5C518</div>
+          <div class="swatch-use">girlanda, ticker</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#E8A5A0;"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">wesele</div>
+          <div class="swatch-hex">#E8A5A0</div>
+          <div class="swatch-use">różany akcent</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TYPOGRAFIA ============ -->
+<section>
+  <div class="container">
+    <h2>typografia — <em>3 fonty</em></h2>
+    <p class="section-intro">Archivo Black (grotesk krzyczy) + Instrument Serif italic (serif szepcze) + JetBrains Mono (utility). Wszystkie lowercase. Wszystkie darmowe Google Fonts.</p>
+    <div class="type-samples">
+      <div class="type-row">
+        <div class="type-label">display · archivo black + instrument serif italic · 96px</div>
+        <div class="t-display">postaw gdzie chcesz. <em>zrób co chcesz.</em></div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">h1 · archivo black · 52px · lowercase</div>
+        <div class="t-h1">wolny namiot — twoja impreza.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">italic · instrument serif italic · 40px</div>
+        <div class="t-italic">— wolny namiot to może być twoja impreza.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">h2 · archivo black · 32px · lowercase</div>
+        <div class="t-h2">co robi wolny namiot</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">body · archivo 400 · 16px</div>
+        <div class="t-body">jędrzejów, świętokrzyskie, 100 km dookoła. wynajem namiotów 30-300 osób. nie udajemy eleganckich dostawców. robimy robotę — ładnie, na czas, bez cyrku.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">caption · jetbrains mono · 12px · lowercase</div>
+        <div class="t-caption">est. 2020 · jędrzejów · polska</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NAV ============ -->
+<section>
+  <div class="container">
+    <h2>nav</h2>
+    <div class="nav-mockup">
+      <div class="nav-logo">wolny <em>namiot</em></div>
+      <div class="nav-links">
+        <a href="#">namioty</a>
+        <a href="#">zastosowania</a>
+        <a href="#">cennik</a>
+        <a href="#">realizacje</a>
+        <a href="#">kontakt</a>
+      </div>
+      <a class="btn btn-primary" style="padding:12px 20px;font-size:12px;">796 886 222</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRZYCISKI ============ -->
+<section>
+  <div class="container">
+    <h2>przyciski &amp; <em>tagi</em></h2>
+    <p class="section-intro">Ostre kanty, uppercase → lowercase pivot. Tagi mono-font z kolorami palety.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary">zadzwoń 796 886 222</a>
+      <a class="btn btn-ogien">rezerwuj sezon 2026</a>
+      <a class="btn btn-outline">zobacz realizacje</a>
+    </div>
+    <div style="margin-top:28px;display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="tag">sezon 2026</span>
+      <span class="tag tag-ogien">wolne terminy</span>
+      <span class="tag tag-zarowka">↯ ostatnie miejsca</span>
+      <span class="tag tag-trawa">outdoor ready</span>
+      <span class="tag tag-wesele">wedding friendly</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KARTY USŁUG ============ -->
+<section>
+  <div class="container">
+    <h2>karty — <em>namioty</em></h2>
+    <div class="grid-3">
+      <div class="card-service">
+        <div class="num">01 · małe</div>
+        <h3>namiot <em>3×3m</em></h3>
+        <p>Pawilon na ogródek, grill, punkt info, urodziny psa. Szybki montaż, cena od 200 zł/dzień.</p>
+        <div class="price">od 200 zł / dobę</div>
+      </div>
+      <div class="card-service">
+        <div class="num">02 · średnie</div>
+        <h3>namiot <em>6×12m</em></h3>
+        <p>Biesiada działkowiczów, jarmark, urodziny 40-60 osób. Podłoga + oświetlenie w cenie.</p>
+        <div class="price">od 900 zł / weekend</div>
+      </div>
+      <div class="card-service">
+        <div class="num">03 · duże</div>
+        <h3>namiot <em>10×20m</em></h3>
+        <p>Wesele, komunia, event firmowy 100-150 osób. Pełny pakiet, bez niespodzianek kosztowych.</p>
+        <div class="price">od 1 100 zł / weekend</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section>
+  <div class="container">
+    <h2>stats</h2>
+    <div class="stats-bar">
+      <div class="stat">
+        <div class="stat-num">80+</div>
+        <div class="stat-label">eventów rocznie</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5★</div>
+        <div class="stat-label">ocena google</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100km</div>
+        <div class="stat-label">zasięg z jędrzejowa</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">30-300</div>
+        <div class="stat-label">gości w namiocie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<section>
+  <div class="container">
+    <h2>stopka</h2>
+    <div class="girlanda" style="margin-bottom:0;"></div>
+    <div class="footer-mockup">
+      <div class="fg-split">
+        <div>
+          <div class="brand-h">wolny<br/><em>namiot</em></div>
+          <p class="brand-p">postaw gdzie chcesz. zrób co chcesz.</p>
+        </div>
+        <div>
+          <h3>zastosowania</h3>
+          <ul>
+            <li>wesele</li>
+            <li>biesiada</li>
+            <li>urodziny</li>
+            <li>komunia</li>
+            <li>protest</li>
+            <li>firma</li>
+          </ul>
+        </div>
+        <div>
+          <h3>firma</h3>
+          <ul>
+            <li>o nas</li>
+            <li>realizacje</li>
+            <li>cennik</li>
+            <li>faq</li>
+          </ul>
+        </div>
+        <div>
+          <h3>kontakt</h3>
+          <ul>
+            <li><strong>796 886 222</strong></li>
+            <li>kontakt@wolnynamiot.pl</li>
+            <li>11 listopada 27</li>
+            <li>28-300 jędrzejów</li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 wolny namiot · nip xxx-xxx-xx-xx</span>
+        <span>polityka prywatności · regulamin</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="girlanda"></div>
+<div class="spacer"></div>
+
+</body>
+</html>

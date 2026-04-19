@@ -1,0 +1,94 @@
+# wolny namiot — robots.txt
+# wolnynamiot.pl · ostatnia aktualizacja 2026-04-19
+
+# === OGÓLNI BOCI SEO ===
+User-agent: *
+Allow: /
+
+# Pliki techniczne (brandbook, prototypy) — nie indeksować
+Disallow: /brand-system-print.html
+Disallow: /brand-system-v2-recovery.html
+Disallow: /visual-system.html
+Disallow: /landing.html
+Disallow: /PROMPT-*.md
+
+# === AI AGENT CRAWLERS (GEO · Generative Engine Optimization) ===
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google AI (Gemini, Bard, Google-Extended dla AI Overview)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Microsoft Copilot / Bing AI
+User-agent: bingbot
+Allow: /
+
+# Common Crawl (używany przez wiele modeli do trenowania)
+User-agent: CCBot
+Allow: /
+
+# Apple (Applebot-Extended dla AI)
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta / Facebook AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Cohere / You.com / Diffbot / inne
+User-agent: Diffbot
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# === SITEMAPS ===
+Sitemap: https://wolnynamiot.pl/sitemap.xml
+
+# === LLMS.TXT (dla AI agentów — ludzkie podsumowanie strony) ===
+# Zobacz: https://wolnynamiot.pl/llms.txt
+
+# === DOMYŚLNE OPÓŹNIENIE ===
+Crawl-delay: 1
