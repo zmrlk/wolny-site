@@ -57,7 +57,7 @@
           "name": "Ekspres 4,5 × 3 m + stoły",
           "dimensions": {"length_m": 4.5, "width_m": 3, "area_m2": 13.5},
           "capacity": {"people_min": 10, "people_max": 25},
-          "price_brutto_pln": 250,
+          "price_brutto_pln": 400,
           "includes": ["namiot", "boki", "stoły prostokątne", "krzesła plastikowe"],
           "delivery": "self-pickup",
           "sku": "EKS-4.5x3-STL"
@@ -66,7 +66,7 @@
           "name": "Ekspres 6 × 3 m + stoły",
           "dimensions": {"length_m": 6, "width_m": 3, "area_m2": 18},
           "capacity": {"people_min": 15, "people_max": 30},
-          "price_brutto_pln": 400,
+          "price_brutto_pln": 800,
           "includes": ["namiot", "boki", "stoły prostokątne", "krzesła plastikowe"],
           "delivery": "self-pickup",
           "sku": "EKS-6x3-STL"
@@ -148,7 +148,7 @@
     "Dowóz do 100 km od Jędrzejowa w cenie (Kielce, Częstochowa, Kraków). Dalej — dopłata 3-5 zł/km (Łódź, Lublin, Rzeszów, Zakopane).",
     "Przy dłuższych imprezach (2+ dni) dopłata 30-50% ceny bazowej za każdy dodatkowy dzień.",
     "Rabaty dla stałych klientów, stowarzyszeń, ROD-ów, OSP.",
-    "Ekspresowe namioty (odbiór własny) — samodzielny montaż, 15-20 minut, 2 osoby.",
+    "Ekspresowe namioty (odbiór własny) — samodzielny montaż, 15-20 minut, 2 osoby. Rozmiary: 4,5×3m oraz 6×3m.",
     "Duże namioty — my stawiamy i demontujemy, czas montażu 2-4h.",
     "Dostępność ekspresowa często w 12-24h od telefonu (zależnie od sezonu)."
   ],

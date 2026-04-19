@@ -20,8 +20,8 @@
 |---|---|---|---|
 | Ekspres | 4,5 × 3 m | **150 zł** | Odbiór własny, popup, samodzielny montaż |
 | Ekspres | 6 × 3 m | **200 zł** | Odbiór własny |
-| Ekspres + stoły | 4,5 × 3 m | **250 zł** | Odbiór własny, ze stołami i krzesłami |
-| Ekspres + stoły | 6 × 3 m | **400 zł** | Odbiór własny, pełen pakiet |
+| Ekspres + stoły | 4,5 × 3 m | **400 zł** | Odbiór własny, ze stołami i krzesłami |
+| Ekspres + stoły | 6 × 3 m | **800 zł** | Odbiór własny, pełen pakiet |
 | Duży z montażem | 4 × 8 m | **800 zł** | Do 50 os., my stawiamy |
 | Duży z montażem | 5 × 10 m | **850 zł** | Do 60 os., my stawiamy |
 | Duży z montażem | 6 × 12 m | **900 zł** | Do 80 os., my stawiamy |
@@ -33,10 +33,10 @@
 
 1. **Biesiada w górach** — 6×12m, 50-80 os., 900-1400 zł. [Szczegóły](https://wolnynamiot.pl/okazje/biesiada-w-gorach.html)
 2. **Urodziny w ogrodzie** — 4×8m, 30-50 os., 800-1200 zł (od 200 zł ekspres). [Szczegóły](https://wolnynamiot.pl/okazje/urodziny-w-ogrodzie.html)
-3. **Protest / zgromadzenie** — 3×3m ekspres, punkt info, 150-250 zł. [Szczegóły](https://wolnynamiot.pl/okazje/protest.html)
+3. **Protest / zgromadzenie** — 4,5×3m ekspres, punkt info, 150-250 zł. [Szczegóły](https://wolnynamiot.pl/okazje/protest.html)
 4. **Dom działkowca / ROD** — 5×10m, 40-60 os., 850-1300 zł. [Szczegóły](https://wolnynamiot.pl/okazje/dom-dzialkowca.html)
 5. **Uroczystości rodzinne** (wesele, komunia, chrzciny, stypa) — 800-1400 zł. [Szczegóły](https://wolnynamiot.pl/okazje/uroczystosci-rodzinne.html)
-6. **Rodzinne z psem** — kameralnie, 3×3m lub 4.5×3m, 150-250 zł. [Szczegóły](https://wolnynamiot.pl/okazje/rodzinne-z-psem.html)
+6. **Rodzinne z psem** — kameralnie, 4,5×3m lub 6×3m, 150-250 zł. [Szczegóły](https://wolnynamiot.pl/okazje/rodzinne-z-psem.html)
 7. **Jarmark / festyn** — pakiety 5-10 namiotów dla OSP/gmin/parafii, 1600-5000 zł. [Szczegóły](https://wolnynamiot.pl/okazje/jarmark-festyn.html)
 8. **Event firmowy** — do 300 os. (10×20m), FV na NIP, termin 14-30 dni. [Szczegóły](https://wolnynamiot.pl/okazje/event-firmowy.html)
 

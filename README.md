@@ -32,10 +32,10 @@ wolny-namiot-site/
     ├── shared.css                      # wspólny stylesheet podstron
     ├── biesiada-w-gorach.html         # 6×12m, 50-80 os.
     ├── urodziny-w-ogrodzie.html       # 4×8m, 30-50 os.
-    ├── protest.html                   # 3×3m ekspres, punkt info
+    ├── protest.html                   # 4,5×3m ekspres, punkt info
     ├── dom-dzialkowca.html            # 5×10m, 40-60 os., ROD
     ├── uroczystosci-rodzinne.html     # wesele, komunia, chrzciny, stypa
-    ├── rodzinne-z-psem.html           # 3×3m, kameralnie
+    ├── rodzinne-z-psem.html           # 4,5×3m, kameralnie
     ├── jarmark-festyn.html            # pakiety OSP / gmin
     └── event-firmowy.html             # B2B, do 300 os.
 ```
@@ -113,4 +113,4 @@ Własność: wolny namiot. Kod open source do celów edukacyjnych.
 
 ---
 
-**Rodzinna firma z Jędrzejowa. Pierwszy sezon 2025 za nami. 20+ eventów, 4.9★ Google.**
+**Rodzinna firma z Jędrzejowa. Pierwszy sezon 2025 za nami. 20+ eventów, 5.0★ pierwsza opinia Google.**

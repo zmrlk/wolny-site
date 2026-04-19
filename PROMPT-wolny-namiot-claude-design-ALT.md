@@ -4,7 +4,7 @@ Skopiuj całość poniżej i wklej jako pierwszą wiadomość w nowym projekcie 
 
 ---
 
-Robimy **brand system dla wolnynamiot.pl** — polska rodzinna wypożyczalnia namiotów imprezowych z Jędrzejowa (województwo świętokrzyskie). Namioty 3×3 do 15×30 na **wesele, biesiadę, urodziny w ogrodzie, spotkanie u działkowca, protest, komunię, festyn, urodziny psa Burego, stypę, event firmowy** — pełne spektrum polskich okazji, od wesela po protest.
+Robimy **brand system dla wolnynamiot.pl** — polska rodzinna wypożyczalnia namiotów imprezowych z Jędrzejowa (województwo świętokrzyskie). Namioty 4,5×3 do 12×6 na **wesele, biesiadę, urodziny w ogrodzie, spotkanie u działkowca, protest, komunię, festyn, urodziny psa Burego, stypę, event firmowy** — pełne spektrum polskich okazji, od wesela po protest.
 
 ## DNA marki
 
@@ -91,10 +91,10 @@ Zero pomarańczowego. Zero różowego. Zero szarości. Wszystkie kolory o pełne
 |---|---|---|---|
 | 01 | biesiada w górach | 6×12m | 50-80 |
 | 02 | urodziny w ogrodzie | 4×8m | 30-50 |
-| 03 | protest / zgromadzenie | 3×3m | punkt info |
+| 03 | protest / zgromadzenie | 4,5×3m | punkt info |
 | 04 | dom działkowca | 5×10m | 40-60 |
 | 05 | wesele (tak, też) | 10×20m | 100-150 |
-| 06 | urodziny psa burego | 3×3m | pies i rodzina |
+| 06 | urodziny psa burego | 4,5×3m | pies i rodzina |
 | 07 | jarmark / festyn | 6×12m | kramy + ludzie |
 | 08 | stypa | 5×10m | 30-50 |
 | 09 | komunia / chrzciny | 4×8m | 40-60 |
