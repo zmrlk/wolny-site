@@ -1,0 +1,56 @@
+{
+  "@context": "https://schema.org",
+  "@type": "APICatalog",
+  "name": "wolny namiot API catalog",
+  "description": "Katalog publicznych endpointów wolnynamiot.pl dla agentów AI i klientów.",
+  "version": "1.0.0",
+  "lastUpdated": "2026-04-19",
+  "links": [
+    {
+      "rel": "service-desc",
+      "href": "https://wolnynamiot.pl/llms.txt",
+      "type": "text/markdown",
+      "title": "Pełne podsumowanie serwisu dla LLM"
+    },
+    {
+      "rel": "pricing",
+      "href": "https://wolnynamiot.pl/cennik.json",
+      "type": "application/json",
+      "title": "Machine-readable cennik (schema.org PriceSpecification)"
+    },
+    {
+      "rel": "sitemap",
+      "href": "https://wolnynamiot.pl/sitemap.xml",
+      "type": "application/xml",
+      "title": "Mapa strony z obrazami"
+    },
+    {
+      "rel": "contact",
+      "href": "mailto:kontakt@wolnynamiot.pl",
+      "title": "E-mail kontaktowy"
+    },
+    {
+      "rel": "tel",
+      "href": "tel:+48796886222",
+      "title": "Telefon"
+    },
+    {
+      "rel": "reservation-form",
+      "href": "https://wolnynamiot.pl/#formularz",
+      "type": "text/html",
+      "title": "Formularz rezerwacji (POST do formsubmit.co)"
+    }
+  ],
+  "resources": {
+    "pricing": "https://wolnynamiot.pl/cennik.json",
+    "summary": "https://wolnynamiot.pl/llms.txt",
+    "sitemap": "https://wolnynamiot.pl/sitemap.xml"
+  },
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "wolny namiot",
+    "url": "https://wolnynamiot.pl/",
+    "telephone": "+48796886222",
+    "email": "kontakt@wolnynamiot.pl"
+  }
+}
