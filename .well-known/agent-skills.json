@@ -1,0 +1,80 @@
+{
+  "@context": "https://schema.org",
+  "@type": "AgentSkills",
+  "version": "1.0.0",
+  "provider": {
+    "name": "wolny namiot",
+    "url": "https://wolnynamiot.pl/",
+    "contact": "kontakt@wolnynamiot.pl"
+  },
+  "description": "Umiejętności agenta AI dostępne dla serwisu wolnynamiot.pl. Agenci mogą sprawdzać dostępność, pobierać cennik, składać zapytania rezerwacyjne oraz czytać treść strony.",
+  "skills": [
+    {
+      "id": "get-pricing",
+      "name": "Pobierz cennik",
+      "description": "Pobierz pełny cennik wynajmu namiotów (9 rozmiarów, 4 kategorie: ekspres odbiór własny, ekspres+stoły, duże z montażem, duże+stoły+krzesła).",
+      "endpoint": "https://wolnynamiot.pl/cennik.json",
+      "method": "GET",
+      "response_type": "application/json",
+      "schema": "https://schema.org/PriceSpecification",
+      "parameters": []
+    },
+    {
+      "id": "get-summary",
+      "name": "Pobierz podsumowanie firmy",
+      "description": "Pobierz markdown'owe podsumowanie firmy, oferty, kontaktu i FAQ w formacie przyjaznym dla LLM.",
+      "endpoint": "https://wolnynamiot.pl/llms.txt",
+      "method": "GET",
+      "response_type": "text/markdown",
+      "parameters": []
+    },
+    {
+      "id": "get-sitemap",
+      "name": "Pobierz mapę strony",
+      "description": "Pobierz XML sitemap ze wszystkimi stronami i powiązanymi obrazami.",
+      "endpoint": "https://wolnynamiot.pl/sitemap.xml",
+      "method": "GET",
+      "response_type": "application/xml",
+      "parameters": []
+    },
+    {
+      "id": "submit-reservation",
+      "name": "Wyślij zapytanie rezerwacyjne",
+      "description": "Wyślij formularz zapytania o rezerwację namiotu. Backend: formsubmit.co, klient zostanie powiadomiony e-mailem.",
+      "endpoint": "https://formsubmit.co/kontakt@wolnynamiot.pl",
+      "method": "POST",
+      "content_type": "application/x-www-form-urlencoded",
+      "parameters": [
+        {"name": "imię", "type": "string", "required": true, "description": "Imię i nazwisko klienta"},
+        {"name": "telefon", "type": "string", "required": true, "description": "Numer telefonu do kontaktu"},
+        {"name": "email", "type": "string", "required": false, "description": "E-mail klienta (opcjonalnie)"},
+        {"name": "data", "type": "date", "required": true, "description": "Data eventu (YYYY-MM-DD)"},
+        {"name": "okazja", "type": "string", "required": true, "enum": ["wesele", "urodziny", "komunia-chrzciny", "stypa", "jarmark-festyn", "event-firmowy", "biesiada", "protest", "rod-dzialka", "inne"]},
+        {"name": "osoby", "type": "string", "required": true, "enum": ["do-30", "30-50", "50-80", "80-150", "150-300", "300+"]},
+        {"name": "miejsce", "type": "string", "required": false, "description": "Miejsce eventu (miasto / wieś)"},
+        {"name": "komentarz", "type": "string", "required": false, "description": "Dodatkowe informacje"}
+      ]
+    },
+    {
+      "id": "read-occasion",
+      "name": "Przeczytaj szczegóły okazji",
+      "description": "Pobierz szczegółową stronę dla konkretnego typu okazji (rozmiar, cena, FAQ).",
+      "base_endpoint": "https://wolnynamiot.pl/okazje/",
+      "method": "GET",
+      "response_type": "text/html",
+      "available_paths": [
+        "biesiada-w-gorach.html",
+        "urodziny-w-ogrodzie.html",
+        "protest.html",
+        "dom-dzialkowca.html",
+        "uroczystosci-rodzinne.html",
+        "rodzinne-z-psem.html",
+        "jarmark-festyn.html",
+        "event-firmowy.html"
+      ]
+    }
+  ],
+  "authentication": "none",
+  "rate_limits": "brak oficjalnych limitów - zachowaj rozsądek (max 60 req/min)",
+  "contact_for_agents": "kontakt@wolnynamiot.pl"
+}

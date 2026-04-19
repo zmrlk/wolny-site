@@ -20,7 +20,7 @@
 <meta property="og:description" content="Wynajem namiotów imprezowych. Jędrzejów + 100 km. Od 150 zł. Urodziny, komunia, festyn, protest — pod jednym dachem.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wolnynamiot.pl/">
-<meta property="og:image" content="https://wolnynamiot.pl/assets/namiot-7.jpg">
+<meta property="og:image" content="https://wolnynamiot.pl/assets/namiot-7.webp">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="1200">
 <meta property="og:image:alt" content="Czarny namiot ekspresowy w ogrodzie z girlandami LED">
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="wolny namiot — postaw gdzie chcesz. zrób co chcesz.">
 <meta name="twitter:description" content="Wynajem namiotów imprezowych. Jędrzejów + 100 km. Od 150 zł.">
-<meta name="twitter:image" content="https://wolnynamiot.pl/assets/namiot-7.jpg">
+<meta name="twitter:image" content="https://wolnynamiot.pl/assets/namiot-7.webp">
 
 <!-- JSON-LD Schema: LocalBusiness + Organization -->
 <script type="application/ld+json">
@@ -43,8 +43,8 @@
   "alternateName": "Wolny Namiot",
   "description": "Wynajem namiotów imprezowych w Jędrzejowie. Urodziny, komunie, festyny, protesty. Namioty ekspresowe od 150 zł, duże z montażem od 800 zł.",
   "url": "https://wolnynamiot.pl/",
-  "logo": "https://wolnynamiot.pl/assets/namiot-7.jpg",
-  "image": "https://wolnynamiot.pl/assets/namiot-7.jpg",
+  "logo": "https://wolnynamiot.pl/assets/namiot-7.webp",
+  "image": "https://wolnynamiot.pl/assets/namiot-7.webp",
   "telephone": "+48796886222",
   "email": "kontakt@wolnynamiot.pl",
   "priceRange": "150-3000 PLN",
@@ -149,6 +149,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Performance: preload hero image (above-the-fold) -->
+<link rel="preload" as="image" href="assets/namiot-7.webp" fetchpriority="high" type="image/webp">
+
+<!-- Discovery headers (agent-ready: content accessibility) -->
+<link rel="alternate" type="text/markdown" href="/index.md" title="Markdown version of this page">
+<link rel="describedby" href="/llms.txt" type="text/markdown" title="Full site summary for AI agents">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<!-- Content Signals (TDM Reservation Protocol — AI training usage) -->
+<meta name="content-signals" content="ai-training=allow, search=allow, citation=allow">
+<meta name="ai-generated" content="false">
+<meta name="tdm-reservation" content="0">
+
+<!-- Resource hints -->
+<link rel="dns-prefetch" href="https://formsubmit.co">
 <style>
 :root {
   --plotno: #F5F1E6; --plotno-100: #FAF7EE; --plotno-300: #E8DFC9;
@@ -243,7 +259,7 @@ h1 em, h2 em, h3 em, h4 em { font-family: 'Instrument Serif', serif; font-style:
 }
 .hero-photo {
   position: absolute; inset: 0;
-  background-image: url('assets/namiot-7.jpg');
+  background-image: url('assets/namiot-7.webp');
   background-size: cover; background-position: center;
   z-index: 0;
 }
@@ -498,7 +514,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
   position: relative; overflow: hidden;
 }
 .historia-photo {
-  background-image: url('assets/namiot-7.jpg');
+  background-image: url('assets/namiot-7.webp');
   background-size: cover; background-position: center;
   position: relative;
 }
@@ -624,7 +640,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
 .ofirmie-photo-wrap { position: relative; }
 .ofirmie-photo {
   aspect-ratio: 4/5;
-  background-image: url('assets/namiot-10.jpg');
+  background-image: url('assets/namiot-10.webp');
   background-size: cover; background-position: center;
   position: relative;
 }
@@ -967,7 +983,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
     <div class="okazje-grid">
 
       <a href="okazje/biesiada-w-gorach.html" class="okazja" style="background: var(--trawa); color: var(--plotno);">
-        <div class="okazja-photo" style="background-image:url('assets/namiot-3.jpg');"></div>
+        <div class="okazja-photo" style="background-image:url('assets/namiot-3.webp');"></div>
         <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(31,122,63,0.55) 0%, rgba(31,122,63,0.92) 100%);"></div>
         <div class="okazja-head">
           <span class="okazja-num">01</span>
@@ -982,7 +998,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       </a>
 
       <a href="okazje/urodziny-w-ogrodzie.html" class="okazja" style="background: var(--pomidor); color: var(--plotno);">
-        <div class="okazja-photo" style="background-image:url('assets/namiot-5.jpg');"></div>
+        <div class="okazja-photo" style="background-image:url('assets/namiot-5.webp');"></div>
         <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(217,58,31,0.50) 0%, rgba(217,58,31,0.93) 100%);"></div>
         <div class="okazja-head">
           <span class="okazja-num">02</span>
@@ -1023,7 +1039,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       </a>
 
       <a href="okazje/uroczystosci-rodzinne.html" class="okazja" style="background: var(--zarowka); color: var(--atrament);">
-        <div class="okazja-photo" style="background-image:url('assets/namiot-8.jpg');"></div>
+        <div class="okazja-photo" style="background-image:url('assets/namiot-8.webp');"></div>
         <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(249,217,74,0.65) 0%, rgba(249,217,74,0.92) 100%);"></div>
         <div class="okazja-head">
           <span class="okazja-num">05</span>
@@ -1038,7 +1054,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       </a>
 
       <a href="okazje/rodzinne-z-psem.html" class="okazja" style="background: var(--niebo); color: var(--plotno);">
-        <div class="okazja-photo" style="background-image:url('assets/namiot-11.jpg');"></div>
+        <div class="okazja-photo" style="background-image:url('assets/namiot-11.webp');"></div>
         <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(26,143,163,0.50) 0%, rgba(26,143,163,0.92) 100%);"></div>
         <div class="okazja-head">
           <span class="okazja-num">06</span>
@@ -1053,7 +1069,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       </a>
 
       <a href="okazje/jarmark-festyn.html" class="okazja" style="background: var(--burak); color: var(--plotno);">
-        <div class="okazja-photo" style="background-image:url('assets/namiot-14.jpg');"></div>
+        <div class="okazja-photo" style="background-image:url('assets/namiot-14.webp');"></div>
         <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(139,30,63,0.50) 0%, rgba(139,30,63,0.93) 100%);"></div>
         <div class="okazja-head">
           <span class="okazja-num">07</span>
@@ -1068,7 +1084,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       </a>
 
       <a href="okazje/event-firmowy.html" class="okazja" style="background: var(--granat); color: var(--plotno);">
-        <div class="okazja-photo" style="background-image:url('assets/namiot-2.jpg');"></div>
+        <div class="okazja-photo" style="background-image:url('assets/namiot-2.webp');"></div>
         <div class="okazja-scrim" style="background: linear-gradient(135deg, rgba(19,43,77,0.65) 0%, rgba(19,43,77,0.95) 100%);"></div>
         <div class="okazja-head">
           <span class="okazja-num" style="color: var(--zarowka);">08</span>
@@ -1285,20 +1301,20 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       <p class="lead">Wybrane z naszego pierwszego sezonu 2025. Urodziny 7-latki w ogrodzie, komunie, 50-tki mamy, jarmarki, małe wesela. Ludzkie eventy.</p>
     </div>
     <div class="gal-grid">
-      <div class="gal-item tall" style="background-image: url('assets/namiot-1.jpg');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-2.jpg');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-3.jpg');"></div>
-      <div class="gal-item wide" style="background-image: url('assets/namiot-4.jpg');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-5.jpg');"></div>
-      <div class="gal-item tall" style="background-image: url('assets/namiot-6.jpg');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-7.jpg');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-8.jpg');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-9.jpg');"></div>
-      <div class="gal-item wide" style="background-image: url('assets/namiot-10.jpg');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-11.jpg');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-12.jpg');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-13.jpg');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-14.jpg');"></div>
+      <div class="gal-item tall" style="background-image: url('assets/namiot-1.webp');"></div>
+      <div class="gal-item" style="background-image: url('assets/namiot-2.webp');"></div>
+      <div class="gal-item" style="background-image: url('assets/namiot-3.webp');"></div>
+      <div class="gal-item wide" style="background-image: url('assets/namiot-4.webp');"></div>
+      <div class="gal-item" style="background-image: url('assets/namiot-5.webp');"></div>
+      <div class="gal-item tall" style="background-image: url('assets/namiot-6.webp');"></div>
+      <div class="gal-item" style="background-image: url('assets/namiot-7.webp');"></div>
+      <div class="gal-item" style="background-image: url('assets/namiot-8.webp');"></div>
+      <div class="gal-item" style="background-image: url('assets/namiot-9.webp');"></div>
+      <div class="gal-item wide" style="background-image: url('assets/namiot-10.webp');"></div>
+      <div class="gal-item" style="background-image: url('assets/namiot-11.webp');"></div>
+      <div class="gal-item" style="background-image: url('assets/namiot-12.webp');"></div>
+      <div class="gal-item" style="background-image: url('assets/namiot-13.webp');"></div>
+      <div class="gal-item" style="background-image: url('assets/namiot-14.webp');"></div>
     </div>
   </div>
 </section>
