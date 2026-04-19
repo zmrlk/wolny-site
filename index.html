@@ -432,15 +432,41 @@ section { padding: 100px 48px; position: relative; }
 .okazje .section-head h2 { color: var(--plotno); }
 .okazje .section-head h2 em { color: var(--zarowka); }
 .okazje .section-head .lead { color: rgba(245,241,230,0.65); }
-.okazje-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.okazje-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 260px);
+  gap: 16px;
+}
 .okazja {
-  aspect-ratio: 3/4;
-  padding: 24px; position: relative; overflow: hidden;
+  padding: 28px 24px; position: relative; overflow: hidden;
   display: flex; flex-direction: column; justify-content: space-between;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
   text-decoration: none;
+  min-height: 260px;
 }
+.okazja.okazja-hero {
+  grid-row: span 2;
+  padding: 36px 32px;
+}
+.okazja.okazja-pano {
+  grid-column: span 4;
+  padding: 36px 48px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 220px;
+}
+.okazja.okazja-pano .okazja-head { align-self: flex-start; }
+.okazja.okazja-pano > div { flex: 1; }
+.okazja.okazja-pano .okazja-right {
+  flex: 0 0 auto;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 96px; letter-spacing: -0.04em; line-height: 0.85;
+  text-align: right;
+}
+.okazja.okazja-pano .okazja-bignum { display: none; }
 .okazja:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(249,217,74,0.2); }
 .okazja .okazja-cta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: lowercase; opacity: 0.7; margin-top: 6px; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
 .okazja:hover .okazja-cta { opacity: 1; }
@@ -455,10 +481,26 @@ section { padding: 100px 48px; position: relative; }
 .okazja-title { font-family: 'Archivo Black', sans-serif; font-size: 22px; text-transform: lowercase; letter-spacing: -0.03em; line-height: 0.92; margin-bottom: 4px; }
 .okazja-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; text-transform: none; }
 .okazja-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; opacity: 0.75; }
-.okazja-bignum { position: absolute; bottom: -10px; right: 0; font-family: 'Archivo Black', sans-serif; font-size: 120px; line-height: 0.85; letter-spacing: -0.05em; opacity: 0.15; pointer-events: none; z-index: 1; }
-@media (max-width: 1100px) { .okazje-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 720px) { .okazje-grid { grid-template-columns: repeat(2, 1fr); } .okazja { padding: 18px; } }
-@media (max-width: 420px) { .okazje-grid { grid-template-columns: 1fr; } }
+.okazja-bignum { position: absolute; bottom: -16px; right: 4px; font-family: 'Archivo Black', sans-serif; font-size: 160px; line-height: 0.8; letter-spacing: -0.06em; opacity: 0.22; pointer-events: none; z-index: 1; }
+.okazja-hero .okazja-bignum { font-size: 260px; bottom: -40px; right: -8px; opacity: 0.18; }
+.okazja-hero .okazja-title { font-size: 34px; }
+.okazja-hero .okazja-meta { font-size: 13px; }
+@media (max-width: 1100px) {
+  .okazje-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 240px); }
+  .okazja.okazja-hero { grid-row: span 2; }
+  .okazja.okazja-pano { grid-column: span 3; }
+}
+@media (max-width: 720px) {
+  .okazje-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+  .okazja { padding: 20px; }
+  .okazja.okazja-hero { grid-row: span 1; grid-column: span 2; padding: 28px 24px; }
+  .okazja.okazja-pano { grid-column: span 2; flex-direction: column; align-items: flex-start; padding: 24px; }
+  .okazja.okazja-pano .okazja-right { text-align: left; font-size: 64px; }
+}
+@media (max-width: 420px) {
+  .okazje-grid { grid-template-columns: 1fr; }
+  .okazja.okazja-hero, .okazja.okazja-pano { grid-column: span 1; }
+}
 
 /* === CENNIK === */
 .cennik { background: var(--plotno); }
@@ -1100,16 +1142,16 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
     </div>
     <div class="okazje-grid">
 
-      <a href="okazje/biesiada-w-gorach.html" class="okazja" style="background: var(--trawa); color: var(--plotno);">
+      <a href="okazje/biesiada-w-gorach.html" class="okazja okazja-hero" style="background: var(--trawa); color: var(--plotno);">
         <div class="okazja-photo" style="background-image:url('assets/namiot-3.webp');"></div>
-        <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(31,122,63,0.55) 0%, rgba(31,122,63,0.92) 100%);"></div>
+        <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(31,122,63,0.40) 0%, rgba(31,122,63,0.92) 100%);"></div>
         <div class="okazja-head">
-          <span class="okazja-num">01</span>
-          <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 26 L16 6 L28 26 Z"/><path d="M16 6 L16 26"/></svg>
+          <span class="okazja-num">01 · hero</span>
+          <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:36px;height:36px;"><path d="M4 26 L16 6 L28 26 Z"/><path d="M16 6 L16 26"/></svg>
         </div>
         <div>
-          <div class="okazja-title">biesiada <em>w górach</em></div>
-          <div class="okazja-meta">6×12m · 50-80 os.</div>
+          <div class="okazja-title">biesiada<br/><em>w górach</em></div>
+          <div class="okazja-meta">6×12m · 50-80 osób · koc + drewno</div>
           <div class="okazja-cta">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
         </div>
         <span class="okazja-bignum" style="color: var(--zarowka);">01</span>
@@ -1201,19 +1243,21 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
         <span class="okazja-bignum" style="color: var(--zarowka);">07</span>
       </a>
 
-      <a href="okazje/event-firmowy.html" class="okazja" style="background: var(--granat); color: var(--plotno);">
+      <a href="okazje/event-firmowy.html" class="okazja okazja-pano" style="background: var(--granat); color: var(--plotno);">
         <div class="okazja-photo" style="background-image:url('assets/namiot-2.webp');"></div>
-        <div class="okazja-scrim" style="background: linear-gradient(135deg, rgba(19,43,77,0.65) 0%, rgba(19,43,77,0.95) 100%);"></div>
-        <div class="okazja-head">
-          <span class="okazja-num" style="color: var(--zarowka);">08</span>
-          <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="20" height="16"/><path d="M10 10 L10 6 L22 6 L22 10"/></svg>
-        </div>
+        <div class="okazja-scrim" style="background: linear-gradient(90deg, rgba(19,43,77,0.92) 0%, rgba(19,43,77,0.55) 100%);"></div>
         <div>
-          <div class="okazja-title">event <em style="color: var(--zarowka);">firmowy</em></div>
-          <div class="okazja-meta">do 300 os. · branding</div>
-          <div class="okazja-cta" style="color: var(--zarowka);">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
+          <div class="okazja-head">
+            <span class="okazja-num" style="color: var(--zarowka);">08 · firmowy</span>
+            <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="20" height="16"/><path d="M10 10 L10 6 L22 6 L22 10"/></svg>
+          </div>
+          <div style="margin-top: 24px;">
+            <div class="okazja-title" style="font-size: 42px;">event <em style="color: var(--zarowka);">firmowy</em></div>
+            <div class="okazja-meta">do 300 osób · branding · catering · scena · FV B2B</div>
+            <div class="okazja-cta" style="color: var(--zarowka);">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
+          </div>
         </div>
-        <span class="okazja-bignum" style="color: var(--zarowka);">08</span>
+        <div class="okazja-right" style="color: var(--zarowka);">300+<br/><span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;font-size:32px;color:var(--plotno);">osób pod dachem.</span></div>
       </a>
 
     </div>
