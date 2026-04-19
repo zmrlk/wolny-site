@@ -12,7 +12,7 @@
 - **Zasięg:** 100 km od Jędrzejowa (Kielce, Kraków, Częstochowa, Busko-Zdrój, Końskie)
 - **Kontakt:** +48 796 886 222 · kontakt@wolnynamiot.pl
 - **Godziny:** 8:00-20:00, 7 dni w tygodniu
-- **Ocena Google:** 4.9/5 (~20 opinii)
+- **Ocena Google:** 5.0/5 (pierwsza opinia — dopiero budujemy recenzje)
 
 ## Cennik (brutto, VAT 23%)
 

@@ -76,13 +76,15 @@
     "opens": "08:00",
     "closes": "20:00"
   }],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "20",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
+  "review": [{
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "author": {"@type": "Person", "name": "Klient Google"}
+  }]
 }
 </script>
 
@@ -1039,10 +1041,10 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       <div class="proof-label">start firmy<br/>świeży rozpęd</div>
     </div>
     <div class="proof-item">
-      <div class="proof-num">4.9</div>
+      <div class="proof-num">5.0</div>
       <div>
         <div class="proof-stars">★★★★★</div>
-        <div class="proof-label">ocena google</div>
+        <div class="proof-label">pierwsza opinia<br/>google</div>
       </div>
     </div>
     <div class="proof-item">
@@ -1562,19 +1564,19 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
 <section class="opinie" id="opinie">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">↯ opinie klientów · google reviews</div>
+      <div class="eyebrow">↯ pierwsze wrażenia klientów · sezon 2025</div>
       <h2>tak to <em>robimy.</em></h2>
-      <p class="lead">Nie prosimy o opinie. Same się piszą. 4.9/5 w Google, dziesiątki pozytywnych komentarzy na lokalnych grupach.</p>
+      <p class="lead">Jesteśmy młodą firmą — pierwszy sezon, pierwsza opinia w Google (5.0★), pozostałe wracają jeszcze po telefonie i w DM. Oto co słyszymy najczęściej.</p>
     </div>
     <div class="opinie-grid">
 
       <div class="opinia">
         <div class="opinia-stars">★★★★★</div>
-        <p class="opinia-text">Namiot postawiony w 2h, wszystko dopięte. Patryk przyjechał dzień wcześniej, wytłumaczył jak to działa. Na weselu 120 osób — namiot idealny, pogoda średnia, ale pod dachem jak u Pana Boga za piecem.</p>
+        <p class="opinia-text">"Wszystko dopięte, zero niespodzianek. Cena taka jak w mailu — dokładnie tyle. Montaż w dzień przed eventem, demontaż następnego dnia rano. Tak jak się umawialiśmy."</p>
         <div class="opinia-author">
-          <div class="opinia-avatar">AM</div>
+          <div class="opinia-avatar" style="background:var(--trawa);">★</div>
           <div>
-            <div class="opinia-name">Anna M.</div>
+            <div class="opinia-name">parafraza · dm messenger</div>
             <div class="opinia-meta">wesele · czerwiec 2025</div>
           </div>
         </div>
@@ -1582,24 +1584,24 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
 
       <div class="opinia">
         <div class="opinia-stars">★★★★★</div>
-        <p class="opinia-text">Robiliśmy festyn osiedlowy — namiot 6×12 z montażem, plus stoły i ławki. Wszystko w cenie, żadnych niespodzianek. Demontaż następnego dnia, znikli tak że nawet sąsiedzi nie zauważyli. Polecam.</p>
+        <p class="opinia-text">"Namiot 6×12 na festyn OSP, montaż w 3h, wszystko w cenie. Patryk odebrał telefon w 5 minut. Dobra robota dla lokalnej firmy — polecamy w dół ulicy."</p>
         <div class="opinia-author">
-          <div class="opinia-avatar">TK</div>
+          <div class="opinia-avatar" style="background:var(--pomidor);">★</div>
           <div>
-            <div class="opinia-name">Tomasz K.</div>
-            <div class="opinia-meta">jarmark · sierpień 2025</div>
+            <div class="opinia-name">parafraza · telefon po evencie</div>
+            <div class="opinia-meta">festyn OSP · sierpień 2025</div>
           </div>
         </div>
       </div>
 
-      <div class="opinia">
-        <div class="opinia-stars">★★★★★</div>
-        <p class="opinia-text">Komunia córki, 50 osób, namiot 4×8 — elegancki, czysty, po prostu robi robotę. Ceny takie jak w mailu, zero doliczeń. Kontakt przez cały czas, odpowiedzi w pół godziny. Pierwsza klasa.</p>
+      <div class="opinia" style="background: var(--zarowka); border-color: var(--atrament);">
+        <div class="opinia-stars" style="color: var(--atrament);">★</div>
+        <p class="opinia-text" style="color: var(--atrament);"><strong>Byłeś u nas? Zostaw opinię w Google.</strong> Budujemy reputację od zera — każda opinia dla nas ważna. Jeden klik, jedno zdanie, pomagasz nam rosnąć.</p>
         <div class="opinia-author">
-          <div class="opinia-avatar">MP</div>
+          <div class="opinia-avatar" style="background:var(--atrament); color: var(--zarowka);">→</div>
           <div>
-            <div class="opinia-name">Marta P.</div>
-            <div class="opinia-meta">komunia · maj 2025</div>
+            <a href="https://g.page/r/wolny-namiot/review" style="font-family: 'Archivo Black', sans-serif; font-size: 14px; text-transform: lowercase; color: var(--atrament); letter-spacing: -0.02em;">zostaw opinię google →</a>
+            <div class="opinia-meta" style="color: var(--atrament-700);">dziękujemy!</div>
           </div>
         </div>
       </div>
