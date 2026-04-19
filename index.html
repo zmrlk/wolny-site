@@ -172,7 +172,7 @@
   --trawa: #1F7A3F; --trawa-100: #C8E6D1;
   --granat: #132B4D;
   --zarowka: #F9D94A;
-  --pomidor: #D93A1F; --pomidor-100: #F9D6CE;
+  --pomidor: #D93A1F; --pomidor-100: #F9D6CE; --pomidor-dark: #A82510;
   --burak: #8B1E3F;
   --niebo: #1A8FA3;
   --fiolet: #6B3F8C;
@@ -196,7 +196,7 @@ em.italic { font-family: 'Instrument Serif', serif; font-style: italic; font-wei
 h1, h2, h3, h4 { font-family: 'Archivo Black', sans-serif; text-transform: lowercase; letter-spacing: -0.035em; line-height: 0.9; font-weight: 900; }
 h1 em, h2 em, h3 em, h4 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; text-transform: none; letter-spacing: -0.015em; }
 .mono { font-family: 'JetBrains Mono', monospace; letter-spacing: 1.5px; text-transform: lowercase; font-size: 12px; }
-.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: lowercase; color: var(--pomidor); font-weight: 600; margin-bottom: 16px; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: lowercase; color: var(--pomidor-dark); font-weight: 600; margin-bottom: 16px; }
 
 /* === GIRLANDA === */
 .girlanda {
@@ -364,6 +364,7 @@ body.menu-open { overflow: hidden; }
   letter-spacing: -0.05em; line-height: 0.85;
   color: var(--plotno);
   margin-bottom: 24px;
+  min-height: clamp(82px, 13.6vw, 221px); /* reserve space — CLS fix */
 }
 .hero h1 em { color: var(--zarowka); display: inline-block; }
 .hero-claim {
@@ -916,10 +917,10 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
     <a href="#" class="nav-logo">wolny <em>namiot.</em></a>
     <div class="nav-links">
       <a href="#okazje">okazje</a>
-      <a href="#vs">sala vs namiot</a>
       <a href="#cennik">cennik</a>
       <a href="#galeria">realizacje</a>
       <a href="#ofirmie">o nas</a>
+      <a href="blog/index.html">blog</a>
       <a href="#faq">faq</a>
       <a href="#formularz">rezerwuj</a>
     </div>
@@ -937,10 +938,10 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
 <div class="mobile-menu-backdrop" aria-hidden="true"></div>
 <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobilne">
   <a href="#okazje">8 <em>okazji</em></a>
-  <a href="#vs">sala <em>vs namiot</em></a>
   <a href="#cennik">cennik</a>
   <a href="#galeria">realizacje</a>
   <a href="#ofirmie">o nas</a>
+  <a href="blog/index.html">blog <em>/ poradniki</em></a>
   <a href="#faq">faq</a>
   <a href="#formularz" class="mobile-menu-cta">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3.5 1.5a1 1 0 011-1h2.382a1 1 0 01.95.684l.724 2.17a1 1 0 01-.217 1.003l-1.2 1.2a10.5 10.5 0 005.304 5.304l1.2-1.2a1 1 0 011.003-.217l2.17.724a1 1 0 01.684.95v2.382a1 1 0 01-1 1C6.596 14.5 1.5 9.404 1.5 3.118a1 1 0 011-1H3.5z"/></svg>
@@ -981,6 +982,8 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
     <span>pierwszy sezon za nami</span>
   </div>
 </header>
+
+<main id="main" role="main">
 
 <!-- ============ SOCIAL PROOF BAR ============ -->
 <div class="proof-bar">
@@ -1730,6 +1733,8 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
   </div>
 </section>
 
+</main>
+
 <div class="girlanda"></div>
 
 <!-- ============ STOPKA ============ -->
@@ -1740,7 +1745,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       <div class="footer-tagline">— postaw gdzie chcesz. zrób co chcesz.</div>
     </div>
     <div class="footer-col">
-      <h4>nawigacja</h4>
+      <h3>nawigacja</h3>
       <a href="#okazje">8 okazji</a>
       <a href="#cennik">cennik</a>
       <a href="#galeria">realizacje</a>
@@ -1750,14 +1755,14 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       <a href="#formularz">rezerwuj online</a>
     </div>
     <div class="footer-col">
-      <h4>kontakt</h4>
+      <h3>kontakt</h3>
       <a href="tel:+48796886222">796 886 222</a>
       <a href="mailto:kontakt@wolnynamiot.pl">kontakt@wolnynamiot.pl</a>
       <span>jędrzejów, świętokrzyskie</span>
       <span>pn-nd · 8:00-20:00</span>
     </div>
     <div class="footer-col">
-      <h4>firma</h4>
+      <h3>firma</h3>
       <span>wolny namiot</span>
       <span>est. 2025</span>
       <span>rodzinna firma</span>

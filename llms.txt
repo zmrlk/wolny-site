@@ -110,6 +110,12 @@ Orientacyjnie: 4×8m = 30-50 os., 5×10m = 40-60 os., 6×12m = 60-80 os., 10×20
 - "nie pytamy co robisz pod spodem."
 - "ślub? protest? obojętnie."
 
+## Blog (poradniki)
+
+- [Sala weselna czy namiot w ogrodzie? Porównanie kosztów 2026](https://wolnynamiot.pl/blog/sala-weselna-czy-namiot.html)
+- [Ile kosztuje wynajem namiotu na 50 osób? Cennik 2026](https://wolnynamiot.pl/blog/ile-kosztuje-namiot-na-50-osob.html)
+- [Jak dobrać rozmiar namiotu do liczby osób?](https://wolnynamiot.pl/blog/jak-dobrac-rozmiar-namiotu.html)
+
 ## Linki
 
 - [Strona główna](https://wolnynamiot.pl/)
@@ -118,4 +124,5 @@ Orientacyjnie: 4×8m = 30-50 os., 5×10m = 40-60 os., 6×12m = 60-80 os., 10×20
 - [FAQ](https://wolnynamiot.pl/#faq)
 - [O firmie](https://wolnynamiot.pl/#ofirmie)
 - [Galeria realizacji](https://wolnynamiot.pl/#galeria)
+- [Blog · poradniki](https://wolnynamiot.pl/blog/)
 - [Sitemap XML](https://wolnynamiot.pl/sitemap.xml)

@@ -104,4 +104,45 @@
     </image:image>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://wolnynamiot.pl/blog/</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/blog/sala-weselna-czy-namiot.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-8.webp</image:loc>
+      <image:title>Sala weselna czy namiot w ogrodzie — porównanie kosztów 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/blog/ile-kosztuje-namiot-na-50-osob.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-4.webp</image:loc>
+      <image:title>Ile kosztuje wynajem namiotu na 50 osób — cennik 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/blog/jak-dobrac-rozmiar-namiotu.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-12.webp</image:loc>
+      <image:title>Jak dobrać rozmiar namiotu — przewodnik 2026</image:title>
+    </image:image>
+  </url>
+
 </urlset>
