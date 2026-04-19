@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>regulamin wynajmu · wolny namiot</title>
+<meta name="description" content="Regulamin wynajmu namiotów imprezowych wolny namiot. Warunki rezerwacji, płatności, anulacji, odpowiedzialności.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://wolnynamiot.pl/regulamin.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --plotno: #F5F1E6; --plotno-100: #FAF7EE; --plotno-300: #E8DFC9;
+  --atrament: #0A0A0A; --atrament-500: #4A4A4A; --atrament-700: #2A2A2A;
+  --zarowka: #E8A933; --pomidor: #D93A1F; --granat: #132B4D;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Archivo', sans-serif;
+  background: var(--plotno);
+  color: var(--atrament);
+  line-height: 1.6;
+}
+.nav {
+  background: var(--atrament);
+  color: var(--plotno);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav a {
+  font-family: 'Archivo Black', sans-serif;
+  color: var(--plotno);
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  text-transform: lowercase;
+}
+.nav a em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--zarowka);
+  text-transform: none;
+}
+.nav-back {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  color: var(--zarowka) !important;
+  font-weight: 700;
+}
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 32px 80px;
+}
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  color: var(--pomidor);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+  margin-bottom: 20px;
+}
+h1 em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--granat);
+  text-transform: none;
+}
+.updated {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  color: var(--atrament-500);
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--plotno-300);
+}
+h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 22px;
+  letter-spacing: -0.025em;
+  text-transform: lowercase;
+  line-height: 1.1;
+  margin: 40px 0 16px;
+  color: var(--atrament);
+}
+h2 em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--granat);
+  text-transform: none;
+}
+h3 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  margin: 20px 0 8px;
+}
+p { margin-bottom: 14px; font-size: 15px; color: var(--atrament-700); }
+ul, ol { margin: 8px 0 16px 20px; }
+li { margin-bottom: 6px; font-size: 15px; color: var(--atrament-700); }
+strong { font-family: 'Archivo Black', sans-serif; font-weight: 900; color: var(--atrament); text-transform: lowercase; letter-spacing: -0.015em; font-size: 15.5px; }
+.note {
+  background: var(--plotno-100);
+  border-left: 3px solid var(--granat);
+  padding: 14px 20px;
+  margin: 20px 0;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--atrament-700);
+  line-height: 1.5;
+}
+footer {
+  background: var(--atrament);
+  color: var(--plotno);
+  padding: 32px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  color: rgba(245,241,230,0.6);
+}
+footer a {
+  color: var(--zarowka);
+  text-decoration: none;
+  margin: 0 12px;
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="/">wolny <em>namiot.</em></a>
+  <a href="/" class="nav-back">← strona główna</a>
+</nav>
+
+<main>
+  <div class="eyebrow">↯ regulamin wynajmu</div>
+  <h1>regulamin <em>wolnego namiotu.</em></h1>
+  <div class="updated">obowiązuje od: 2026-04-19 · ostatnia aktualizacja: 2026-04-19</div>
+
+  <h2>§1. <em>definicje</em></h2>
+  <p>Na potrzeby niniejszego regulaminu:</p>
+  <ul>
+    <li><strong>Wynajmujący</strong> — Max-GSM, właściciel marki „wolny namiot", z siedzibą: [uzupełnić adres], NIP: [uzupełnić], e-mail: kontakt@wolnynamiot.pl, tel. +48 796 886 222</li>
+    <li><strong>Najemca</strong> — osoba fizyczna, prawna lub jednostka organizacyjna rezerwująca wynajem namiotu.</li>
+    <li><strong>Przedmiot najmu</strong> — namiot imprezowy wraz z wyposażeniem (konstrukcja, boki, girlandy LED, opcjonalnie stoły i krzesła).</li>
+    <li><strong>Umowa</strong> — umowa wynajmu zawierana drogą mailową lub telefoniczną, potwierdzona wpłatą zaliczki.</li>
+  </ul>
+
+  <h2>§2. <em>rezerwacja i płatność</em></h2>
+  <ol>
+    <li>Rezerwacja następuje po akceptacji oferty i wpłacie <strong>zaliczki 30%</strong> wartości zamówienia.</li>
+    <li>Pozostała kwota (70%) płatna jest przed rozpoczęciem montażu lub gotówką w dniu montażu.</li>
+    <li>Wynajmujący wystawia fakturę VAT 23% dla firm i instytucji.</li>
+    <li>Brak wpłaty zaliczki w terminie 5 dni od potwierdzenia oferty skutkuje anulowaniem rezerwacji.</li>
+  </ol>
+
+  <h2>§3. <em>anulacja rezerwacji</em></h2>
+  <ul>
+    <li>Anulacja powyżej <strong>30 dni</strong> przed terminem — zwrot 100% zaliczki.</li>
+    <li>Anulacja 14-30 dni — zwrot 50% zaliczki.</li>
+    <li>Anulacja poniżej 14 dni — zaliczka bezzwrotna (poza siłą wyższą, p. §6).</li>
+    <li>Zmiana terminu (bez anulacji) — bezpłatna jeśli nowy termin dostępny, zgłoszona min. 7 dni wcześniej.</li>
+  </ul>
+
+  <h2>§4. <em>obowiązki wynajmującego</em></h2>
+  <ul>
+    <li>Dostarczenie namiotu i wyposażenia zgodnie z zamówieniem, w terminie i miejscu ustalonym.</li>
+    <li>Montaż i demontaż (namioty duże) lub udostępnienie do odbioru własnego (ekspresowe).</li>
+    <li>Dostarczenie produktu w stanie sprawnym, czystym i bezpiecznym.</li>
+    <li>Reagowanie na zgłoszenia usterek w ciągu 2 godzin w godz. 8:00-20:00.</li>
+  </ul>
+
+  <h2>§5. <em>obowiązki najemcy</em></h2>
+  <ul>
+    <li>Wskazanie dokładnej lokalizacji montażu i zapewnienie dostępu (równe, suche podłoże, brak linii energetycznych, zgoda właściciela terenu).</li>
+    <li>Użytkowanie namiotu zgodnie z jego przeznaczeniem (imprezy, eventy, spotkania).</li>
+    <li>Zabezpieczenie mienia i zdrowia gości (opieka nad dziećmi, zabezpieczenie przed warunkami atmosferycznymi).</li>
+    <li>Niezwłoczne zgłaszanie uszkodzeń namiotu i wyposażenia.</li>
+    <li>Zwrot namiotu w stanie niepogorszonym. Koszt naprawy ewentualnych uszkodzeń (poza zużyciem normalnym) pokrywa Najemca.</li>
+    <li>Dopełnienie wszelkich formalności administracyjnych (zgłoszenia do gminy, zgromadzeń, ROD itp.) — to po stronie Najemcy.</li>
+  </ul>
+
+  <h2>§6. <em>odpowiedzialność i siła wyższa</em></h2>
+  <ol>
+    <li>Wynajmujący nie odpowiada za skutki niewłaściwego użytkowania namiotu ani za zdarzenia wynikłe z siły wyższej (wichura &gt; 90 km/h, ekstremalne opady, klęska żywiołowa).</li>
+    <li>W przypadku siły wyższej uniemożliwiającej wykonanie usługi — termin zostaje przełożony bez dodatkowych opłat lub zwrot zaliczki w 100%.</li>
+    <li>Przy wichurze &gt; 90 km/h Wynajmujący ma prawo zdemontować namiot bez zwrotu opłat za zabezpieczenie — bezpieczeństwo gości ma priorytet.</li>
+    <li>Limit odpowiedzialności Wynajmującego: <strong>wartość opłaty za wynajem</strong>.</li>
+  </ol>
+
+  <h2>§7. <em>transport i dowóz</em></h2>
+  <ul>
+    <li>Dowóz do 100 km od Jędrzejowa — <strong>w cenie</strong> (namioty z montażem).</li>
+    <li>Powyżej 100 km — dopłata 3-5 zł/km (ustalana indywidualnie).</li>
+    <li>Ekspresowe namioty — odbiór własny z Jędrzejowa lub dostawa (dopłata od 3 zł/km).</li>
+    <li>Maksymalny zasięg obsługi: 250 km od Jędrzejowa (cała Polska na zapytanie).</li>
+  </ul>
+
+  <h2>§8. <em>reklamacje</em></h2>
+  <p>Reklamacje należy zgłaszać drogą mailową (kontakt@wolnynamiot.pl) lub telefoniczną (+48 796 886 222) w terminie 7 dni od zakończenia eventu. Wynajmujący rozpatrzy reklamację w ciągu 14 dni.</p>
+
+  <h2>§9. <em>ochrona danych osobowych</em></h2>
+  <p>Dane osobowe Najemcy przetwarzane są zgodnie z <a href="/polityka-prywatnosci.html" style="color:var(--granat);font-weight:700;">Polityką Prywatności</a>. Administratorem danych jest Max-GSM.</p>
+
+  <h2>§10. <em>postanowienia końcowe</em></h2>
+  <ol>
+    <li>W sprawach nieuregulowanych zastosowanie mają przepisy Kodeksu Cywilnego.</li>
+    <li>Spory rozstrzyga sąd właściwy dla siedziby Wynajmującego.</li>
+    <li>Wynajmujący zastrzega sobie prawo do zmiany regulaminu. O zmianach informuje na stronie wolnynamiot.pl.</li>
+    <li>Regulamin obowiązuje od momentu publikacji na stronie.</li>
+  </ol>
+
+  <div class="note">
+    — masz pytanie do regulaminu? zadzwoń 796 886 222 lub napisz kontakt@wolnynamiot.pl. odpisujemy w 2h w godz. 8:00-20:00.
+  </div>
+
+</main>
+
+<footer>
+  wolny <strong style="color:var(--zarowka);">namiot.</strong> · jędrzejów · polska · 250 km od jędrzejowa<br/>
+  <a href="/regulamin.html">regulamin</a> · <a href="/polityka-prywatnosci.html">polityka prywatności</a> · <a href="/">strona główna</a>
+</footer>
+
+</body>
+</html>

@@ -1588,8 +1588,8 @@ Polski od jędrzejowa">
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 wolny namiot · wszystkie prawa zastrzeżone</span>
-    <span>wolnynamiot.pl · design v0.3</span>
+    <span>© 2026 wolny namiot · Max-GSM · wszystkie prawa zastrzeżone</span>
+    <span><a href="/regulamin.html" style="color:var(--zarowka);margin-right:14px;">regulamin</a><a href="/polityka-prywatnosci.html" style="color:var(--zarowka);">polityka prywatności</a></span>
   </div>
 </footer>
 
@@ -1645,6 +1645,29 @@ Polski od jędrzejowa">
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
   });
+</script>
+
+<!-- ============ COOKIE BANNER ============ -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--atrament);color:var(--plotno);padding:20px 24px;border-top:2px solid var(--zarowka);box-shadow:0 -8px 32px rgba(0,0,0,0.3);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:240px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:lowercase;color:var(--zarowka);font-weight:700;margin-bottom:6px;">↯ cookies</div>
+      <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;line-height:1.4;color:rgba(245,241,230,0.88);">— używamy tylko niezbędnych plików cookie (zapamiętanie twojej preferencji). <strong style="font-family:'Archivo Black',sans-serif;font-style:normal;color:var(--plotno);font-weight:900;text-transform:lowercase;letter-spacing:-0.015em;font-size:14px;">nie śledzimy. nie profilujemy. nie sprzedajemy danych.</strong> <a href="/polityka-prywatnosci.html" style="color:var(--zarowka);text-decoration:underline;">więcej →</a></div>
+    </div>
+    <button id="cookie-accept" style="background:var(--zarowka);color:var(--atrament);border:none;padding:14px 28px;font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:-0.02em;text-transform:lowercase;cursor:pointer;flex-shrink:0;">rozumiem ✓</button>
+  </div>
+</div>
+<script>
+  (function(){
+    var banner=document.getElementById('cookie-banner');
+    if(!localStorage.getItem('wn-cookies-ok')){
+      banner.style.display='block';
+    }
+    document.getElementById('cookie-accept').addEventListener('click',function(){
+      localStorage.setItem('wn-cookies-ok','1');
+      banner.style.display='none';
+    });
+  })();
 </script>
 
 </body>
