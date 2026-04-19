@@ -32,7 +32,7 @@
 ## 8 okazji (use cases)
 
 1. **Biesiada w górach** — 6×12m, 50-80 os., 900-1400 zł. [Szczegóły](https://wolnynamiot.pl/okazje/biesiada-w-gorach.html)
-2. **Urodziny w ogrodzie** — 4×8m, 30-50 os., 800-1200 zł (od 150 zł ekspres). [Szczegóły](https://wolnynamiot.pl/okazje/urodziny-w-ogrodzie.html)
+2. **Urodziny w ogrodzie** — 4×8m, 30-50 os., 800-1200 zł (od 200 zł ekspres). [Szczegóły](https://wolnynamiot.pl/okazje/urodziny-w-ogrodzie.html)
 3. **Protest / zgromadzenie** — 3×3m ekspres, punkt info, 150-250 zł. [Szczegóły](https://wolnynamiot.pl/okazje/protest.html)
 4. **Dom działkowca / ROD** — 5×10m, 40-60 os., 850-1300 zł. [Szczegóły](https://wolnynamiot.pl/okazje/dom-dzialkowca.html)
 5. **Uroczystości rodzinne** (wesele, komunia, chrzciny, stypa) — 800-1400 zł. [Szczegóły](https://wolnynamiot.pl/okazje/uroczystosci-rodzinne.html)
@@ -75,7 +75,7 @@
 A: Dach jest po to, żeby padało. Namioty mają boki chroniące przed deszczem bocznym i wiatrem do 60 km/h. Przy ekstremalnej pogodzie możemy przełożyć termin bez opłaty (do 48h przed).
 
 **Q: Ile to kosztuje?**
-A: Ekspresowe od 150 zł, duże z montażem od 800 zł, pełen pakiet ze stołami od 1200 zł. Wszystkie ceny brutto z VAT.
+A: Ekspresowe od 200 zł, duże z montażem od 1 200 zł, pełen pakiet ze stołami od 1200 zł. Wszystkie ceny brutto z VAT.
 
 **Q: Jak szybko można zarezerwować?**
 A: Ekspresy 12-24h od telefonu (często odbiór tego samego dnia). Duże namioty 2-4 tygodnie w sezonie. Weselne 3-12 miesięcy.
