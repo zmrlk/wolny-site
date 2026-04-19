@@ -64,7 +64,7 @@ Zero pomarańczowego. Zero różowego. Zero szarości. Wszystkie kolory o pełne
 ## Motywy wizualne
 
 - **Girlanda żarówek** — cienki pasek z kropkami żarówka + las + granat, używany jako divider między sekcjami (odpowiednik fali lub linii).
-- **Ticker z okazjami** — pasek przewijający się z listą sytuacji ("sezon 2026 · wolne terminy · jędrzejów + 100 km · wesele · protest · urodziny psa burego").
+- **Ticker z okazjami** — pasek przewijający się z listą sytuacji ("sezon 2026 · wolne terminy · południe polski · wesele · protest · urodziny psa burego").
 - **Ostre kanty** — bez zaokrągleń (poza pieczątkami-stickerami).
 - **Box-decoration-break** dla highlighted słów — żółty marker jak na flamastrze, wieloliniowy.
 
@@ -83,7 +83,7 @@ Zero pomarańczowego. Zero różowego. Zero szarości. Wszystkie kolory o pełne
 **Long:**
 7. 80 wesel rocznie. *ani jednego odwołania z naszej winy.*
 8. montaż w 3h. demontaż w 1. *reszta należy do ciebie.*
-9. rodzinna firma z *jędrzejowa.* 100 km dookoła. zawsze na czas.
+9. rodzinna firma z *jędrzejowa.* południe polski. zawsze na czas.
 
 ## 10 okazji (use cases) z rozmiarami
 

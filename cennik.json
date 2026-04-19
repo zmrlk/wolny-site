@@ -20,7 +20,7 @@
       "addressCountry": "PL"
     }
   },
-  "areaServed": "Jędrzejów + 100 km",
+  "areaServed": "południe Polski",
   "lastUpdated": "2026-04-19",
   "categories": [
     {
@@ -82,7 +82,7 @@
           "dimensions": {"length_m": 8, "width_m": 4, "area_m2": 32},
           "capacity": {"people_min": 30, "people_max": 50},
           "price_brutto_pln": 800,
-          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz 100km"],
+          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz regionalny"],
           "delivery": "full-service",
           "setup_time_hours": 2,
           "sku": "DUZ-4x8"
@@ -92,7 +92,7 @@
           "dimensions": {"length_m": 10, "width_m": 5, "area_m2": 50},
           "capacity": {"people_min": 40, "people_max": 60},
           "price_brutto_pln": 850,
-          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz 100km"],
+          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz regionalny"],
           "delivery": "full-service",
           "setup_time_hours": 3,
           "sku": "DUZ-5x10"
@@ -102,7 +102,7 @@
           "dimensions": {"length_m": 12, "width_m": 6, "area_m2": 72},
           "capacity": {"people_min": 60, "people_max": 80},
           "price_brutto_pln": 900,
-          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz 100km"],
+          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz regionalny"],
           "delivery": "full-service",
           "setup_time_hours": 4,
           "sku": "DUZ-6x12"
@@ -118,7 +118,7 @@
           "dimensions": {"length_m": 8, "width_m": 4, "area_m2": 32},
           "capacity": {"people_min": 30, "people_max": 50},
           "price_brutto_pln": 1200,
-          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz 100km", "stoły", "krzesła", "girlandy LED"],
+          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz regionalny", "stoły", "krzesła", "girlandy LED"],
           "delivery": "full-service",
           "sku": "DUZ-4x8-STL"
         },
@@ -127,7 +127,7 @@
           "dimensions": {"length_m": 10, "width_m": 5, "area_m2": 50},
           "capacity": {"people_min": 40, "people_max": 60},
           "price_brutto_pln": 1300,
-          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz 100km", "stoły", "krzesła", "girlandy LED"],
+          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz regionalny", "stoły", "krzesła", "girlandy LED"],
           "delivery": "full-service",
           "sku": "DUZ-5x10-STL"
         },
@@ -136,7 +136,7 @@
           "dimensions": {"length_m": 12, "width_m": 6, "area_m2": 72},
           "capacity": {"people_min": 60, "people_max": 80},
           "price_brutto_pln": 1400,
-          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz 100km", "stoły", "krzesła", "girlandy LED"],
+          "includes": ["namiot", "konstrukcja", "boki", "obciążniki", "montaż", "demontaż", "dowóz regionalny", "stoły", "krzesła", "girlandy LED"],
           "delivery": "full-service",
           "sku": "DUZ-6x12-STL"
         }
@@ -145,7 +145,7 @@
   ],
   "notes": [
     "Wszystkie ceny brutto (VAT 23% wliczony).",
-    "Dowóz w promieniu 100 km od Jędrzejowa zwykle w cenie. Dalej — dopłata 3-5 zł/km.",
+    "Dowóz do 100 km od Jędrzejowa w cenie (Kielce, Częstochowa, Kraków). Dalej — dopłata 3-5 zł/km (Łódź, Lublin, Rzeszów, Zakopane).",
     "Przy dłuższych imprezach (2+ dni) dopłata 30-50% ceny bazowej za każdy dodatkowy dzień.",
     "Rabaty dla stałych klientów, stowarzyszeń, ROD-ów, OSP.",
     "Ekspresowe namioty (odbiór własny) — samodzielny montaż, 15-20 minut, 2 osoby.",
