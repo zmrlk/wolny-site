@@ -358,23 +358,24 @@ body.menu-open { overflow: hidden; }
 }
 .hero-scrim {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(180deg, rgba(19,43,77,0.2) 0%, rgba(10,10,10,0.88) 100%);
+  background: linear-gradient(180deg, rgba(19,43,77,0.35) 0%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,0.92) 100%);
 }
 .hero-inner { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; width: 100%; }
 .hero h1 {
-  font-size: clamp(48px, 8vw, 130px);
-  letter-spacing: -0.05em; line-height: 0.85;
+  font-size: clamp(40px, 8.2vw, 130px);
+  letter-spacing: -0.045em; line-height: 0.92;
   color: var(--plotno);
-  margin-bottom: 24px;
-  min-height: clamp(82px, 13.6vw, 221px); /* reserve space — CLS fix */
+  margin-bottom: 20px;
+  min-height: clamp(74px, 13.6vw, 221px);
 }
-.hero h1 em { color: var(--zarowka); display: inline-block; }
+.hero h1 em { color: var(--zarowka); display: inline; white-space: nowrap; }
 .hero-claim {
   font-family: 'Instrument Serif', serif; font-style: italic;
-  font-size: clamp(18px, 2.4vw, 28px);
-  color: var(--zarowka);
-  max-width: 720px; margin-bottom: 40px;
-  line-height: 1.25;
+  font-size: clamp(17px, 2.2vw, 26px);
+  color: var(--plotno);
+  max-width: 640px; margin-bottom: 32px;
+  line-height: 1.35;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
 }
 .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .btn {
