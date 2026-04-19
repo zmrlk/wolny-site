@@ -650,13 +650,21 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
   position: relative; overflow: hidden;
 }
 .historia-photo {
-  background-image: url('assets/namiot-7.webp');
+  background-image: url('assets/protest-chmielnik.webp');
   background-size: cover; background-position: center;
   position: relative;
 }
 .historia-photo::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(19,43,77,0.15) 0%, rgba(10,10,10,0.40) 100%);
+  background: linear-gradient(135deg, rgba(19,43,77,0.08) 0%, rgba(10,10,10,0.25) 100%);
+}
+.historia-photo-stamp {
+  position: absolute; bottom: 20px; left: 20px; z-index: 2;
+  background: var(--atrament); color: var(--zarowka);
+  padding: 10px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 2px; text-transform: lowercase;
+  border: 1px solid rgba(249,217,74,0.3);
 }
 .historia-body { padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
 .historia-tag {
@@ -1068,7 +1076,9 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
     </div>
 
     <div class="historia-card">
-      <div class="historia-photo"></div>
+      <div class="historia-photo">
+        <div class="historia-photo-stamp">↯ chmielnik · x 2025 · leje</div>
+      </div>
       <div class="historia-body">
         <span class="historia-tag">↯ case study · zgromadzenie · okolice kielc · x 2025</span>
         <h3>"nikt nie pytał <em>przeciwko czemu</em> protestujemy."</h3>
