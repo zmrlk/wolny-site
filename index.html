@@ -75,7 +75,19 @@
     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "opens": "08:00",
     "closes": "20:00"
-  }]
+  }],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "2",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "paymentAccepted": ["Cash", "Bank Transfer"],
+  "currenciesAccepted": "PLN",
+  "slogan": "postaw gdzie chcesz. zrób co chcesz.",
+  "knowsLanguage": "pl",
+  "keywords": "wynajem namiotów, namiot na wesele, namiot imprezowy, wypożyczalnia namiotów, namiot na komunię, namiot na festyn, namiot Jędrzejów, namiot Kielce, namiot Kraków"
 }
 </script>
 
@@ -118,24 +130,108 @@
     {
       "@type": "Question",
       "name": "Co jeśli pada deszcz?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Dach jest po to żeby padało. Namioty mają boki chroniące przed deszczem bocznym i wiatrem do 60 km/h."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Nic. Dach jest po to, żeby padało. Namioty mają boki (także mocowane do ziemi) — chronią przed deszczem bocznym i wiatrem do ~60 km/h. Przy ekstremalnej pogodzie możemy przełożyć termin bez opłaty."}
     },
     {
       "@type": "Question",
       "name": "Ile to kosztuje?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Ekspresowe od 200 zł, duże z montażem od 1 200 zł, pełen pakiet od 1200 zł."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Zależy od rozmiaru. Namioty ekspresowe (odbiór własny) od 200 zł, duże z montażem od 1 200 zł, z pełnym pakietem (stoły + ławki) od 1200 zł. Dokładny cennik na stronie głównej."}
     },
     {
       "@type": "Question",
-      "name": "Jak daleko przyjeżdżacie?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Południe Polski — od Jędrzejowa do Łodzi, Lublina, Rzeszowa, Zakopanego — Kielce, Kraków, Rzeszów, Lublin, Piotrków Trybunalski, Łódź, Częstochowa, Sosnowiec, Zakopane, Sucha Beskidzka, Busko-Zdrój, Końskie, Wolbrom, Zawiercie."}
+      "name": "Czy stawiacie na betonie?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Tak. Mamy obciążniki betonowe do mocowania. Stawiamy też na kostce, na trawniku, na placu przy domu, na parkingu. Praktycznie każde równe podłoże. Jedyne co nie pracuje — strome zbocza."}
     },
     {
       "@type": "Question",
       "name": "Ile osób mieści się w namiocie?",
-      "acceptedAnswer": {"@type": "Answer", "text": "4×8m = 30-50 os., 5×10m = 40-60 os., 6×12m = 60-80 os., 10×20m = 100-150 os."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Zależy od rozmiaru i ustawienia stołów. Orientacyjnie: 4×8m = 30-50 os., 5×10m = 40-60 os., 6×12m = 60-80 os. Dla większych eventów (80-140 os.) składamy zestaw — 6×12 główny + ekspresy satelitarne. Dokładnie policzymy pod Twój event."}
+    },
+    {
+      "@type": "Question",
+      "name": "Jak daleko przyjeżdżacie?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Południe Polski — od Jędrzejowa do Łodzi, Lublina, Rzeszowa, Zakopanego (Kielce, Kraków, Rzeszów, Lublin, Piotrków Trybunalski, Łódź, Częstochowa, Sosnowiec, Zakopane, Sucha Beskidzka, Busko-Zdrój, Końskie, Wolbrom, Zawiercie) — dowóz często w cenie. Dalej — pytaj, zwykle ustalamy dopłatę 3-5 zł/km za transport."}
     }
   ]
+}
+</script>
+
+<!-- JSON-LD: WebSite + SearchAction (Google sitelinks search box) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://wolnynamiot.pl/#website",
+  "url": "https://wolnynamiot.pl/",
+  "name": "wolny namiot",
+  "description": "Wynajem namiotów imprezowych — południe Polski",
+  "inLanguage": "pl-PL",
+  "publisher": {"@id": "https://wolnynamiot.pl/#business"}
+}
+</script>
+
+<!-- JSON-LD: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://wolnynamiot.pl/#organization",
+  "name": "wolny namiot",
+  "alternateName": "Wolny Namiot",
+  "url": "https://wolnynamiot.pl/",
+  "logo": "https://wolnynamiot.pl/assets/namiot-8.webp",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://wolnynamiot.pl/#patryk-pelka",
+    "name": "Patryk Pełka",
+    "jobTitle": "Właściciel i koordynator rezerwacji"
+  },
+  "employee": {"@id": "https://wolnynamiot.pl/#patryk-pelka"},
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+48796886222",
+    "contactType": "customer service",
+    "email": "kontakt@wolnynamiot.pl",
+    "areaServed": "PL",
+    "availableLanguage": "Polish",
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  },
+  "sameAs": []
+}
+</script>
+
+<!-- JSON-LD: Person (Patryk Pełka — author entity dla Article schema + E-E-A-T signal) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://wolnynamiot.pl/#patryk-pelka",
+  "name": "Patryk Pełka",
+  "givenName": "Patryk",
+  "familyName": "Pełka",
+  "jobTitle": "Właściciel i koordynator rezerwacji",
+  "description": "Koordynator rezerwacji w firmie wolny namiot (Jędrzejów). Stawia namioty imprezowe w południowej Polsce od 2025 roku — komunie, urodziny, wesela, festyny OSP, eventy firmowe. Odbiera telefon w 5 minut, nie infolinia.",
+  "worksFor": {"@id": "https://wolnynamiot.pl/#organization"},
+  "telephone": "+48796886222",
+  "email": "kontakt@wolnynamiot.pl",
+  "knowsAbout": [
+    "wynajem namiotów imprezowych",
+    "organizacja eventów plenerowych",
+    "logistyka montażu namiotów",
+    "obsługa eventów B2B i B2C",
+    "FV dla gmin, OSP, stowarzyszeń"
+  ],
+  "workLocation": {
+    "@type": "Place",
+    "name": "Jędrzejów",
+    "address": {"@type":"PostalAddress","addressLocality":"Jędrzejów","addressRegion":"świętokrzyskie","postalCode":"28-300","addressCountry":"PL"}
+  }
 }
 </script>
 
@@ -546,6 +642,17 @@ section { padding: 100px 48px; position: relative; }
 .galeria .section-head h2 em { color: var(--zarowka); }
 .galeria .section-head .lead { color: rgba(245,241,230,0.65); }
 .gal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.gal-item figcaption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 14px 16px 12px;
+  background: linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.85) 100%);
+  color: var(--plotno);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 1.2px; text-transform: lowercase;
+  opacity: 0; transition: opacity 220ms ease;
+}
+.gal-item:hover figcaption { opacity: 1; }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .gal-item {
   aspect-ratio: 4/3;
   background-size: cover; background-position: center;
@@ -968,7 +1075,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
     <a href="#" class="nav-logo">wolny <em>namiot.</em></a>
     <div class="nav-links">
       <a href="#okazje">okazje</a>
-      <a href="#cennik">cennik</a>
+      <a href="cennik.html">cennik</a>
       <a href="#galeria">realizacje</a>
       <a href="#ofirmie">o nas</a>
       <a href="blog/index.html">blog</a>
@@ -989,7 +1096,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
 <div class="mobile-menu-backdrop" aria-hidden="true"></div>
 <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobilne">
   <a href="#okazje">8 <em>okazji</em></a>
-  <a href="#cennik">cennik</a>
+  <a href="cennik.html">cennik</a>
   <a href="#galeria">realizacje</a>
   <a href="#ofirmie">o nas</a>
   <a href="blog/index.html">blog <em>/ poradniki</em></a>
@@ -1076,79 +1183,79 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
         <span class="okazja-bignum">02</span>
       </a>
 
-      <a href="okazje/protest.html" class="okazja" style="background: var(--atrament); color: var(--zarowka);">
-        <div class="okazja-photo" style="background-image:url('assets/protest-chmielnik.webp');"></div>
-        <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(10,10,10,0.45) 0%, rgba(10,10,10,0.92) 100%);"></div>
-        <div class="okazja-head">
-          <span class="okazja-num" style="color: var(--plotno);">03</span>
-          <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10 L6 26 M6 10 L22 6 L22 18 L6 14"/></svg>
-        </div>
-        <div>
-          <div class="okazja-title">protest <em>/ zgromadzenie</em></div>
-          <div class="okazja-meta" style="color: var(--plotno);">4,5×3m · punkt info</div>
-          <div class="okazja-cta" style="color: var(--plotno);">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
-        </div>
-        <span class="okazja-bignum" style="color: var(--plotno);">03</span>
-      </a>
-
-      <a href="okazje/dom-dzialkowca.html" class="okazja" style="background: var(--plotno-100); color: var(--plotno);">
-        <div class="okazja-photo" style="background-image:url('assets/namiot-14.webp');"></div>
-        <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(31,122,63,0.30) 0%, rgba(10,10,10,0.88) 100%);"></div>
-        <div class="okazja-head">
-          <span class="okazja-num" style="color: var(--plotno);">04</span>
-          <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16 L16 6 L28 16 L28 28 L4 28 Z"/></svg>
-        </div>
-        <div>
-          <div class="okazja-title">dom <em style="color: var(--trawa);">działkowca</em></div>
-          <div class="okazja-meta">5×10m · 40-60 os.</div>
-          <div class="okazja-cta">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
-        </div>
-        <span class="okazja-bignum" style="color: var(--pomidor);">04</span>
-      </a>
-
       <a href="okazje/uroczystosci-rodzinne.html" class="okazja" style="background: var(--zarowka); color: var(--atrament);">
-        <div class="okazja-photo" style="background-image:url('assets/namiot-8.webp');"></div>
+        <div class="okazja-photo" style="background-image:url('assets/realizacje/realizacja-komunia-ogrod.webp');"></div>
         <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(249,217,74,0.65) 0%, rgba(249,217,74,0.92) 100%);"></div>
         <div class="okazja-head">
-          <span class="okazja-num">05</span>
+          <span class="okazja-num">03</span>
           <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="18" r="6"/><circle cx="20" cy="18" r="6"/></svg>
         </div>
         <div>
           <div class="okazja-title">uroczystości <em style="color: var(--pomidor);">rodzinne</em></div>
-          <div class="okazja-meta">wesele · stypa · komunia · chrzciny</div>
+          <div class="okazja-meta">komunia · chrzciny · jubileusz · stypa · wesele</div>
+          <div class="okazja-cta">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
+        </div>
+        <span class="okazja-bignum" style="color: var(--pomidor);">03</span>
+      </a>
+
+      <a href="okazje/jarmark-festyn.html" class="okazja" style="background: var(--burak); color: var(--plotno);">
+        <div class="okazja-photo" style="background-image:url('assets/realizacje/realizacja-festyn-boisko.webp');"></div>
+        <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(139,30,63,0.50) 0%, rgba(139,30,63,0.93) 100%);"></div>
+        <div class="okazja-head">
+          <span class="okazja-num">04</span>
+          <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L16 6 L28 12 L28 14 L4 14 Z"/><path d="M6 14 L6 26 M26 14 L26 26"/></svg>
+        </div>
+        <div>
+          <div class="okazja-title">festyn <em style="color: var(--zarowka);">/ jarmark</em></div>
+          <div class="okazja-meta">6×12m na scenę · ekspresy 4,5×3m na kramy · OSP/gmina</div>
+          <div class="okazja-cta">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
+        </div>
+        <span class="okazja-bignum" style="color: var(--zarowka);">04</span>
+      </a>
+
+      <a href="okazje/dom-dzialkowca.html" class="okazja" style="background: var(--plotno-100); color: var(--plotno);">
+        <div class="okazja-photo" style="background-image:url('assets/realizacje/realizacja-deszcz-ogrod.webp');"></div>
+        <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(31,122,63,0.30) 0%, rgba(10,10,10,0.88) 100%);"></div>
+        <div class="okazja-head">
+          <span class="okazja-num" style="color: var(--plotno);">05</span>
+          <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16 L16 6 L28 16 L28 28 L4 28 Z"/></svg>
+        </div>
+        <div>
+          <div class="okazja-title">dom <em style="color: var(--trawa);">działkowca</em></div>
+          <div class="okazja-meta">5×10m · impreza w ROD · 40-60 os.</div>
           <div class="okazja-cta">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
         </div>
         <span class="okazja-bignum" style="color: var(--pomidor);">05</span>
       </a>
 
+      <a href="okazje/protest.html" class="okazja" style="background: var(--atrament); color: var(--zarowka);">
+        <div class="okazja-photo" style="background-image:url('assets/protest-chmielnik.webp');"></div>
+        <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(10,10,10,0.45) 0%, rgba(10,10,10,0.92) 100%);"></div>
+        <div class="okazja-head">
+          <span class="okazja-num" style="color: var(--plotno);">06</span>
+          <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10 L6 26 M6 10 L22 6 L22 18 L6 14"/></svg>
+        </div>
+        <div>
+          <div class="okazja-title">protest <em>/ zgromadzenie</em></div>
+          <div class="okazja-meta" style="color: var(--plotno);">4,5×3m · punkt info · 12-24h od tel.</div>
+          <div class="okazja-cta" style="color: var(--plotno);">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
+        </div>
+        <span class="okazja-bignum" style="color: var(--plotno);">06</span>
+      </a>
+
       <a href="okazje/rodzinne-z-psem.html" class="okazja" style="background: var(--niebo); color: var(--plotno);">
-        <div class="okazja-photo" style="background-image:url('assets/namiot-11.webp');"></div>
+        <div class="okazja-photo" style="background-image:url('assets/realizacje/realizacja-szary-kameralny.webp');"></div>
         <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(26,143,163,0.50) 0%, rgba(26,143,163,0.92) 100%);"></div>
         <div class="okazja-head">
-          <span class="okazja-num">06</span>
+          <span class="okazja-num">07</span>
           <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20 Q8 14 14 14 L20 14 Q26 14 26 20 L26 26 L8 26 Z"/></svg>
         </div>
         <div>
           <div class="okazja-title">rodzinne <em style="color: var(--zarowka);">z psem</em></div>
-          <div class="okazja-meta">4,5×3m · kameralnie</div>
+          <div class="okazja-meta">4,5×3m · kameralnie · odbiór własny</div>
           <div class="okazja-cta">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
         </div>
-        <span class="okazja-bignum">06</span>
-      </a>
-
-      <a href="okazje/jarmark-festyn.html" class="okazja" style="background: var(--burak); color: var(--plotno);">
-        <div class="okazja-photo" style="background-image:url('assets/jarmark-festyn.webp');"></div>
-        <div class="okazja-scrim" style="background: linear-gradient(180deg, rgba(139,30,63,0.50) 0%, rgba(139,30,63,0.93) 100%);"></div>
-        <div class="okazja-head">
-          <span class="okazja-num">07</span>
-          <svg class="okazja-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L16 6 L28 12 L28 14 L4 14 Z"/><path d="M6 14 L6 26 M26 14 L26 26"/></svg>
-        </div>
-        <div>
-          <div class="okazja-title">jarmark <em style="color: var(--zarowka);">/ festyn</em></div>
-          <div class="okazja-meta">6×12m · kramy + scena</div>
-          <div class="okazja-cta">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
-        </div>
-        <span class="okazja-bignum" style="color: var(--zarowka);">07</span>
+        <span class="okazja-bignum">07</span>
       </a>
 
       <a href="okazje/event-firmowy.html" class="okazja okazja-pano" style="background: var(--granat); color: var(--plotno);">
@@ -1161,11 +1268,11 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
           </div>
           <div style="margin-top: 24px;">
             <div class="okazja-title" style="font-size: 42px;">event <em style="color: var(--zarowka);">firmowy</em></div>
-            <div class="okazja-meta">do 300 osób · branding · catering · scena · FV B2B</div>
+            <div class="okazja-meta">do 80 os. lub zestaw · FV B2B · branding · scena</div>
             <div class="okazja-cta" style="color: var(--zarowka);">zobacz więcej <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8 L13 8 M9 4 L13 8 L9 12"/></svg></div>
           </div>
         </div>
-        <div class="okazja-right" style="color: var(--zarowka);">300+<br/><span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;font-size:32px;color:var(--plotno);">osób pod dachem.</span></div>
+        <div class="okazja-right" style="color: var(--zarowka);">140<br/><span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:500;font-size:32px;color:var(--plotno);">osób w zestawie.</span></div>
       </a>
 
     </div>
@@ -1279,20 +1386,46 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       <p class="lead">Wybrane z naszego pierwszego sezonu 2025. Urodziny 7-latki w ogrodzie, komunie, 50-tki mamy, jarmarki, małe wesela. Ludzkie eventy.</p>
     </div>
     <div class="gal-grid">
-      <div class="gal-item tall" style="background-image: url('assets/namiot-1.webp');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-2.webp');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-3.webp');"></div>
-      <div class="gal-item wide" style="background-image: url('assets/namiot-4.webp');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-5.webp');"></div>
-      <div class="gal-item tall" style="background-image: url('assets/namiot-6.webp');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-8.webp');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-8.webp');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-9.webp');"></div>
-      <div class="gal-item wide" style="background-image: url('assets/namiot-10.webp');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-11.webp');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-12.webp');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-13.webp');"></div>
-      <div class="gal-item" style="background-image: url('assets/namiot-14.webp');"></div>
+      <figure class="gal-item tall">
+        <img src="assets/realizacje/realizacja-komunia-ogrod.webp" alt="Wynajem namiotu na komunię w ogrodzie — 5×10m, 40-60 osób, prywatna posesja" loading="lazy" width="512" height="768">
+        <figcaption>komunia · 5×10m · ogród prywatny</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/realizacje/realizacja-urodziny-ogrod.webp" alt="Wynajem namiotu na urodziny w ogrodzie — 5×10m, rodzinna uroczystość" loading="lazy" width="512" height="384">
+        <figcaption>urodziny · 5×10m · ogród</figcaption>
+      </figure>
+      <figure class="gal-item wide">
+        <img src="assets/realizacje/realizacja-6x12-podworko.webp" alt="Namiot 6×12m na podwórku wiejskim — uroczystość rodzinna, stary dom z cegły" loading="lazy" width="1024" height="384">
+        <figcaption>6×12m · podwórko wiejskie · uroczystość rodzinna</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/realizacje/realizacja-festyn-boisko.webp" alt="Namiot na festyn — boisko sportowe, event publiczny, gmina/OSP" loading="lazy" width="512" height="384">
+        <figcaption>festyn · boisko · event publiczny</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/realizacje/realizacja-event-firmowy-bus.webp" alt="Namiot na event firmowy 6×12m — transport własny, profesjonalny setup" loading="lazy" width="512" height="384">
+        <figcaption>event firmowy · 6×12m · transport w cenie</figcaption>
+      </figure>
+      <figure class="gal-item tall">
+        <img src="assets/realizacje/realizacja-gory-agroturystyka.webp" alt="Namiot w górach — agroturystyka z drewnianymi domkami, impreza w plenerze" loading="lazy" width="512" height="768">
+        <figcaption>impreza w górach · agroturystyka · plener</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/realizacje/realizacja-ekspres-szary-popup.webp" alt="Szary namiot ekspresowy 4,5×3m popup — odbiór własny, kameralna impreza" loading="lazy" width="512" height="384">
+        <figcaption>szary ekspres · 4,5×3m · odbiór własny</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/realizacje/realizacja-szary-kameralny.webp" alt="Szary namiot 4,5×3m w ogrodzie — kameralna impreza rodzinna, pod drzewami" loading="lazy" width="512" height="384">
+        <figcaption>szary · ogród · kameralne</figcaption>
+      </figure>
+      <figure class="gal-item wide">
+        <img src="assets/realizacje/realizacja-firmowy-plac.webp" alt="Namiot 6×12m na placu — event firmowy, bus transportowy, profesjonalna realizacja" loading="lazy" width="1024" height="384">
+        <figcaption>event firmowy · 6×12m · plac · bus + montaż</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/realizacje/realizacja-deszcz-ogrod.webp" alt="Namiot 6×12m w ogrodzie podczas chmurzystej pogody — plan B na deszcz, brzozy" loading="lazy" width="512" height="384">
+        <figcaption>6×12m · plan B na deszcz · ogród</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1412,7 +1545,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
 
       <details class="faq-item">
         <summary>ile osób <em>mieści się?</em> <span class="faq-icon">+</span></summary>
-        <p>Zależy od rozmiaru i ustawienia stołów. Orientacyjnie: 4×8m = 30-50 os., 5×10m = 40-60 os., 6×12m = 60-80 os., 10×20m = 100-150 os. (wesele). Dokładnie policzymy pod Twój event.</p>
+        <p>Zależy od rozmiaru i ustawienia stołów. Orientacyjnie: 4×8m = 30-50 os., 5×10m = 40-60 os., 6×12m = 60-80 os. Dla większych eventów (80-140 os.) składamy zestaw — 6×12 główny + ekspresy satelitarne. Dokładnie policzymy pod Twój event.</p>
       </details>
 
       <details class="faq-item">
@@ -1466,7 +1599,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
           <option value="urodziny">urodziny</option>
           <option value="komunia-chrzciny">komunia / chrzciny</option>
           <option value="stypa">stypa</option>
-          <option value="jarmark-festyn">jarmark / festyn</option>
+          <option value="jarmark-festyn">festyn / jarmark</option>
           <option value="event-firmowy">event firmowy</option>
           <option value="biesiada">biesiada / impreza rodzinna</option>
           <option value="protest">protest / zgromadzenie</option>
@@ -1564,7 +1697,7 @@ Polski od jędrzejowa">
     <div class="footer-col">
       <h3>nawigacja</h3>
       <a href="#okazje">8 okazji</a>
-      <a href="#cennik">cennik</a>
+      <a href="cennik.html">cennik</a>
       <a href="#galeria">realizacje</a>
       <a href="#proces">jak to działa</a>
       <a href="#opinie">opinie</a>

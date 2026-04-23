@@ -5,109 +5,350 @@
   <!-- Strona główna -->
   <url>
     <loc>https://wolnynamiot.pl/</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://wolnynamiot.pl/assets/namiot-7.webp</image:loc>
-      <image:title>Wolny Namiot — ekspresowy namiot z girlandami w ogrodzie</image:title>
-      <image:caption>Namiot ekspresowy 4.5×3m, czarny popup, ogrody urodzinowe</image:caption>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc>
+      <image:title>Wynajem namiotu na komunię w ogrodzie — 5×10m, 40-60 osób</image:title>
+      <image:caption>Komunia w prywatnym ogrodzie — namiot 5×10m, stoły, krzesła, girlandy LED</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc>
+      <image:title>Wynajem namiotu na urodziny w ogrodzie — 5×10m, rodzinna uroczystość</image:title>
+      <image:caption>Urodziny pod namiotem — ogród, rodzina, dach nad głową</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc>
+      <image:title>Namiot 6×12m na wiejskim podwórku — uroczystość rodzinna</image:title>
+      <image:caption>Duży namiot 6×12m, stary dom z cegły, wieś — klimatyczna realizacja</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc>
+      <image:title>Namiot na festyn — boisko sportowe, event publiczny, OSP/gmina</image:title>
+      <image:caption>Festyn wiejski, zestaw namiotów na boisku, obsługa OSP/samorządów</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-event-firmowy-bus.webp</image:loc>
+      <image:title>Namiot na event firmowy 6×12m — transport własny, profesjonalny montaż</image:title>
+      <image:caption>Piknik firmowy, bus transportowy, 60-80 osób, FV na firmę</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-gory-agroturystyka.webp</image:loc>
+      <image:title>Impreza w górach pod namiotem — agroturystyka, drewniane domki, Beskidy</image:title>
+      <image:caption>Namiot na wyjazd rodzinny w góry, agroturystyka, plener</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-ekspres-szary-popup.webp</image:loc>
+      <image:title>Szary namiot ekspresowy 4,5×3m popup — odbiór własny, kameralna impreza</image:title>
+      <image:caption>Popup ekspresowy szary, samodzielny montaż 15 min, ogród</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-szary-kameralny.webp</image:loc>
+      <image:title>Szary namiot 4,5×3m w ogrodzie — kameralna impreza pod drzewami</image:title>
+      <image:caption>Szary ekspres w ogrodzie — kameralne spotkanie rodzinne</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-firmowy-plac.webp</image:loc>
+      <image:title>Namiot 6×12m na placu — event firmowy, profesjonalna realizacja B2B</image:title>
+      <image:caption>Event firmowy, plac utwardzony, bus, transport i montaż w cenie</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-deszcz-ogrod.webp</image:loc>
+      <image:title>Namiot 6×12m w ogrodzie podczas chmurzystej pogody — plan B na deszcz</image:title>
+      <image:caption>Namiot jako plan B na deszcz — impreza w ogrodzie w chmurach i deszczu</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/namiot-8.webp</image:loc>
+      <image:title>Wolny Namiot — wypożyczalnia namiotów imprezowych, południe Polski</image:title>
+      <image:caption>Hero brand image — wynajem namiotów, Jędrzejów + 250 km</image:caption>
     </image:image>
   </url>
+
+  <!-- Cennik · fundament T1 landing -->
+  <url>
+    <loc>https://wolnynamiot.pl/cennik.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc>
+      <image:title>Cennik wynajmu namiotów 2026 — brutto, bez haków</image:title>
+      <image:caption>Tabela cen namiotów 4,5×3 do 6×12m, zestawy dla 80-140 osób</image:caption>
+    </image:image>
+  </url>
+
+  <!-- T1 landingi · eventy -->
+  <url>
+    <loc>https://wolnynamiot.pl/eventy/komunia.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc>
+      <image:title>Wynajem namiotu na komunię — 4×8/5×10m, pakiet od 1 500 zł</image:title>
+      <image:caption>Komunia w prywatnym ogrodzie — namiot z pełnym pakietem</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/eventy/urodziny.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc>
+      <image:title>Wynajem namiotu na urodziny — dzieci od 200 zł, jubileusz od 1 500 zł</image:title>
+      <image:caption>Urodziny pod namiotem w ogrodzie — dwa segmenty: dzieci + dorośli</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/eventy/event-firmowy.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-event-firmowy-bus.webp</image:loc>
+      <image:title>Wynajem namiotu na event firmowy — B2B, FV 14-30 dni, OC, dokumentacja</image:title>
+      <image:caption>Event firmowy pod namiotem — piknik pracowniczy, jubileusz, integracja</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://wolnynamiot.pl/eventy/festyn-jarmark.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc>
+      <image:title>Wynajem namiotów na festyn i jarmark — zestawy OSP, gminy, parafii</image:title>
+      <image:caption>Festyn OSP na boisku — zestaw 5-10 namiotów, duże 6×12m na scenę, ekspresy na kramy</image:caption>
+    </image:image>
+  </url>
+
+  <!-- T1 landingi · namioty per rozmiar -->
+  <url>
+    <loc>https://wolnynamiot.pl/namioty/4x8.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc>
+      <image:title>Wynajem namiotu 4×8m — 30-50 osób, od 1 200 zł brutto</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wolnynamiot.pl/namioty/5x10.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc>
+      <image:title>Wynajem namiotu 5×10m — 40-60 osób, od 1 200 zł brutto</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wolnynamiot.pl/namioty/6x12.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc>
+      <image:title>Wynajem namiotu 6×12m — 60-80 osób, od 1 300 zł brutto</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wolnynamiot.pl/namioty/ekspres-4-5x3.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-ekspres-szary-popup.webp</image:loc>
+      <image:title>Wynajem namiotu ekspresowego 4,5×3m popup — od 200 zł</image:title>
+    </image:image>
+  </url>
+
+  <!-- T1 landingi · lokalizacje -->
+  <url>
+    <loc>https://wolnynamiot.pl/lokalizacje/jedrzejow.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc>
+      <image:title>Wynajem namiotu Jędrzejów — lokalnie, dowóz gratis</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wolnynamiot.pl/lokalizacje/kielce.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc>
+      <image:title>Wynajem namiotu Kielce — dowóz z Jędrzejowa w cenie</image:title>
+    </image:image>
+  </url>
+
+  <url><loc>https://wolnynamiot.pl/lokalizacje/krakow.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Kraków — dowóz z Jędrzejowa 80 km w cenie</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/rzeszow.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Rzeszów — dowóz 180 km z dopłatą</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/lublin.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Lublin — 180 km z bazy</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/czestochowa.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Częstochowa — 95 km, dowóz w cenie</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/busko-zdroj.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Busko-Zdrój — 35 km, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/pinczow.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Pińczów — 30 km, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/konskie.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Końskie — 85 km, dowóz w cenie</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/staszow.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Staszów — 75 km, dowóz gratis</image:title></image:image></url>
+
+  <!-- T1 landingi · pakiety -->
+  <url><loc>https://wolnynamiot.pl/pakiety/pelny.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Pakiet pełny — namiot + stoły + krzesła + girlandy od 1 500 zł</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/pakiety/komunijny.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Pakiet komunijny — namiot 4×8m + stoły + krzesła, 1 500 zł</image:title></image:image></url>
+
+  <!-- T1 landingi · poradniki -->
+  <url><loc>https://wolnynamiot.pl/poradniki/jaki-rozmiar.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Jaki namiot na ile osób — przewodnik rozmiaru 2026</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/poradniki/kiedy-zarezerwowac.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Kiedy rezerwować namiot — timeline 2026 per event</image:title></image:image></url>
 
   <!-- 8 podstron okazji -->
   <url>
     <loc>https://wolnynamiot.pl/okazje/biesiada-w-gorach.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-3.webp</image:loc>
       <image:title>Biesiada w górach — namiot 6×12m na polanie</image:title>
+      <image:caption>Impreza w górach pod namiotem — wyjazd rodzinny, zjazd znajomych</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-gory-agroturystyka.webp</image:loc>
+      <image:title>Namiot 6×12m przy drewnianych domkach — agroturystyka w Beskidach</image:title>
+      <image:caption>Realizacja w górach: agroturystyka, polana, 50-80 osób</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://wolnynamiot.pl/okazje/urodziny-w-ogrodzie.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-7.webp</image:loc>
-      <image:title>Urodziny w ogrodzie — namiot ekspresowy dla dzieci</image:title>
+      <image:title>Urodziny w ogrodzie — namiot ekspresowy dla dzieci i dorosłych</image:title>
+      <image:caption>Wynajem namiotu na urodziny w ogrodzie — kameralna impreza rodzinna</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc>
+      <image:title>Urodziny w ogrodzie — namiot 5×10m, realizacja sezon 2025</image:title>
+      <image:caption>Jubileuszowe urodziny pod namiotem, prywatny ogród</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://wolnynamiot.pl/okazje/protest.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-7.webp</image:loc>
-      <image:title>Protest — namiot 4,5×3m jako punkt informacyjny</image:title>
+      <image:title>Namiot na protest 4,5×3m — zgromadzenie publiczne, odbiór w 12-24h</image:title>
+      <image:caption>Ekspresowy namiot na zgromadzenie, zbiórka podpisów, akcja społeczna</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://wolnynamiot.pl/okazje/dom-dzialkowca.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-4.webp</image:loc>
-      <image:title>Dom działkowca — namiot w ROD</image:title>
+      <image:title>Namiot dla działkowca — impreza w ROD, 5×10m</image:title>
+      <image:caption>Namiot na działce ROD — otwarcie sezonu, piknik działkowców</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://wolnynamiot.pl/okazje/uroczystosci-rodzinne.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-8.webp</image:loc>
-      <image:title>Uroczystości rodzinne — wesele, komunia, chrzciny, stypa</image:title>
+      <image:title>Uroczystości rodzinne — namiot na komunię, chrzciny, jubileusz</image:title>
+      <image:caption>Namiot na uroczystość rodzinną — wybierz rozmiar pod liczbę gości</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc>
+      <image:title>Komunia w ogrodzie — namiot 5×10m, 40-60 osób, realizacja 2025</image:title>
+      <image:caption>Komunijna uroczystość w prywatnym ogrodzie — pełen pakiet</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc>
+      <image:title>Uroczystość rodzinna na podwórku — namiot 6×12m, wieś</image:title>
+      <image:caption>Rodzinna impreza na wiejskim podwórku, klimatyczna realizacja</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://wolnynamiot.pl/okazje/rodzinne-z-psem.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-11.webp</image:loc>
-      <image:title>Rodzinne z psem — kameralny namiot ekspres</image:title>
+      <image:title>Rodzinne z psem — kameralny namiot ekspres 4,5×3m</image:title>
+      <image:caption>Mała rodzinna impreza w ogrodzie — namiot ekspres, odbiór własny</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-szary-kameralny.webp</image:loc>
+      <image:title>Szary namiot 4,5×3m w ogrodzie pod drzewami — kameralna impreza</image:title>
+      <image:caption>Kameralne spotkanie rodzinne, szary popup, natura</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://wolnynamiot.pl/okazje/jarmark-festyn.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-14.webp</image:loc>
-      <image:title>Jarmark festyn — namioty dla gmin OSP stowarzyszeń</image:title>
+      <image:title>Jarmark festyn — namioty dla OSP, gmin, parafii, stowarzyszeń</image:title>
+      <image:caption>Zestaw namiotów na festyn gminny, jarmark świąteczny, dożynki</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc>
+      <image:title>Festyn na boisku — duży namiot imprezowy, event publiczny</image:title>
+      <image:caption>Realizacja festyn OSP na boisku sportowym, gmina</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://wolnynamiot.pl/okazje/event-firmowy.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-2.webp</image:loc>
-      <image:title>Event firmowy — namiot 10×20m do 300 osób</image:title>
+      <image:title>Event firmowy pod namiotem — piknik, jubileusz, integracja firmy</image:title>
+      <image:caption>Event firmowy B2B — FV, ubezpieczenie OC, profesjonalny montaż</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-event-firmowy-bus.webp</image:loc>
+      <image:title>Namiot firmowy 6×12m z transportem — bus, plac, 60-80 osób</image:title>
+      <image:caption>Realizacja eventu firmowego, transport, montaż w cenie</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-firmowy-plac.webp</image:loc>
+      <image:title>Event firmowy 6×12m — plac, bus, polana, profesjonalna obsługa B2B</image:title>
+      <image:caption>Piknik firmowy na placu, transport + montaż + FV</image:caption>
     </image:image>
   </url>
 
   <!-- Blog -->
   <url>
     <loc>https://wolnynamiot.pl/blog/</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -120,6 +361,7 @@
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-8.webp</image:loc>
       <image:title>Sala weselna czy namiot w ogrodzie — porównanie kosztów 2026</image:title>
+      <image:caption>Porównanie: sala weselna vs namiot pod gołym niebem, koszty 2026</image:caption>
     </image:image>
   </url>
 
@@ -131,6 +373,7 @@
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-4.webp</image:loc>
       <image:title>Ile kosztuje wynajem namiotu na 50 osób — cennik 2026</image:title>
+      <image:caption>Cennik namiotu na 50 osób — 5×10m z pakietem, brutto</image:caption>
     </image:image>
   </url>
 
@@ -141,7 +384,8 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/namiot-12.webp</image:loc>
-      <image:title>Jak dobrać rozmiar namiotu — przewodnik 2026</image:title>
+      <image:title>Jak dobrać rozmiar namiotu — przewodnik 2026 dla 30/50/80 osób</image:title>
+      <image:caption>Przewodnik rozmiarów namiotu imprezowego, dobór pod liczbę gości</image:caption>
     </image:image>
   </url>
 

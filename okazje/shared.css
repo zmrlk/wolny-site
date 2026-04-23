@@ -176,7 +176,84 @@ section { padding: 80px 48px; position: relative; }
 .case-mini p { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 17px; color: var(--atrament-700); line-height: 1.55; }
 @media (max-width: 720px) { .case-mini { padding: 28px 24px; } }
 
-/* FAQ MINI */
+/* === OKAZJE GRID (dla "zobacz również" w T1 landingach) === */
+.okazje-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 260px;
+  gap: 16px;
+}
+.okazja {
+  padding: 28px 24px; position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 260px;
+}
+.okazja.okazja-hero { grid-row: span 2; padding: 36px 32px; }
+.okazja:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(249,217,74,0.2); }
+.okazja .okazja-cta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: lowercase; opacity: 0.7; margin-top: 6px; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
+.okazja:hover .okazja-cta { opacity: 1; }
+.okazja-photo { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; }
+.okazja-scrim { position: absolute; inset: 0; z-index: 1; }
+.okazja > *:not(.okazja-photo):not(.okazja-scrim) { position: relative; z-index: 2; }
+.okazja-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; opacity: 0.85; font-weight: 600; }
+.okazja-ico { width: 28px; height: 28px; }
+.okazja-head { display: flex; justify-content: space-between; align-items: flex-start; }
+.okazja-title { font-family: 'Archivo Black', sans-serif; font-size: 22px; text-transform: lowercase; letter-spacing: -0.03em; line-height: 0.92; margin-bottom: 4px; }
+.okazja-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; text-transform: none; }
+.okazja-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; opacity: 0.75; }
+.okazja-bignum { position: absolute; bottom: -16px; right: 4px; font-family: 'Archivo Black', sans-serif; font-size: 160px; line-height: 0.8; letter-spacing: -0.06em; opacity: 0.22; pointer-events: none; z-index: 1; }
+@media (max-width: 1100px) {
+  .okazje-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 240px); }
+}
+@media (max-width: 720px) {
+  .okazje-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 12px; }
+  .okazja, .okazja.okazja-hero { grid-row: auto; min-height: 200px; padding: 24px 20px; }
+  .okazja-title { font-size: 20px; }
+  .okazja-bignum { font-size: 100px; }
+}
+
+/* === PRICE BAR (dla T1 landingów) === */
+.price-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; padding: 32px; background: var(--plotno-100); border-left: 3px solid var(--pomidor); }
+.price-item .price-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: lowercase; color: var(--atrament-500); margin-bottom: 8px; }
+.price-item .price-val { font-family: 'Archivo Black', sans-serif; font-size: 28px; letter-spacing: -0.03em; color: var(--pomidor); line-height: 1; }
+.price-item .price-val em { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 16px; color: var(--atrament); font-weight: 500; margin-left: 4px; }
+.price-item .price-sub { font-family: 'Archivo', sans-serif; font-size: 13px; color: var(--atrament-500); margin-top: 8px; line-height: 1.5; }
+@media (max-width: 720px) { .price-bar { grid-template-columns: 1fr; gap: 16px; padding: 24px; } }
+
+/* === FAQ (desktop, dla T1 landingów — cennik, komunia, urodziny, event-firmowy, festyn) === */
+.faq { background: var(--plotno-100); }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; margin-top: 32px; }
+.faq-item {
+  background: var(--plotno);
+  border: 1px solid var(--plotno-300);
+  padding: 24px 28px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.faq-item[open] { border-color: var(--pomidor); background: var(--plotno-100); }
+.faq-item summary {
+  list-style: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  font-family: 'Archivo Black', sans-serif; font-size: 17px; text-transform: lowercase; letter-spacing: -0.02em; line-height: 1.2;
+  color: var(--atrament);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--pomidor); text-transform: none; }
+.faq-item summary .faq-icon {
+  width: 24px; height: 24px; flex-shrink: 0;
+  background: var(--atrament); color: var(--plotno);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Archivo Black', sans-serif; font-size: 14px; line-height: 1;
+  transition: background 0.2s, transform 0.2s;
+}
+.faq-item[open] summary .faq-icon { background: var(--pomidor); transform: rotate(45deg); }
+.faq-item p { font-size: 14px; color: var(--atrament-500); line-height: 1.6; margin-top: 14px; }
+@media (max-width: 900px) { .faq-grid { grid-template-columns: 1fr; } }
+
+/* FAQ MINI (używane w /okazje/*, osobny styling) */
 .faq-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .faq-mini details {
   background: var(--plotno-100);
