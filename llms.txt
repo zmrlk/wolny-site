@@ -184,17 +184,60 @@ Zdjęcia realnych imprez z sezonu 2025 dostępne na stronie głównej (sekcja /#
 - [Namiot 6×12m](https://wolnynamiot.pl/namioty/6x12.html) — 60-80 os., sam 1 300 zł, pakiet 1 600 zł (największy w ofercie)
 - [Namiot ekspresowy 4,5×3m](https://wolnynamiot.pl/namioty/ekspres-4-5x3.html) — popup, odbiór własny 200 zł, pakiet 400 zł, biały lub szary
 
-### Lokalizacje (10 miast + okolice, dowóz do 250 km gratis)
-- [Jędrzejów](https://wolnynamiot.pl/lokalizacje/jedrzejow.html) — baza firmy, powiat jędrzejowski, dowóz gratis
-- [Kielce](https://wolnynamiot.pl/lokalizacje/kielce.html) — 40 km, gratis
-- [Kraków](https://wolnynamiot.pl/lokalizacje/krakow.html) — 80 km, gratis
-- [Rzeszów](https://wolnynamiot.pl/lokalizacje/rzeszow.html) — 180 km, +240 zł transport
-- [Lublin](https://wolnynamiot.pl/lokalizacje/lublin.html) — 180 km, +240 zł transport
-- [Częstochowa](https://wolnynamiot.pl/lokalizacje/czestochowa.html) — 95 km, gratis
-- [Busko-Zdrój](https://wolnynamiot.pl/lokalizacje/busko-zdroj.html) — 35 km, gratis
-- [Pińczów](https://wolnynamiot.pl/lokalizacje/pinczow.html) — 30 km, gratis
-- [Końskie](https://wolnynamiot.pl/lokalizacje/konskie.html) — 85 km, gratis
-- [Staszów](https://wolnynamiot.pl/lokalizacje/staszow.html) — 75 km, gratis
+### Lokalizacje (37 miast, dowóz gratis w zasięgu 250 km)
+
+**Baza + najbliższe (świętokrzyskie):**
+- [Jędrzejów](https://wolnynamiot.pl/lokalizacje/jedrzejow.html) — baza firmy, powiat jędrzejowski
+- [Kielce](https://wolnynamiot.pl/lokalizacje/kielce.html) — 40 km
+- [Morawica](https://wolnynamiot.pl/lokalizacje/morawica.html) — 25 km DK7
+- [Pińczów](https://wolnynamiot.pl/lokalizacje/pinczow.html) — 30 km
+- [Busko-Zdrój](https://wolnynamiot.pl/lokalizacje/busko-zdroj.html) — 35 km
+- [Staszów](https://wolnynamiot.pl/lokalizacje/staszow.html) — 75 km
+- [Końskie](https://wolnynamiot.pl/lokalizacje/konskie.html) — 85 km
+- [Skarżysko-Kamienna](https://wolnynamiot.pl/lokalizacje/skarzysko-kamienna.html) — świętokrzyskie
+- [Ostrowiec Świętokrzyski](https://wolnynamiot.pl/lokalizacje/ostrowiec-swietokrzyski.html) — świętokrzyskie
+- [Sandomierz](https://wolnynamiot.pl/lokalizacje/sandomierz.html) — świętokrzyskie
+- [Opatów](https://wolnynamiot.pl/lokalizacje/opatow.html) — świętokrzyskie
+- [Włoszczowa](https://wolnynamiot.pl/lokalizacje/wloszczowa.html) — świętokrzyskie
+
+**Małopolskie:**
+- [Kraków](https://wolnynamiot.pl/lokalizacje/krakow.html) — 80 km
+- [Miechów](https://wolnynamiot.pl/lokalizacje/miechow.html) — małopolskie
+- [Olkusz](https://wolnynamiot.pl/lokalizacje/olkusz.html) — małopolskie
+- [Bochnia](https://wolnynamiot.pl/lokalizacje/bochnia.html) — małopolskie
+- [Tarnów](https://wolnynamiot.pl/lokalizacje/tarnow.html) — małopolskie
+- [Nowy Sącz](https://wolnynamiot.pl/lokalizacje/nowy-sacz.html) — małopolskie
+- [Rabka-Zdrój](https://wolnynamiot.pl/lokalizacje/rabka-zdroj.html) — małopolskie, Podhale
+- [Oświęcim](https://wolnynamiot.pl/lokalizacje/oswiecim.html) — małopolskie
+- [Szczekociny](https://wolnynamiot.pl/lokalizacje/szczekociny.html) — małopolskie
+
+**Śląskie:**
+- [Częstochowa](https://wolnynamiot.pl/lokalizacje/czestochowa.html) — 95 km
+- [Zawiercie](https://wolnynamiot.pl/lokalizacje/zawiercie.html) — śląskie
+- [Katowice](https://wolnynamiot.pl/lokalizacje/katowice.html) — 170 km
+- [Rybnik](https://wolnynamiot.pl/lokalizacje/rybnik.html) — śląskie
+- [Bielsko-Biała](https://wolnynamiot.pl/lokalizacje/bielsko-biala.html) — 220 km, Beskid Śląski
+
+**Podkarpackie:**
+- [Rzeszów](https://wolnynamiot.pl/lokalizacje/rzeszow.html) — 180 km
+- [Krosno](https://wolnynamiot.pl/lokalizacje/krosno.html) — podkarpackie
+
+**Lubelskie:**
+- [Lublin](https://wolnynamiot.pl/lokalizacje/lublin.html) — 180 km
+- [Puławy](https://wolnynamiot.pl/lokalizacje/pulawy.html) — lubelskie
+- [Kraśnik](https://wolnynamiot.pl/lokalizacje/krasnik.html) — lubelskie
+
+**Łódzkie:**
+- [Piotrków Trybunalski](https://wolnynamiot.pl/lokalizacje/piotrkow-trybunalski.html) — 100 km A1
+- [Tomaszów Mazowiecki](https://wolnynamiot.pl/lokalizacje/tomaszow-mazowiecki.html) — 150 km DK74
+- [Łódź](https://wolnynamiot.pl/lokalizacje/lodz.html) — 160 km A1
+
+**Mazowieckie:**
+- [Radom](https://wolnynamiot.pl/lokalizacje/radom.html) — mazowieckie
+- [Kozienice](https://wolnynamiot.pl/lokalizacje/kozienice.html) — mazowieckie
+- [Warszawa](https://wolnynamiot.pl/lokalizacje/warszawa.html) — 240 km, krawędź zasięgu
+
+**Dowóz gratis do wszystkich tych miast** (zasięg 250 km od Jędrzejowa). Dalej — transport do uzgodnienia.
 
 ### Pakiety (all-inclusive)
 - [Pakiet pełny](https://wolnynamiot.pl/pakiety/pelny.html) — namiot + stoły + krzesła + girlandy, 3 rozmiary (1 500-1 600 zł)
