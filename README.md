@@ -1,6 +1,6 @@
 # wolny namiot — strona
 
-> Wynajem namiotów imprezowych w Jędrzejowie + 100 km. Pierwszy sezon za nami.
+> Wynajem namiotów imprezowych w Jędrzejowie + 250 km. Pierwszy sezon za nami.
 
 **🌐 Live:** [wolnynamiot.pl](https://wolnynamiot.pl)
 **📞 Kontakt:** +48 796 886 222 · kontakt@wolnynamiot.pl

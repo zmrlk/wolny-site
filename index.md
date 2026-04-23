@@ -38,7 +38,7 @@
 5. **Uroczystości rodzinne** (wesele, komunia, chrzciny, stypa) — 800-1400 zł. [Szczegóły](https://wolnynamiot.pl/okazje/uroczystosci-rodzinne.html)
 6. **Rodzinne z psem** — kameralnie, 4,5×3m lub 6×3m, 150-250 zł. [Szczegóły](https://wolnynamiot.pl/okazje/rodzinne-z-psem.html)
 7. **Jarmark / festyn** — pakiety 5-10 namiotów dla OSP/gmin/parafii, 1600-5000 zł. [Szczegóły](https://wolnynamiot.pl/okazje/jarmark-festyn.html)
-8. **Event firmowy** — do 300 os. (10×20m), FV na NIP, termin 14-30 dni. [Szczegóły](https://wolnynamiot.pl/okazje/event-firmowy.html)
+8. **Event firmowy** — do 300 os. (zestaw 6×12 + ekspresy), FV na NIP, termin 14-30 dni. [Szczegóły](https://wolnynamiot.pl/okazje/event-firmowy.html)
 
 ## W cenie
 
@@ -87,7 +87,7 @@ A: Tak. Mocujemy obciążnikami (bez wbijania w trawnik). Beton, kostka, trawa. 
 A: Południe Polski — od Jędrzejowa do Łodzi, Lublina, Rzeszowa, Zakopanego — dowóz w cenie. Dalej — dopłata do uzgodnienia.
 
 **Q: Ile osób mieści się w namiocie?**
-A: 4×8m = 30-50 os., 5×10m = 40-60 os., 6×12m = 60-80 os., 10×20m = 100-150 os.
+A: 4×8m = 30-50 os., 5×10m = 40-60 os., 6×12m = 60-80 os., zestaw 6×12 + ekspresy = 100-150 os.
 
 **Q: Jaka jest różnica między ekspresem a dużym namiotem?**
 A: Ekspres = popup, ma stelaż który sam się rozkłada (15 min, 2 osoby). Duży namiot = klasyczna konstrukcja halowa, potrzeba montażu 2-4h przez naszą ekipę.
