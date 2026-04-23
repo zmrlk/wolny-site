@@ -47,7 +47,7 @@
 - Stoły prostokątne + krzesła plastikowe (w pakietach "+ stoły")
 - **Girlandy LED + oświetlenie** pod kalenicą
 - Obciążniki (beton, trawa, kostka)
-- Dowóz po południu Polski — do 100 km w cenie, dalej dopłata transport
+- Dowóz po południu Polski — do 250 km w cenie, dalej dopłata transport
 - Obsługa telefoniczna (nie infolinia)
 
 ## Czego nie robimy
@@ -84,7 +84,7 @@ A: Ekspresy 12-24h od telefonu (często odbiór tego samego dnia). Duże namioty
 A: Tak. Mocujemy obciążnikami (bez wbijania w trawnik). Beton, kostka, trawa. Nie pracujemy na stromych zboczach.
 
 **Q: Jak daleko przyjeżdżacie?**
-A: Południe Polski — od Jędrzejowa do Łodzi, Lublina, Rzeszowa, Zakopanego — dowóz w cenie. Dalej — dopłata 3-5 zł/km.
+A: Południe Polski — od Jędrzejowa do Łodzi, Lublina, Rzeszowa, Zakopanego — dowóz w cenie. Dalej — dopłata do uzgodnienia.
 
 **Q: Ile osób mieści się w namiocie?**
 A: 4×8m = 30-50 os., 5×10m = 40-60 os., 6×12m = 60-80 os., 10×20m = 100-150 os.
