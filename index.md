@@ -11,7 +11,7 @@
 - **Lokalizacja:** Jędrzejów, woj. świętokrzyskie
 - **Zasięg:** południe Polski: Kielce, Kraków, Rzeszów, Lublin, Piotrków Trybunalski, Łódź, Częstochowa, Sosnowiec, Zakopane, Sucha Beskidzka, Busko-Zdrój, Końskie, Wolbrom, Zawiercie
 - **Kontakt:** +48 796 886 222 · kontakt@wolnynamiot.pl
-- **Godziny:** 8:00-20:00, 7 dni w tygodniu
+- **Godziny:** 7:00-21:00, 7 dni w tygodniu
 - **Ocena Google:** 5.0/5 (pierwsza opinia — dopiero budujemy recenzje)
 
 ## Cennik (brutto, VAT 23%)
