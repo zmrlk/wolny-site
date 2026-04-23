@@ -37,18 +37,27 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["Store", "LocalBusiness"],
   "@id": "https://wolnynamiot.pl/#business",
   "name": "wolny namiot",
-  "alternateName": "Wolny Namiot",
+  "alternateName": ["Wolny Namiot", "Wolny Namiot Jędrzejów", "Namioty Pełka"],
   "description": "Wynajem namiotów imprezowych w Jędrzejowie. Urodziny, komunie, festyny, protesty. Namioty ekspresowe od 200 zł, duże z montażem od 1 200 zł.",
   "url": "https://wolnynamiot.pl/",
   "logo": "https://wolnynamiot.pl/assets/namiot-8.webp",
-  "image": "https://wolnynamiot.pl/assets/namiot-8.webp",
+  "image": [
+    "https://wolnynamiot.pl/assets/namiot-8.webp",
+    "https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp",
+    "https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp",
+    "https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp"
+  ],
   "telephone": "+48796886222",
   "email": "kontakt@wolnynamiot.pl",
   "priceRange": "150-3000 PLN",
-  "foundingDate": "2025",
+  "vatID": "PL6562314416",
+  "iso6523Code": "0088:PL6562314416",
+  "naics": "532310",
+  "foundingDate": "2025-05-01",
+  "hasMap": "https://g.page/r/wolny-namiot",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "ul. 11 Listopada 27",
@@ -87,8 +96,22 @@
   "paymentAccepted": ["Cash", "Bank Transfer"],
   "currenciesAccepted": "PLN",
   "slogan": "postaw gdzie chcesz. zrób co chcesz.",
-  "knowsLanguage": "pl",
-  "keywords": "wynajem namiotów, namiot na wesele, namiot imprezowy, wypożyczalnia namiotów, namiot na komunię, namiot na festyn, namiot Jędrzejów, namiot Kielce, namiot Kraków"
+  "knowsLanguage": ["pl", "en"],
+  "keywords": "wynajem namiotów, namiot na wesele, namiot imprezowy, wypożyczalnia namiotów, namiot na komunię, namiot na festyn, namiot Jędrzejów, namiot Kielce, namiot Kraków",
+  "knowsAbout": [
+    "wynajem namiotów imprezowych",
+    "namioty weselne",
+    "namioty na komunie",
+    "namioty na urodziny",
+    "namioty festynowe",
+    "wynajem namiotów OSP",
+    "wynajem namiotów na festyny gminne",
+    "hale namiotowe",
+    "namioty ekspresowe pop-up",
+    "montaż namiotów",
+    "wynajem namiotów Jędrzejów",
+    "wynajem namiotów województwo świętokrzyskie"
+  ]
 }
 </script>
 
@@ -109,13 +132,29 @@
     "@type": "OfferCatalog",
     "name": "Katalog namiotów",
     "itemListElement": [
-      {"@type": "Offer", "name": "Ekspres 4,5×3 m", "price": "200", "priceCurrency": "PLN"},
-      {"@type": "Offer", "name": "Ekspres 6×3 m", "price": "300", "priceCurrency": "PLN"},
-      {"@type": "Offer", "name": "Duży 4×8 m z montażem", "price": "1200", "priceCurrency": "PLN"},
-      {"@type": "Offer", "name": "Duży 5×10 m z montażem", "price": "1200", "priceCurrency": "PLN"},
-      {"@type": "Offer", "name": "Duży 6×12 m z montażem", "price": "1300", "priceCurrency": "PLN"},
-      {"@type": "Offer", "name": "Duży 6×12 m + stoły + krzesła", "price": "1600", "priceCurrency": "PLN"}
+      {"@type": "Offer", "name": "Ekspres 4,5×3 m", "price": "200", "priceCurrency": "PLN", "businessFunction": "https://schema.org/LeaseOut", "availability": "https://schema.org/InStock", "validFrom": "2026-04-01", "validThrough": "2026-10-31", "seller": {"@id": "https://wolnynamiot.pl/#business"}, "eligibleDuration": {"@type": "QuantitativeValue", "value": "1", "unitCode": "DAY"}},
+      {"@type": "Offer", "name": "Ekspres 6×3 m", "price": "300", "priceCurrency": "PLN", "businessFunction": "https://schema.org/LeaseOut", "availability": "https://schema.org/InStock", "validFrom": "2026-04-01", "validThrough": "2026-10-31", "seller": {"@id": "https://wolnynamiot.pl/#business"}, "eligibleDuration": {"@type": "QuantitativeValue", "value": "1", "unitCode": "DAY"}},
+      {"@type": "Offer", "name": "Duży 4×8 m z montażem", "price": "1200", "priceCurrency": "PLN", "businessFunction": "https://schema.org/LeaseOut", "availability": "https://schema.org/InStock", "validFrom": "2026-04-01", "validThrough": "2026-10-31", "seller": {"@id": "https://wolnynamiot.pl/#business"}, "eligibleDuration": {"@type": "QuantitativeValue", "value": "1", "unitCode": "DAY"}},
+      {"@type": "Offer", "name": "Duży 5×10 m z montażem", "price": "1200", "priceCurrency": "PLN", "businessFunction": "https://schema.org/LeaseOut", "availability": "https://schema.org/InStock", "validFrom": "2026-04-01", "validThrough": "2026-10-31", "seller": {"@id": "https://wolnynamiot.pl/#business"}, "eligibleDuration": {"@type": "QuantitativeValue", "value": "1", "unitCode": "DAY"}},
+      {"@type": "Offer", "name": "Duży 6×12 m z montażem", "price": "1300", "priceCurrency": "PLN", "businessFunction": "https://schema.org/LeaseOut", "availability": "https://schema.org/InStock", "validFrom": "2026-04-01", "validThrough": "2026-10-31", "seller": {"@id": "https://wolnynamiot.pl/#business"}, "eligibleDuration": {"@type": "QuantitativeValue", "value": "1", "unitCode": "DAY"}},
+      {"@type": "Offer", "name": "Duży 6×12 m + stoły + krzesła", "price": "1600", "priceCurrency": "PLN", "businessFunction": "https://schema.org/LeaseOut", "availability": "https://schema.org/InStock", "validFrom": "2026-04-01", "validThrough": "2026-10-31", "seller": {"@id": "https://wolnynamiot.pl/#business"}, "eligibleDuration": {"@type": "QuantitativeValue", "value": "1", "unitCode": "DAY"}}
     ]
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "PLN",
+    "lowPrice": "200",
+    "highPrice": "1600",
+    "offerCount": "6",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2026-04-01",
+    "validThrough": "2026-10-31",
+    "businessFunction": "https://schema.org/LeaseOut",
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 50.6389, "longitude": 20.2986},
+      "geoRadius": "250000"
+    }
   }
 }
 </script>
@@ -150,6 +189,31 @@
       "@type": "Question",
       "name": "Jak daleko przyjeżdżacie?",
       "acceptedAnswer": {"@type": "Answer", "text": "Południe Polski — od Jędrzejowa do Łodzi, Lublina, Rzeszowa, Zakopanego (Kielce, Kraków, Rzeszów, Lublin, Piotrków Trybunalski, Łódź, Częstochowa, Sosnowiec, Zakopane, Sucha Beskidzka, Busko-Zdrój, Końskie, Wolbrom, Zawiercie) — dowóz często w cenie. Dalej — pytaj, zwykle ustalamy dopłatę 3-5 zł/km za transport."}
+    },
+    {
+      "@type": "Question",
+      "name": "Ile wcześniej trzeba zarezerwować namiot?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Zależy od sezonu. Sezon komunijny (maj-czerwiec) i weselny (lipiec-wrzesień) — rezerwuj minimum 2-3 miesiące wcześniej, niektóre terminy schodzą 4-5 miesięcy przed. Ekspres popup — często damy radę 1-3 dni przed (last-minute piątek na sobotę też realne, jeśli namiot wolny). W sezonie weekendy schodzą szybciej niż dni powszednie."}
+    },
+    {
+      "@type": "Question",
+      "name": "Co jest w pakiecie pełnym?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Namiot z bokami (chronią przed wiatrem i deszczem) + 4-8 stołów prostokątnych + 30-80 krzeseł plastikowych + girlandy LED pod kalenicą + obciążniki betonowe (bez wbijania kołków w trawnik) + montaż dzień wcześniej + demontaż następnego dnia + dowóz do 100 km od Jędrzejowa. 4×8m pakiet = 1 500 zł brutto, 5×10m i 6×12m pakiet = po 1 600 zł brutto. VAT w cenie."}
+    },
+    {
+      "@type": "Question",
+      "name": "Czy mogę postawić namiot w ogrodzie rodziców na komunię?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Tak, to najczęstszy scenariusz — większość komunijnych namiotów stawiamy właśnie w ogrodach dziadków lub rodziców. Potrzebujemy równego terenu o wymiarach trochę większych niż sam namiot (dla 4×8m — przestrzeni 5×9m). Podjazd dla busa z namiotem = mile widziany (węższy niż 2,5m alejką bez problemu przejdziemy ręcznie). Podłoże: trawa, kostka, beton — każde pasuje."}
+    },
+    {
+      "@type": "Question",
+      "name": "Czy wystawiacie fakturę VAT?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Tak. FV VAT 23% (VAT w cenie) na dowolny NIP firmowy lub paragon imienny (osoba prywatna). Termin płatności zwykle 7 dni przed wydarzeniem (zaliczka + reszta przy montażu). Dla eventów firmowych i OSP/gmin standardowa faktura z przelewem 14 dni. Bez dopłat za fakturę."}
+    },
+    {
+      "@type": "Question",
+      "name": "Co jeśli ogród jest mały albo nierówny?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Przyjedziemy na wizję lokalną (darmowe) jeśli jesteś w promieniu 30-40 km. Dla większych odległości — wyślij nam zdjęcia i wymiary na WhatsApp lub kontakt@wolnynamiot.pl. Dla małych ogrodów mamy ekspres 4,5×3m (mieści 15-25 osób). Teren z lekkim spadkiem do 5% jest OK — ekipa wyrównuje podłoże. Stromizny powyżej 20° — nie podejmujemy się."}
     }
   ]
 }
@@ -176,10 +240,33 @@
   "@type": "Organization",
   "@id": "https://wolnynamiot.pl/#organization",
   "name": "wolny namiot",
-  "alternateName": "Wolny Namiot",
+  "alternateName": ["Wolny Namiot", "Wolny Namiot Jędrzejów"],
+  "legalName": "Max-GSM Denis Górski (wolny namiot)",
+  "description": "Wynajem namiotów imprezowych w Jędrzejowie i województwie świętokrzyskim. Wesela, komunie, urodziny, festyny, eventy firmowe. Obsługujemy w promieniu 250 km — Kielce, Kraków, Radom, Częstochowa, Lublin, Rzeszów.",
   "url": "https://wolnynamiot.pl/",
-  "logo": "https://wolnynamiot.pl/assets/namiot-8.webp",
-  "foundingDate": "2025",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://wolnynamiot.pl/assets/namiot-8.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  "image": [
+    "https://wolnynamiot.pl/assets/namiot-8.webp",
+    "https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp",
+    "https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp"
+  ],
+  "slogan": "postaw gdzie chcesz. zrób co chcesz.",
+  "foundingDate": "2025-05-01",
+  "vatID": "PL6562314416",
+  "iso6523Code": "0088:PL6562314416",
+  "naics": "532310",
+  "knowsAbout": [
+    "wynajem namiotów imprezowych",
+    "namioty weselne",
+    "organizacja eventów plenerowych",
+    "konstrukcje namiotowe",
+    "wynajem hal namiotowych"
+  ],
   "founder": {
     "@type": "Person",
     "@id": "https://wolnynamiot.pl/#patryk-pelka",
