@@ -319,7 +319,9 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
 .footer-logo { font-family: 'Archivo Black', sans-serif; font-size: 42px; letter-spacing: -0.045em; line-height: 0.85; text-transform: lowercase; }
 .footer-logo em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; color: var(--zarowka); text-transform: none; }
 .footer-tagline { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 17px; color: var(--zarowka); margin-top: 12px; }
-.footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2.5px; text-transform: lowercase; color: var(--zarowka); margin-bottom: 16px; font-weight: 600; }
+.footer-col h3, .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2.5px; text-transform: lowercase; color: var(--zarowka); margin-bottom: 16px; font-weight: 600; }
+.footer-social a { color: var(--plotno); opacity: 0.7; transition: opacity 0.2s; text-decoration: none; }
+.footer-social a:hover { opacity: 1; }
 .footer-col a, .footer-col span { display: block; font-size: 14px; color: rgba(245,241,230,0.75); padding: 4px 0; transition: color 0.2s; }
 .footer-col a:hover { color: var(--zarowka); }
 .footer-bottom {
