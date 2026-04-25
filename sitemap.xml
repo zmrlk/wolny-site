@@ -68,13 +68,26 @@
   <!-- Cennik · fundament T1 landing -->
   <url>
     <loc>https://wolnynamiot.pl/cennik</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc>
       <image:title>Cennik wynajmu namiotów 2026 — brutto, bez haków</image:title>
       <image:caption>Tabela cen namiotów 4,5×3 do 6×12m, zestawy dla 80-140 osób</image:caption>
+    </image:image>
+  </url>
+
+  <!-- O nas · encja firmy + Patryk + Denis -->
+  <url>
+    <loc>https://wolnynamiot.pl/o-nas</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc>
+      <image:title>wolny namiot — firma rodzinna z Jędrzejowa, Patryk Pełka koordynator</image:title>
+      <image:caption>O nas — Patryk Pełka i Denis Górski, firma rodzinna est. 2025</image:caption>
     </image:image>
   </url>
 
