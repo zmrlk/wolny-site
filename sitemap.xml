@@ -67,7 +67,7 @@
 
   <!-- Cennik · fundament T1 landing -->
   <url>
-    <loc>https://wolnynamiot.pl/cennik.html</loc>
+    <loc>https://wolnynamiot.pl/cennik</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -80,7 +80,7 @@
 
   <!-- T1 landingi · eventy -->
   <url>
-    <loc>https://wolnynamiot.pl/eventy/komunia.html</loc>
+    <loc>https://wolnynamiot.pl/eventy/komunia</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
@@ -92,7 +92,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/eventy/urodziny.html</loc>
+    <loc>https://wolnynamiot.pl/eventy/urodziny</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
@@ -104,7 +104,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/eventy/event-firmowy.html</loc>
+    <loc>https://wolnynamiot.pl/eventy/event-firmowy</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -116,7 +116,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/eventy/festyn-jarmark.html</loc>
+    <loc>https://wolnynamiot.pl/eventy/festyn-jarmark</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -129,7 +129,7 @@
 
   <!-- T1 landingi · namioty per rozmiar -->
   <url>
-    <loc>https://wolnynamiot.pl/namioty/4x8.html</loc>
+    <loc>https://wolnynamiot.pl/namioty/4x8</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -139,7 +139,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wolnynamiot.pl/namioty/5x10.html</loc>
+    <loc>https://wolnynamiot.pl/namioty/5x10</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -149,7 +149,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wolnynamiot.pl/namioty/6x12.html</loc>
+    <loc>https://wolnynamiot.pl/namioty/6x12</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -159,7 +159,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wolnynamiot.pl/namioty/ekspres-4-5x3.html</loc>
+    <loc>https://wolnynamiot.pl/namioty/ekspres-4-5x3</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -171,7 +171,7 @@
 
   <!-- T1 landingi · lokalizacje -->
   <url>
-    <loc>https://wolnynamiot.pl/lokalizacje/jedrzejow.html</loc>
+    <loc>https://wolnynamiot.pl/lokalizacje/jedrzejow</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -181,7 +181,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wolnynamiot.pl/lokalizacje/kielce.html</loc>
+    <loc>https://wolnynamiot.pl/lokalizacje/kielce</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -191,53 +191,53 @@
     </image:image>
   </url>
 
-  <url><loc>https://wolnynamiot.pl/lokalizacje/krakow.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Kraków — dowóz z Jędrzejowa 80 km, gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/rzeszow.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Rzeszów — dowóz 180 km, gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/lublin.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Lublin — 180 km z bazy, gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/czestochowa.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Częstochowa — 95 km, dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/busko-zdroj.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Busko-Zdrój — 35 km, dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/pinczow.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Pińczów — 30 km, dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/konskie.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Końskie — 85 km, dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/staszow.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Staszów — 75 km, dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/morawica.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Wynajem namiotu Morawica — 25 km DK7, dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/miechow.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Wynajem namiotu Miechów — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/szczekociny.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Szczekociny — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/wloszczowa.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Włoszczowa — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/sandomierz.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Sandomierz — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/opatow.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Opatów — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/ostrowiec-swietokrzyski.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Ostrowiec Świętokrzyski — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/skarzysko-kamienna.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Skarżysko-Kamienna — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/piotrkow-trybunalski.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Piotrków Trybunalski — 100 km A1, gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/tomaszow-mazowiecki.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Tomaszów Mazowiecki — 150 km, gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/radom.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Radom — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/kozienice.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Kozienice — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/lodz.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Łódź — 160 km A1, dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/warszawa.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Warszawa — 240 km, dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/olkusz.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Olkusz — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/bochnia.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Bochnia — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/zawiercie.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Zawiercie — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/nowy-sacz.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-gory-agroturystyka.webp</image:loc><image:title>Wynajem namiotu Nowy Sącz — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/krosno.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-gory-agroturystyka.webp</image:loc><image:title>Wynajem namiotu Krosno — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/tarnow.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Tarnów — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/rabka-zdroj.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-gory-agroturystyka.webp</image:loc><image:title>Wynajem namiotu Rabka-Zdrój — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/oswiecim.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Oświęcim — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/katowice.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Katowice — 170 km, dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/rybnik.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Rybnik — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/bielsko-biala.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-gory-agroturystyka.webp</image:loc><image:title>Wynajem namiotu Bielsko-Biała — 220 km, dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/pulawy.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Puławy — dowóz gratis</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/lokalizacje/krasnik.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Kraśnik — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/krakow</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Kraków — dowóz z Jędrzejowa 80 km, gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/rzeszow</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Rzeszów — dowóz 180 km, gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/lublin</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Lublin — 180 km z bazy, gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/czestochowa</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Częstochowa — 95 km, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/busko-zdroj</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Busko-Zdrój — 35 km, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/pinczow</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Pińczów — 30 km, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/konskie</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Końskie — 85 km, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/staszow</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Staszów — 75 km, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/morawica</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Wynajem namiotu Morawica — 25 km DK7, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/miechow</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Wynajem namiotu Miechów — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/szczekociny</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Szczekociny — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/wloszczowa</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Włoszczowa — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/sandomierz</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Sandomierz — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/opatow</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Opatów — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/ostrowiec-swietokrzyski</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Ostrowiec Świętokrzyski — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/skarzysko-kamienna</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Skarżysko-Kamienna — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/piotrkow-trybunalski</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Piotrków Trybunalski — 100 km A1, gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/tomaszow-mazowiecki</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Tomaszów Mazowiecki — 150 km, gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/radom</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Radom — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/kozienice</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-festyn-boisko.webp</image:loc><image:title>Wynajem namiotu Kozienice — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/lodz</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Łódź — 160 km A1, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/warszawa</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Warszawa — 240 km, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/olkusz</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Olkusz — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/bochnia</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-urodziny-ogrod.webp</image:loc><image:title>Wynajem namiotu Bochnia — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/zawiercie</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Zawiercie — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/nowy-sacz</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-gory-agroturystyka.webp</image:loc><image:title>Wynajem namiotu Nowy Sącz — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/krosno</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-gory-agroturystyka.webp</image:loc><image:title>Wynajem namiotu Krosno — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/tarnow</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Tarnów — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/rabka-zdroj</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-gory-agroturystyka.webp</image:loc><image:title>Wynajem namiotu Rabka-Zdrój — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/oswiecim</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Oświęcim — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/katowice</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Katowice — 170 km, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/rybnik</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Rybnik — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/bielsko-biala</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-gory-agroturystyka.webp</image:loc><image:title>Wynajem namiotu Bielsko-Biała — 220 km, dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/pulawy</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Puławy — dowóz gratis</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/lokalizacje/krasnik</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Wynajem namiotu Kraśnik — dowóz gratis</image:title></image:image></url>
 
   <!-- T1 landingi · pakiety -->
-  <url><loc>https://wolnynamiot.pl/pakiety/pelny.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Pakiet pełny — namiot + stoły + krzesła + girlandy od 1 500 zł</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/pakiety/komunijny.html</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Pakiet komunijny — namiot 4×8m + stoły + krzesła, 1 500 zł</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/pakiety/pelny</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Pakiet pełny — namiot + stoły + krzesła + girlandy od 1 500 zł</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/pakiety/komunijny</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Pakiet komunijny — namiot 4×8m + stoły + krzesła, 1 500 zł</image:title></image:image></url>
 
   <!-- T1 landingi · poradniki -->
-  <url><loc>https://wolnynamiot.pl/poradniki/jaki-rozmiar.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Jaki namiot na ile osób — przewodnik rozmiaru 2026</image:title></image:image></url>
-  <url><loc>https://wolnynamiot.pl/poradniki/kiedy-zarezerwowac.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Kiedy rezerwować namiot — timeline 2026 per event</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/poradniki/jaki-rozmiar</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-6x12-podworko.webp</image:loc><image:title>Jaki namiot na ile osób — przewodnik rozmiaru 2026</image:title></image:image></url>
+  <url><loc>https://wolnynamiot.pl/poradniki/kiedy-zarezerwowac</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://wolnynamiot.pl/assets/realizacje/realizacja-komunia-ogrod.webp</image:loc><image:title>Kiedy rezerwować namiot — timeline 2026 per event</image:title></image:image></url>
 
   <!-- 8 podstron okazji -->
   <url>
-    <loc>https://wolnynamiot.pl/okazje/biesiada-w-gorach.html</loc>
+    <loc>https://wolnynamiot.pl/okazje/biesiada-w-gorach</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -254,7 +254,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/okazje/urodziny-w-ogrodzie.html</loc>
+    <loc>https://wolnynamiot.pl/okazje/urodziny-w-ogrodzie</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -271,7 +271,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/okazje/protest.html</loc>
+    <loc>https://wolnynamiot.pl/okazje/protest</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -283,7 +283,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/okazje/dom-dzialkowca.html</loc>
+    <loc>https://wolnynamiot.pl/okazje/dom-dzialkowca</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -295,7 +295,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/okazje/uroczystosci-rodzinne.html</loc>
+    <loc>https://wolnynamiot.pl/okazje/uroczystosci-rodzinne</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -317,7 +317,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/okazje/rodzinne-z-psem.html</loc>
+    <loc>https://wolnynamiot.pl/okazje/rodzinne-z-psem</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -334,7 +334,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/okazje/jarmark-festyn.html</loc>
+    <loc>https://wolnynamiot.pl/okazje/jarmark-festyn</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -351,7 +351,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/okazje/event-firmowy.html</loc>
+    <loc>https://wolnynamiot.pl/okazje/event-firmowy</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -381,7 +381,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/blog/sala-weselna-czy-namiot.html</loc>
+    <loc>https://wolnynamiot.pl/blog/sala-weselna-czy-namiot</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -393,7 +393,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/blog/ile-kosztuje-namiot-na-50-osob.html</loc>
+    <loc>https://wolnynamiot.pl/blog/ile-kosztuje-namiot-na-50-osob</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -405,7 +405,7 @@
   </url>
 
   <url>
-    <loc>https://wolnynamiot.pl/blog/jak-dobrac-rozmiar-namiotu.html</loc>
+    <loc>https://wolnynamiot.pl/blog/jak-dobrac-rozmiar-namiotu</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

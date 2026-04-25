@@ -1,17 +1,38 @@
-# Cloudflare Pages redirects — clean up stary index
+# Cloudflare Pages redirects
 # Format: source destination status
+# UWAGA: Cloudflare Pages automatycznie 308-redirektuje *.html → bez .html.
+# Targets podajemy BEZ .html żeby uniknąć łańcucha 301 → 308.
 
-# Stary URL indeksowany przez Google z poprzedniej wersji strony (audit 2026-04-23)
-/oferta             /cennik.html            301
-/oferta/            /cennik.html            301
-/oferta.html        /cennik.html            301
+# === LEGACY URLs ze starej wersji strony (Lovable build, sezon 2025) ===
+# Cloudflare cache nadal serwuje stare pliki — przy najbliższym deploy 301 nadpisuje.
+/krakow              /lokalizacje/krakow      301
+/krakow/             /lokalizacje/krakow      301
+/krakow.html         /lokalizacje/krakow      301
+/jedrzejow           /lokalizacje/jedrzejow   301
+/jedrzejow/          /lokalizacje/jedrzejow   301
+/jedrzejow.html      /lokalizacje/jedrzejow   301
+/kielce              /lokalizacje/kielce      301
+/kielce/             /lokalizacje/kielce      301
+/kielce.html         /lokalizacje/kielce      301
+/eventy-firmowe      /eventy/event-firmowy    301
+/eventy-firmowe/     /eventy/event-firmowy    301
+/eventy-firmowe.html /eventy/event-firmowy    301
 
-# Stare /okazje → /eventy (kompatybilność)
-/okazje/event-firmowy.html      /eventy/event-firmowy.html      301
-/okazje/jarmark-festyn.html     /eventy/festyn-jarmark.html     301
-/okazje/urodziny-w-ogrodzie.html /eventy/urodziny.html          301
-/okazje/uroczystosci-rodzinne.html /eventy/komunia.html          301
+# === Stary URL "oferta" indeksowany przez Google z poprzedniej wersji ===
+/oferta              /cennik                  301
+/oferta/             /cennik                  301
+/oferta.html         /cennik                  301
 
-# Inne potencjalne stare URLe
-/kontakt            /#formularz             301
-/rezerwacja        /#formularz             301
+# === Stare /okazje → /eventy (kompatybilność) ===
+/okazje/event-firmowy            /eventy/event-firmowy    301
+/okazje/event-firmowy.html       /eventy/event-firmowy    301
+/okazje/jarmark-festyn           /eventy/festyn-jarmark   301
+/okazje/jarmark-festyn.html      /eventy/festyn-jarmark   301
+/okazje/urodziny-w-ogrodzie      /eventy/urodziny         301
+/okazje/urodziny-w-ogrodzie.html /eventy/urodziny         301
+/okazje/uroczystosci-rodzinne    /eventy/komunia          301
+/okazje/uroczystosci-rodzinne.html /eventy/komunia        301
+
+# === Inne potencjalne stare URLe ===
+/kontakt             /#formularz              301
+/rezerwacja          /#formularz              301
