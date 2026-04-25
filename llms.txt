@@ -167,6 +167,13 @@ Zdjęcia realnych imprez z sezonu 2025 dostępne na stronie głównej (sekcja /#
 
 ### Hub strony
 - [Strona główna](https://wolnynamiot.pl/)
+- Blog / poradniki:
+  - [Namiot na komunię w ogrodzie](https://wolnynamiot.pl/blog/namiot-na-komunie-w-ogrodzie) — koszt 1 200-1 600 zł, rozmiar pod 30-60 osób, sezon maj-czerwiec, kiedy rezerwować
+  - [Namiot 6×12 m — ile osób, ile miejsca, koszt](https://wolnynamiot.pl/blog/namiot-6x12-ile-osob) — 72 m², do 80 osób, 1 300-1 600 zł brutto z montażem, scenariusze użycia
+  - [Kraków, Kielce czy Jędrzejów — kiedy opłaca się dowóz](https://wolnynamiot.pl/blog/krakow-czy-jedrzejow-namiot) — geografia bazy, dystanse, kiedy z Jędrzejowa optimum a kiedy lokalnie
+  - [Sala weselna czy namiot w ogrodzie](https://wolnynamiot.pl/blog/sala-weselna-czy-namiot) — porównanie kosztów dla 50-100 gości
+  - [Ile kosztuje wynajem namiotu na 50 osób](https://wolnynamiot.pl/blog/ile-kosztuje-namiot-na-50-osob) — pełen cennik 2026
+  - [Jak dobrać rozmiar namiotu do liczby osób](https://wolnynamiot.pl/blog/jak-dobrac-rozmiar-namiotu) — tabela pojemności
 - [Cennik · pełen (rozmiary, zestawy, dopłaty)](https://wolnynamiot.pl/cennik)
 - [Formularz rezerwacji](https://wolnynamiot.pl/#formularz)
 - [FAQ](https://wolnynamiot.pl/#faq)
