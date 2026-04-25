@@ -89,7 +89,7 @@
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "2",
+    "reviewCount": "5",
     "bestRating": "5",
     "worstRating": "1"
   },
@@ -112,6 +112,72 @@
     "wynajem namiotów Jędrzejów",
     "wynajem namiotów województwo świętokrzyskie"
   ]
+}
+</script>
+
+<!-- JSON-LD: Reviews × 5 (Google Business Profile, dla rich snippet w SERP) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {"@id": "https://wolnynamiot.pl/#organization"},
+  "author": {"@type": "Person", "name": "Krzysztof Wojnar"},
+  "datePublished": "2026-04-24",
+  "reviewBody": "Bardzo profesjonalny montaż polecam wszystkim miła obsługa",
+  "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"},
+  "publisher": {"@type": "Organization", "name": "Google"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {"@id": "https://wolnynamiot.pl/#organization"},
+  "author": {"@type": "Person", "name": "Anita Soboń"},
+  "datePublished": "2026-04-24",
+  "reviewBody": "Wynajęłam namiot na przyjęcie rodzinne w zeszłym roku. Firma Wolny Namiot dostarczyła mi go dzień wcześniej i rozłożyła, ja niczym nie musiałam się przejmować.",
+  "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"},
+  "publisher": {"@type": "Organization", "name": "Google"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {"@id": "https://wolnynamiot.pl/#organization"},
+  "author": {"@type": "Person", "name": "Maciej P."},
+  "datePublished": "2026-04-24",
+  "reviewBody": "Wszystko na plus, szybki kontakt. Namiot zrobił robotę.",
+  "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"},
+  "publisher": {"@type": "Organization", "name": "Google"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {"@id": "https://wolnynamiot.pl/#organization"},
+  "author": {"@type": "Person", "name": "Polly"},
+  "datePublished": "2026-04-24",
+  "reviewBody": "Wynająłem namiot 12×6, idealnie wpasował się pod 80 osób, szybki kontakt. Polecam.",
+  "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"},
+  "publisher": {"@type": "Organization", "name": "Google"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {"@id": "https://wolnynamiot.pl/#organization"},
+  "author": {"@type": "Person", "name": "Konrad Olesiński"},
+  "datePublished": "2025-08-25",
+  "reviewBody": "W ostatni weekend wynajęłam dwa namioty 4×8 i 5×10. Jestem bardzo zadowolony z jakości i obsługi. Na pewno jeszcze kiedyś skorzystam.",
+  "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"},
+  "publisher": {"@type": "Organization", "name": "Google"}
 }
 </script>
 
@@ -1576,39 +1642,55 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
 <section class="opinie" id="opinie">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">pierwsze wrażenia klientów · sezon 2025</div>
-      <h2>tak to <em>robimy.</em></h2>
-      <p class="lead">Jesteśmy młodą firmą — pierwszy sezon, 30+ eventów, większość z polecenia. Oto co słyszymy najczęściej.</p>
+      <div class="eyebrow">opinie google · sezon 2025</div>
+      <h2 class="h2"><span class="review-rating">5.0</span> na google. <em>tak to robimy.</em></h2>
+      <p class="lead"><span class="review-count">5 opinii</span> · 30+ eventów · pierwszy sezon za nami. Co mówią klienci po komuniach, weselach, festynach OSP.</p>
     </div>
-    <div class="opinie-grid">
+    <div class="opinie-grid" id="google-reviews">
 
+      <!-- FALLBACK 1 — Anita Soboń (najbogatsza opinia) -->
       <div class="opinia">
         <div class="opinia-stars">★★★★★</div>
-        <p class="opinia-text">"Wszystko dopięte, zero niespodzianek. Cena taka jak w mailu — dokładnie tyle. Montaż w dzień przed eventem, demontaż następnego dnia rano. Tak jak się umawialiśmy."</p>
+        <p class="opinia-text">„Wynajęłam namiot na przyjęcie rodzinne w zeszłym roku. Firma Wolny Namiot dostarczyła mi go dzień wcześniej i rozłożyła, ja niczym nie musiałam się przejmować…"</p>
         <div class="opinia-author">
-          <div class="opinia-avatar" style="background:var(--trawa);">★</div>
+          <div class="opinia-avatar" style="background:var(--trawa); color: var(--plotno);">★</div>
           <div>
-            <div class="opinia-name">parafraza · dm messenger</div>
-            <div class="opinia-meta">wesele · czerwiec 2025</div>
+            <div class="opinia-name">Anita Soboń</div>
+            <div class="opinia-meta">opinia google · przyjęcie rodzinne</div>
           </div>
         </div>
       </div>
 
+      <!-- FALLBACK 2 — Polly (konkret 6×12 / 80 osób) -->
       <div class="opinia">
         <div class="opinia-stars">★★★★★</div>
-        <p class="opinia-text">"Namiot 6×12 na festyn OSP, montaż w 3h, wszystko w cenie. Patryk odebrał telefon w 5 minut. Dobra robota dla lokalnej firmy — polecamy w dół ulicy."</p>
+        <p class="opinia-text">„Wynająłem namiot 12×6, idealnie wpasował się pod 80 osób, szybki kontakt. Polecam."</p>
         <div class="opinia-author">
-          <div class="opinia-avatar" style="background:var(--pomidor);">★</div>
+          <div class="opinia-avatar" style="background:var(--pomidor); color: var(--plotno);">★</div>
           <div>
-            <div class="opinia-name">parafraza · telefon po evencie</div>
-            <div class="opinia-meta">festyn OSP · sierpień 2025</div>
+            <div class="opinia-name">Polly</div>
+            <div class="opinia-meta">opinia google · namiot 6×12 · 80 osób</div>
           </div>
         </div>
       </div>
 
-      <div class="opinia" style="background: var(--zarowka); border-color: var(--atrament);">
+      <!-- FALLBACK 3 — Konrad Olesiński (zestaw 4×8 + 5×10) -->
+      <div class="opinia">
+        <div class="opinia-stars">★★★★★</div>
+        <p class="opinia-text">„W ostatni weekend wynajęłam dwa namioty 4×8 i 5×10. Jestem bardzo zadowolony z jakości i obsługi. Na pewno jeszcze kiedyś skorzystam."</p>
+        <div class="opinia-author">
+          <div class="opinia-avatar" style="background:var(--granat); color: var(--zarowka);">★</div>
+          <div>
+            <div class="opinia-name">Konrad Olesiński</div>
+            <div class="opinia-meta">opinia google · zestaw 4×8 + 5×10</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA — zostaw opinię (zachowane, reviews.js doklei po reviews) -->
+      <div class="opinia cta-opinia" style="background: var(--zarowka); border-color: var(--atrament);">
         <div class="opinia-stars" style="color: var(--atrament);">★</div>
-        <p class="opinia-text" style="color: var(--atrament);"><strong>Byłeś u nas? Zostaw opinię w Google.</strong> Budujemy reputację od zera — każda opinia dla nas ważna. Jeden klik, jedno zdanie, pomagasz nam rosnąć.</p>
+        <p class="opinia-text" style="color: var(--atrament);"><strong>Byłeś u nas? Zostaw opinię w Google.</strong> Każda opinia pomaga budować zaufanie. Jedno zdanie wystarczy.</p>
         <div class="opinia-author">
           <div class="opinia-avatar" style="background:var(--atrament); color: var(--zarowka);">→</div>
           <div>
@@ -1619,6 +1701,7 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       </div>
 
     </div>
+    <p class="reviews-note" style="text-align:center; margin-top:32px; font-family:'Instrument Serif',serif; font-style:italic; font-size:14px; color:var(--atrament-500);">Pokazujemy 3 najnowsze opinie. <a href="https://www.google.com/maps?q=WolnyNamiot.pl,+11+Listopada+27,+28-300+J%C4%99drzej%C3%B3w&ftid=0x471799a6279c6975:0xf0a2fa819fce76bc" target="_blank" rel="noopener" style="color:var(--pomidor); border-bottom:1px solid var(--pomidor);">Zobacz wszystkie na Google →</a></p>
   </div>
 </section>
 
@@ -1786,7 +1869,7 @@ Polski od jędrzejowa">
           <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <div>
             <div class="k-label">opinie google · zostaw swoją</div>
-            <div class="k-value">★ 5.0 <em>· 2 opinie</em></div>
+            <div class="k-value review-count-inline">★ 5.0 <em>· 5 opinii</em></div>
           </div>
         </a>
 
@@ -1960,6 +2043,20 @@ Polski od jędrzejowa">
     });
   })();
 </script>
+
+<!-- ============ GOOGLE REVIEWS WIDGET ============ -->
+<!-- Pobiera 3 najnowsze opinie z Google Places API i nadpisuje fallback w #google-reviews.
+     Aby aktywować, ustaw klucz API + Place ID poniżej (po setup w Google Cloud Console).
+     Bez kluczy = wyświetla się fallback hardcoded (3 opinie + CTA). Lift z stago-site/reviews.js. -->
+<script>
+  // TODO Karol/Patryk: po setup Google Places API uzupełnij wartości:
+  // 1. Google Cloud Console → Project "wolny-namiot-public" → APIs → Places API (New) → Enable
+  // 2. Credentials → Create API key → Restrict: HTTP referrer "*.wolnynamiot.pl/*" + API: Places API only
+  // 3. Place ID: business.google.com → WolnyNamiot.pl → URL ma cid=... LUB Google Maps share link → Place ID
+  window.WN_GOOGLE_API_KEY = ''; // np. 'AIzaSy...'
+  window.WN_PLACE_ID = '';        // np. 'ChIJdWmcJ6aZF0cR...'
+</script>
+<script src="/reviews.js" defer></script>
 
 </body>
 </html>
