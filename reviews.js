@@ -34,9 +34,7 @@
     var top2 = sorted.slice(0, 2);
     if (top2.length === 0) return; // nic nie nadpisuj jeśli brak danych
 
-    // Zapamiętaj OCENA tile + CTA card (zachowane, doklejone po reviews)
-    var ocena = container.querySelector('.opinia.ocena-card');
-    var ocenaHTML = ocena ? ocena.outerHTML : '';
+    // Zapamiętaj żółty CTA (ocena + "zostaw opinię") — zachowany, doklejony po reviews
     var cta = container.querySelector('.opinia.cta-opinia');
     var ctaHTML = cta ? cta.outerHTML : '';
 
@@ -85,10 +83,7 @@
       container.appendChild(card);
     });
 
-    // Doklej OCENA tile + CTA card (w tej kolejności)
-    if (ocenaHTML) {
-      container.insertAdjacentHTML('beforeend', ocenaHTML);
-    }
+    // Doklej żółty CTA card (ocena + zostaw opinię)
     if (ctaHTML) {
       container.insertAdjacentHTML('beforeend', ctaHTML);
     }

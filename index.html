@@ -1657,28 +1657,16 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
         </div>
       </div>
 
-      <!-- OCENA TILE — 5.0 / 5 opinii / link Google (zachowane przez reviews.js, klasa .ocena-card) -->
-      <div class="opinia ocena-card" style="background: var(--granat); color: var(--plotno); display: flex; flex-direction: column; justify-content: center;">
-        <div class="opinia-stars" style="color: var(--zarowka); font-size: 22px;">★★★★★</div>
-        <p style="font-family: 'Archivo Black', sans-serif; font-size: clamp(56px, 7vw, 80px); line-height: 0.95; letter-spacing: -0.05em; color: var(--zarowka); margin: 12px 0 4px;">5.0</p>
-        <p style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; color: var(--plotno); margin: 0 0 24px;">ocena na google · <span class="review-count">5 opinii</span></p>
+      <!-- ŻÓŁTY KAFELEK — ocena (5.0 + 5 opinii) + CTA "zostaw opinię" (zachowane przez reviews.js) -->
+      <div class="opinia cta-opinia" style="background: var(--zarowka); border-color: var(--atrament); display: flex; flex-direction: column;">
+        <div class="opinia-stars" style="color: var(--atrament);">★★★★★</div>
+        <p style="font-family: 'Archivo Black', sans-serif; font-size: clamp(48px, 6vw, 64px); line-height: 0.95; letter-spacing: -0.05em; color: var(--atrament); margin: 8px 0 4px;">5.0</p>
+        <p style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 17px; color: var(--atrament); margin: 0 0 20px;">ocena na google · <span class="review-count">5 opinii</span></p>
+        <p class="opinia-text" style="color: var(--atrament); margin: 0 0 8px;"><strong>Byłeś u nas? Zostaw opinię w Google.</strong> Każda opinia pomaga budować zaufanie. Jedno zdanie wystarczy.</p>
         <div class="opinia-author" style="margin-top: auto;">
-          <div class="opinia-avatar" style="background:var(--zarowka); color: var(--granat); font-family: 'Archivo Black', sans-serif;">G</div>
-          <div>
-            <a href="https://www.google.com/maps?q=WolnyNamiot.pl,+11+Listopada+27,+28-300+J%C4%99drzej%C3%B3w&ftid=0x471799a6279c6975:0xf0a2fa819fce76bc" target="_blank" rel="noopener" style="font-family: 'Archivo Black', sans-serif; font-size: 14px; text-transform: lowercase; color: var(--zarowka); letter-spacing: -0.02em;">zobacz wszystkie →</a>
-            <div class="opinia-meta" style="color: rgba(245,241,230,0.6);">profil google business</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA — zostaw opinię (zachowane, reviews.js doklei po reviews) -->
-      <div class="opinia cta-opinia" style="background: var(--zarowka); border-color: var(--atrament);">
-        <div class="opinia-stars" style="color: var(--atrament);">★</div>
-        <p class="opinia-text" style="color: var(--atrament);"><strong>Byłeś u nas? Zostaw opinię w Google.</strong> Każda opinia pomaga budować zaufanie. Jedno zdanie wystarczy.</p>
-        <div class="opinia-author">
           <div class="opinia-avatar" style="background:var(--atrament); color: var(--zarowka);">→</div>
           <div>
-            <a href="https://www.google.com/maps?q=WolnyNamiot.pl,+11+Listopada+27,+28-300+J%C4%99drzej%C3%B3w&ftid=0x471799a6279c6975:0xf0a2fa819fce76bc" style="font-family: 'Archivo Black', sans-serif; font-size: 14px; text-transform: lowercase; color: var(--atrament); letter-spacing: -0.02em;">zostaw opinię google →</a>
+            <a href="https://www.google.com/maps?q=WolnyNamiot.pl,+11+Listopada+27,+28-300+J%C4%99drzej%C3%B3w&ftid=0x471799a6279c6975:0xf0a2fa819fce76bc" target="_blank" rel="noopener" style="font-family: 'Archivo Black', sans-serif; font-size: 14px; text-transform: lowercase; color: var(--atrament); letter-spacing: -0.02em;">zostaw opinię google →</a>
             <div class="opinia-meta" style="color: var(--atrament-700);">dziękujemy!</div>
           </div>
         </div>
