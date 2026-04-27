@@ -2049,12 +2049,13 @@ Polski od jędrzejowa">
      Aby aktywować, ustaw klucz API + Place ID poniżej (po setup w Google Cloud Console).
      Bez kluczy = wyświetla się fallback hardcoded (3 opinie + CTA). Lift z stago-site/reviews.js. -->
 <script>
-  // TODO Karol/Patryk: po setup Google Places API uzupełnij wartości:
-  // 1. Google Cloud Console → Project "wolny-namiot-public" → APIs → Places API (New) → Enable
-  // 2. Credentials → Create API key → Restrict: HTTP referrer "*.wolnynamiot.pl/*" + API: Places API only
-  // 3. Place ID: business.google.com → WolnyNamiot.pl → URL ma cid=... LUB Google Maps share link → Place ID
-  window.WN_GOOGLE_API_KEY = ''; // np. 'AIzaSy...'
-  window.WN_PLACE_ID = '';        // np. 'ChIJdWmcJ6aZF0cR...'
+  // Google Places API (New) — public client-side key.
+  // ⚠️ BEZPIECZEŃSTWO: klucz MUSI mieć w Google Cloud Console:
+  //   - HTTP referrer restriction = *.wolnynamiot.pl/* (i nigdzie indziej)
+  //   - API restriction = Places API (New) only
+  // Bez tych restrictions każdy bot z GitHub może go użyć i naliczyć kosztów.
+  window.WN_GOOGLE_API_KEY = 'AIzaSyBE3p_eElx9aca4qk0_gXqbu13ItMcKSJs';
+  window.WN_PLACE_ID = 'ChIJdWmcJ6aZF0cRvHbOn4H6ovA';
 </script>
 <script src="/reviews.js" defer></script>
 
