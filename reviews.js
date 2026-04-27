@@ -31,15 +31,17 @@
       .sort(function(a, b) {
         return new Date(b.publishTime) - new Date(a.publishTime);
       });
-    var top3 = sorted.slice(0, 3);
-    if (top3.length === 0) return; // nic nie nadpisuj jeśli brak danych
+    var top2 = sorted.slice(0, 2);
+    if (top2.length === 0) return; // nic nie nadpisuj jeśli brak danych
 
-    // Zapamiętaj CTA card (ostatnia, do dołączenia po reviews)
+    // Zapamiętaj OCENA tile + CTA card (zachowane, doklejone po reviews)
+    var ocena = container.querySelector('.opinia.ocena-card');
+    var ocenaHTML = ocena ? ocena.outerHTML : '';
     var cta = container.querySelector('.opinia.cta-opinia');
     var ctaHTML = cta ? cta.outerHTML : '';
 
     container.textContent = '';
-    top3.forEach(function(r, i) {
+    top2.forEach(function(r, i) {
       var card = document.createElement('div');
       card.className = 'opinia';
 
@@ -83,7 +85,10 @@
       container.appendChild(card);
     });
 
-    // Doklej CTA card
+    // Doklej OCENA tile + CTA card (w tej kolejności)
+    if (ocenaHTML) {
+      container.insertAdjacentHTML('beforeend', ocenaHTML);
+    }
     if (ctaHTML) {
       container.insertAdjacentHTML('beforeend', ctaHTML);
     }
