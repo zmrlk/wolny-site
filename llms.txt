@@ -40,7 +40,7 @@
 ### Dopłaty i uwagi
 - Transport >250 km od Jędrzejowa: do uzgodnienia
 - Weekend (>24h): 30-50% bazowej ceny za każdy dodatkowy dzień
-- Event wymagający zestawu 5-10 namiotów (jarmark, festyn): **1 600-5 000 zł** indywidualnie
+- Event wymagający zestawu 2-3 namioty (jarmark, festyn): **1 600-5 000 zł** indywidualnie
 - FV na firmę/gminę/stowarzyszenie: standard, termin płatności 14-30 dni
 - Ubezpieczenie OC firmy: polisa dostępna do wglądu
 
@@ -52,7 +52,7 @@
 - [Dom działkowca / ROD](https://wolnynamiot.pl/okazje/dom-dzialkowca): 5×10m, 40-60 osób, **1 200-1 600 zł**
 - [Uroczystości rodzinne](https://wolnynamiot.pl/okazje/uroczystosci-rodzinne): komunia / chrzciny / jubileusz / stypa — 4×8 lub 6×12, **1 200-1 600 zł**
 - [Rodzinne z psem](https://wolnynamiot.pl/okazje/rodzinne-z-psem): ekspres 4,5×3m, kameralnie, **200-500 zł**
-- [Jarmark / festyn](https://wolnynamiot.pl/okazje/jarmark-festyn): zestaw 5-10 namiotów dla OSP, gmin, parafii, **1 600-5 000 zł**
+- [Jarmark / festyn](https://wolnynamiot.pl/okazje/jarmark-festyn): zestaw 2-3 namioty dla OSP, gmin, parafii, **1 600-5 000 zł**
 - [Event firmowy](https://wolnynamiot.pl/okazje/event-firmowy): do 80 osób w jednym namiocie 6×12, lub zestaw (6×12 + 2× ekspres) do ~140 osób, FV na firmę, **1 600-4 500 zł**
 
 ## Co jest w cenie
@@ -185,7 +185,7 @@ Zdjęcia realnych imprez z sezonu 2025 dostępne na stronie głównej (sekcja /#
 - [Namiot na komunię](https://wolnynamiot.pl/eventy/komunia) — 4×8 lub 5×10m, pakiet od 1 500 zł, sezon maj-czerwiec
 - [Namiot na urodziny](https://wolnynamiot.pl/eventy/urodziny) — dzieci 200 zł popup / jubileusz 50/60/70 pakiet od 1 500 zł
 - [Namiot na event firmowy](https://wolnynamiot.pl/eventy/event-firmowy) — B2B 6×12m lub zestaw 140 os., FV 14-30 dni, OC, dokumentacja
-- [Namiot na festyn i jarmark](https://wolnynamiot.pl/eventy/festyn-jarmark) — zestawy 5-10 namiotów dla OSP/gmin/parafii, 1 600-5 000 zł
+- [Namiot na festyn i jarmark](https://wolnynamiot.pl/eventy/festyn-jarmark) — zestawy 2-3 namioty dla OSP/gmin/parafii, 1 600-5 000 zł
 
 ### Namioty per rozmiar (T1 landingi per wymiar)
 - [Namiot 4×8m](https://wolnynamiot.pl/namioty/4x8) — 30-50 os., sam 1 200 zł, pakiet 1 500 zł
