@@ -175,7 +175,34 @@
 
 <link rel="stylesheet" href="okazje/shared.css">
 <style>
-.sub-hero-scrim-cennik { background: linear-gradient(180deg, rgba(19,43,77,0.35) 0%, rgba(10,10,10,0.90) 100%); }
+/* === CENNIK GRID (lift z home) === */
+.cennik { background: var(--plotno); padding: 80px 24px; }
+.cennik-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1400px; margin: 0 auto; }
+.cennik-card {
+  background: var(--plotno-100);
+  padding: 32px;
+  border: 1px solid var(--plotno-300);
+  position: relative;
+}
+.cennik-card.dark { background: var(--granat); color: var(--plotno); border-color: var(--granat); }
+.cennik-card.accent { background: var(--zarowka); color: var(--atrament); border-color: var(--zarowka); }
+.cennik-card.grass { background: var(--trawa); color: var(--plotno); border-color: var(--trawa); }
+.cennik-card h3 { font-size: 28px; letter-spacing: -0.03em; margin-bottom: 6px; }
+.cennik-card .cennik-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; opacity: 0.85; margin-bottom: 20px; }
+.cennik-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid currentColor;
+}
+.cennik-card.light .cennik-row { border-bottom: 1px solid var(--plotno-300); }
+.cennik-row:last-child { border-bottom: none; }
+.cennik-size { font-size: 15px; }
+.cennik-size .cap { font-family: 'JetBrains Mono', monospace; font-size: 11px; opacity: 0.7; margin-left: 6px; }
+.cennik-price { font-family: 'Archivo Black', sans-serif; font-size: 28px; letter-spacing: -0.025em; }
+.cennik-price em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 500; font-size: 18px; opacity: 0.7; margin-left: 2px; }
+.cennik-foot { margin-top: 32px; max-width: 1400px; margin-left: auto; margin-right: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--atrament-500); letter-spacing: 1px; text-transform: lowercase; }
+@media (max-width: 900px) { .cennik-grid { grid-template-columns: 1fr; gap: 20px; } .cennik-card { padding: 24px; } }
+
 .cennik-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
 .cennik-table th, .cennik-table td { padding: 16px 18px; text-align: left; border-bottom: 1px solid var(--plotno-300); }
 .cennik-table th { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: lowercase; color: var(--atrament-500); background: var(--plotno-100); }
@@ -214,26 +241,11 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<header class="sub-hero">
-  <div class="sub-hero-photo" style="background-image: url('assets/realizacje/realizacja-6x12-podworko.webp');"></div>
-  <div class="sub-hero-scrim sub-hero-scrim-cennik"></div>
-  <div class="sub-hero-inner">
-    <div class="breadcrumb">
-      <a href="/">strona główna</a>
-      <span class="sep">›</span>
-      <span>cennik</span>
-    </div>
-    <h1>cennik. <em>brutto.</em></h1>
-    <p class="lead">— Wszystko jasno. VAT w cenie. Transport do 250 km gratis. Bez "zapytaj o wycenę".</p>
-  </div>
-</header>
-
-<!-- ============ CENNIK (kopia z home #cennik) ============ -->
+<!-- ============ CENNIK ============ -->
 <section class="cennik">
   <div class="container">
     <div class="section-head">
-      <h2>ceny <em>jak stoi.</em></h2>
+      <h1>ceny <em>jak stoi.</em></h1>
       <p class="lead">Ekspres — odbierasz własnym transportem. Duże — przyjeżdżamy, stawiamy, demontujemy. Wszystko z VAT.</p>
     </div>
 
