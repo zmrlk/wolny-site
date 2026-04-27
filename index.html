@@ -835,24 +835,18 @@ section { padding: 100px 48px; position: relative; }
 
 /* === PROCES === */
 .proces { background: var(--plotno-100); }
-.proces-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: step; }
+.proces-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: stretch; }
 .proces-step {
   padding: 32px;
   background: var(--plotno);
   border: 1px solid var(--plotno-300);
-  position: relative;
-  counter-increment: step;
-}
-.proces-step::before {
-  content: counter(step, decimal-leading-zero);
-  font-family: 'Archivo Black', sans-serif; font-size: 14px;
-  color: var(--pomidor); letter-spacing: 2px;
-  position: absolute; top: 20px; right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .proces-step h3 { font-size: 22px; margin-bottom: 10px; }
 .proces-step h3 em { color: var(--pomidor); }
-.proces-step p { font-size: 14px; color: var(--atrament-500); line-height: 1.6; }
-.proces-step .proces-time { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; color: var(--trawa); margin-top: 14px; display: block; text-transform: lowercase; font-weight: 600; }
+.proces-step p { font-size: 14px; color: var(--atrament-500); line-height: 1.6; margin: 0; }
 @media (max-width: 900px) { .proces-grid { grid-template-columns: 1fr 1fr; gap: 16px; } .proces-step { padding: 24px; } }
 @media (max-width: 500px) { .proces-grid { grid-template-columns: 1fr; } }
 
@@ -1585,25 +1579,21 @@ footer { background: var(--atrament); color: var(--plotno); padding: 64px 48px 3
       <div class="proces-step">
         <h3>dzwonisz <em>lub piszesz.</em></h3>
         <p>Mówisz co, gdzie, kiedy, ilu ludzi. W 5 minut wiemy czy mamy wolny termin i jaki namiot pasuje.</p>
-        <span class="proces-time">~ 5 min</span>
       </div>
 
       <div class="proces-step">
         <h3>dostajesz <em>ofertę.</em></h3>
         <p>Konkret: rozmiar, cena, co wchodzi w cenę, co doliczamy. Zero ukrytych kosztów. Na maila albo smsem.</p>
-        <span class="proces-time">~ 24h</span>
       </div>
 
       <div class="proces-step">
         <h3>przyjeżdżamy <em>i stawiamy.</em></h3>
         <p>Dzień przed imprezą albo w dniu imprezy rano — ustalamy. Montaż 2-4h zależnie od rozmiaru.</p>
-        <span class="proces-time">2-4h montaż</span>
       </div>
 
       <div class="proces-step">
         <h3>impreza. my <em>znikamy.</em></h3>
         <p>Nie przeszkadzamy, nie rozmawiamy z gośćmi. Następnego dnia demontaż — 1-2h, ty nie musisz być.</p>
-        <span class="proces-time">1-2h demontaż</span>
       </div>
 
     </div>
